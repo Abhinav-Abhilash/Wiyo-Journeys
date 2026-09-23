@@ -1,0 +1,2 @@
+feed_publisher_name,feed_publisher_url,feed_lang,feed_start_date,feed_end_date,feed_version,default_lang,feed_contact_email,feed_contact_url
+Jungle Bus,http://junglebus.io,en,20220926,20230325,202209270834,,contact@junglebus.io,https://jungle-bus.github.io/KochiTransport/

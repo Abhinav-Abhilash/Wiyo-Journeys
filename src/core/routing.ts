@@ -1,6 +1,11 @@
 import { Stop, Route, JourneyPlan, JourneyLeg, MultilingualText, FallbackStopInfo } from '../types';
 import { calculateHaversineDistance, calculateCompassDirection } from './geo';
-import { calculateAccurateKeralaFare, BusServiceClass } from './fare-calculator';
+import {
+  calculateAccurateKeralaFare,
+  BusServiceClass,
+  validateFareConsistency,
+  calculateSanityCheckFare
+} from './fare-calculator';
 
 export class TransitRouter {
   private stopsMap: Map<string, Stop>;
@@ -52,11 +57,14 @@ export class TransitRouter {
     const originIdx = route.stops.indexOf(originStop.id);
     const destIdx = route.stops.indexOf(destStop.id);
 
-    if (originIdx === -1 || destIdx === -1 || originIdx >= destIdx) {
+    if (originIdx === -1 || destIdx === -1 || originIdx === destIdx) {
       return null;
     }
 
-    const legStopsIds = route.stops.slice(originIdx, destIdx + 1);
+    const isForward = originIdx < destIdx;
+    const legStopsIds = isForward
+      ? route.stops.slice(originIdx, destIdx + 1)
+      : route.stops.slice(destIdx, originIdx + 1).reverse();
     const intermediateStops = legStopsIds
       .slice(1, -1)
       .map((id) => this.stopsMap.get(id)!)
@@ -73,11 +81,64 @@ export class TransitRouter {
     }
     const distanceKm = Math.max(2.0, distanceMeters / 1000);
 
-    // Accurate Kerala MVD fare calculation
-    const fareDetails = calculateAccurateKeralaFare(
-      (route.serviceType as BusServiceClass) || 'Ordinary',
-      distanceKm
+    // Calculate stage count and fare directly from route dataset
+    const originStage = route.stopStages?.[originStop.id];
+    const destStage = route.stopStages?.[destStop.id];
+
+    let totalFare: number;
+    let baseFare: number;
+    let stageFare: number;
+    let stagesCount: number;
+    let disclaimer = 'Official Kerala MVD Notification Stage Fare Estimate. Conductor ticket may vary ±₹1 based on approved local stage tables.';
+
+    if (originStage !== undefined && destStage !== undefined) {
+      stagesCount = Math.max(1, Math.abs(destStage - originStage));
+      if (route.fareTable && route.fareTable[stagesCount] !== undefined) {
+        totalFare = route.fareTable[stagesCount];
+        baseFare = route.fareTable[1] !== undefined
+          ? route.fareTable[1]
+          : (route.fareTable[Math.min(...Object.keys(route.fareTable).map(Number))] || 10);
+        if (totalFare < baseFare) {
+          baseFare = totalFare;
+        }
+        stageFare = totalFare - baseFare;
+      } else {
+        const fareDetails = calculateAccurateKeralaFare(
+          (route.serviceType as BusServiceClass) || 'Ordinary',
+          distanceKm
+        );
+        totalFare = fareDetails.totalEstimatedFare;
+        baseFare = fareDetails.baseFare;
+        stageFare = fareDetails.additionalDistanceFare;
+        disclaimer = fareDetails.disclaimer;
+      }
+    } else {
+      const fareDetails = calculateAccurateKeralaFare(
+        (route.serviceType as BusServiceClass) || 'Ordinary',
+        distanceKm
+      );
+      totalFare = fareDetails.totalEstimatedFare;
+      baseFare = fareDetails.baseFare;
+      stageFare = fareDetails.additionalDistanceFare;
+      stagesCount = fareDetails.stagesCount;
+      disclaimer = fareDetails.disclaimer;
+    }
+
+    // Calculate straight-line distance for dual-check sanity validation
+    const straightLineMeters = calculateHaversineDistance(originStop.lat, originStop.lng, destStop.lat, destStop.lng);
+    const straightLineKm = Math.max(1.0, straightLineMeters / 1000);
+
+    const validation = validateFareConsistency(
+      totalFare,
+      straightLineKm,
+      distanceKm,
+      (route.serviceType as BusServiceClass) || 'Ordinary'
     );
+
+    if (!validation.isConsistent) {
+      console.warn(`[TransitRouter Fare Discrepancy] ${originStop.names.en} -> ${destStop.names.en}:`, validation.warning);
+      disclaimer = 'Estimate — please confirm with conductor (fare stage verification variance).';
+    }
 
     const estimatedRideMins = Math.max(8, Math.round(distanceKm * 2.2));
 
@@ -96,8 +157,8 @@ export class TransitRouter {
       fromStop: originStop,
       toStop: destStop,
       intermediateStops,
-      stagesCount: fareDetails.stagesCount,
-      fareEstimate: fareDetails.totalEstimatedFare,
+      stagesCount,
+      fareEstimate: totalFare,
       estimatedRideMins,
       departureTime: this.getNextDeparture(route),
       busBoardHeader,
@@ -113,11 +174,14 @@ export class TransitRouter {
       legs: [leg],
       totalFare: {
         fare_estimate: true,
-        amount: fareDetails.totalEstimatedFare,
+        amount: totalFare,
         currency: 'INR',
-        disclaimer: fareDetails.disclaimer,
-        baseFare: fareDetails.baseFare,
-        stageFare: fareDetails.additionalDistanceFare,
+        disclaimer,
+        baseFare,
+        stageFare,
+        sanityCheckFare: validation.sanityFare,
+        isFareVerified: validation.isConsistent,
+        straightLineDistanceKm: validation.straightLineDistanceKm,
       },
       totalDurationMins: estimatedRideMins,
       departureTime: leg.departureTime,
@@ -130,7 +194,7 @@ export class TransitRouter {
    * calculating exact walking distance and 8-point compass bearing.
    */
   private findNearestReachableFallback(originStop: Stop, requestedDest: Stop): JourneyPlan | null {
-    // 1. Gather all forward reachable stops from originStop along all routes
+    // 1. Gather all reachable stops from originStop along all routes
     interface ReachableCandidate {
       stop: Stop;
       route: Route;
@@ -142,16 +206,18 @@ export class TransitRouter {
     for (const route of this.routes) {
       const oIdx = route.stops.indexOf(originStop.id);
       if (oIdx !== -1) {
-        for (let i = oIdx + 1; i < route.stops.length; i++) {
-          const stop = this.stopsMap.get(route.stops[i]);
-          if (stop && stop.id !== originStop.id) {
-            const distanceToDestMeters = calculateHaversineDistance(
-              stop.lat,
-              stop.lng,
-              requestedDest.lat,
-              requestedDest.lng
-            );
-            candidates.push({ stop, route, distanceToDestMeters });
+        for (let i = 0; i < route.stops.length; i++) {
+          if (i !== oIdx) {
+            const stop = this.stopsMap.get(route.stops[i]);
+            if (stop && stop.id !== originStop.id) {
+              const distanceToDestMeters = calculateHaversineDistance(
+                stop.lat,
+                stop.lng,
+                requestedDest.lat,
+                requestedDest.lng
+              );
+              candidates.push({ stop, route, distanceToDestMeters });
+            }
           }
         }
       }
@@ -180,16 +246,18 @@ export class TransitRouter {
         for (const route of this.routes) {
           const oIdx = route.stops.indexOf(resolvedOrigin.id);
           if (oIdx !== -1) {
-            for (let i = oIdx + 1; i < route.stops.length; i++) {
-              const stop = this.stopsMap.get(route.stops[i]);
-              if (stop && stop.id !== resolvedOrigin.id) {
-                const distanceToDestMeters = calculateHaversineDistance(
-                  stop.lat,
-                  stop.lng,
-                  requestedDest.lat,
-                  requestedDest.lng
-                );
-                candidates.push({ stop, route, distanceToDestMeters });
+            for (let i = 0; i < route.stops.length; i++) {
+              if (i !== oIdx) {
+                const stop = this.stopsMap.get(route.stops[i]);
+                if (stop && stop.id !== resolvedOrigin.id) {
+                  const distanceToDestMeters = calculateHaversineDistance(
+                    stop.lat,
+                    stop.lng,
+                    requestedDest.lat,
+                    requestedDest.lng
+                  );
+                  candidates.push({ stop, route, distanceToDestMeters });
+                }
               }
             }
           }
@@ -226,6 +294,8 @@ export class TransitRouter {
       hi: `निकटतम उपलब्ध स्टॉप (कोई सीधी बस नहीं)। ${best.stop.names.hi} पर उतरें। आपका गंतव्य ${walkKm} किमी ${compassDir.hi} दूर है।`,
     };
 
+    const fallbackDisclaimer = `Bus segment fare to ${best.stop.names.en}. Remaining ${walkKm} km to ${requestedDest.names.en} is onward transfer.`;
+
     return {
       ...basePlan,
       id: `PLAN_FALLBACK_${basePlan.id}`,
@@ -234,6 +304,10 @@ export class TransitRouter {
       requestedDestination: requestedDest, // Original passenger requested stop
       fallbackInfo,
       notes,
+      totalFare: {
+        ...basePlan.totalFare,
+        disclaimer: fallbackDisclaimer,
+      },
     };
   }
 

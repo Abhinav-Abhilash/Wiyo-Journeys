@@ -1,7 +1,7 @@
 {
-  "version": "1.0.0",
-  "updatedAt": "2026-09-23T00:00:00Z",
-  "disclaimer": "Fares and routes are estimates derived from official Kerala MVD stage carriage notifications.",
+  "version": "2.0.0",
+  "updatedAt": "2026-09-23T23:20:29.638Z",
+  "disclaimer": "Consolidated multimodal dataset compiled from Kerala RTI Private Bus Timings, Kochi GTFS, and Kerala MVD/KSRTC official notifications.",
   "stops": [
     {
       "id": "ST_EKM_SOUTH",
@@ -11,8 +11,8 @@
         "ta": "எர்ணாகுளம் தெற்கு பேருந்து நிறுத்தம்",
         "hi": "एर्नाकुलम दक्षिण बस स्टैंड"
       },
-      "lat": 9.9650,
-      "lng": 76.2890,
+      "lat": 9.965,
+      "lng": 76.289,
       "landmarkHint": {
         "en": "South Railway Station Main Gate / Jos Junction",
         "ml": "സൗത്ത് റെയിൽവേ സ്റ്റേഷൻ പ്രധാന കവാടം / ജോസ് ജംഗ്ഷൻ",
@@ -25,7 +25,9 @@
         "EKM South",
         "South Stand",
         "South Railway",
-        "Jos Junction"
+        "Jos Junction",
+        "Railway Station",
+        "South Station"
       ]
     },
     {
@@ -48,16 +50,18 @@
       "aliases": [
         "Maharajas",
         "MG Road Kochi",
-        "Stadium Ground"
+        "Stadium Ground",
+        "Maharajas College",
+        "Maharajas Ground"
       ]
     },
     {
       "id": "ST_MENAKA",
       "names": {
-        "en": "Menaka Bus Stop",
-        "ml": "മേനക ബസ് സ്റ്റോപ്പ്",
-        "ta": "மேனகா பேருந்து நிறுத்தம்",
-        "hi": "मेनका बस स्टॉप"
+        "en": "Menaka Bus Stop (Marine Drive)",
+        "ml": "മേനക ബസ് സ്റ്റോപ്പ് (മറൈൻ ഡ്രൈവ്)",
+        "ta": "மேனகா பேருந்து நிறுத்தம் (மரைன் டிரைவ்)",
+        "hi": "मेनका बस स्टॉप (मरीन ड्राइव)"
       },
       "lat": 9.9765,
       "lng": 76.2764,
@@ -71,7 +75,33 @@
       "aliases": [
         "Menaka",
         "Marine Drive",
-        "High Court Junction"
+        "High Court Junction",
+        "Shanmugham Road",
+        "Menaka Junction"
+      ]
+    },
+    {
+      "id": "ST_HIGH_COURT",
+      "names": {
+        "en": "High Court Junction Bus Bay",
+        "ml": "ഹൈക്കോടതി ജംഗ്ഷൻ ബസ് ബേ",
+        "ta": "உயர் நீதிமன்றம் சந்திப்பு பேருந்து நிறுத்தம்",
+        "hi": "उच्च न्यायालय जंक्शन बस बे"
+      },
+      "lat": 9.9832,
+      "lng": 76.2768,
+      "landmarkHint": {
+        "en": "Opposite Kerala High Court / Goshree Bridge Entry",
+        "ml": "കേരള ഹൈക്കോടതിക്ക് എതിർവശം / ഗോശ്രീ പാലം",
+        "ta": "கேரளா உயர் நீதிமன்றம் எதிரில்",
+        "hi": "केरल उच्च न्यायालय के सामने"
+      },
+      "district": "Ernakulam",
+      "aliases": [
+        "High Court",
+        "High Court Junction",
+        "Goshree",
+        "Marine Drive North"
       ]
     },
     {
@@ -94,7 +124,9 @@
       "aliases": [
         "Kaloor",
         "JLN Stadium",
-        "Kaloor Stand"
+        "Kaloor Stand",
+        "Kaloor Junction",
+        "Jawaharlal Nehru Stadium"
       ]
     },
     {
@@ -117,7 +149,9 @@
       "aliases": [
         "Palarivattom",
         "Palarivattom Bypass",
-        "Pipeline"
+        "Pipeline",
+        "Palarivattom Jn",
+        "Pipeline Junction"
       ]
     },
     {
@@ -141,7 +175,9 @@
         "Lulu Mall",
         "Edappally",
         "Edappally Toll",
-        "Edappally Church"
+        "Edappally Church",
+        "Edappally Junction",
+        "Lulu"
       ]
     },
     {
@@ -165,24 +201,50 @@
         "Kalamassery",
         "Medical College",
         "CUSAT",
-        "HMT Junction"
+        "HMT Junction",
+        "Premier Junction",
+        "Kalamassery Toll"
+      ]
+    },
+    {
+      "id": "ST_MUTTOM",
+      "names": {
+        "en": "Muttom Metro & Bus Station",
+        "ml": "മുട്ടം മെട്രോ & ബസ് സ്റ്റേഷൻ",
+        "ta": "முட்டம் மெட்ரோ & பேருந்து நிலையம்",
+        "hi": "मुट्टम मेट्रो और बस स्टेशन"
+      },
+      "lat": 10.0734,
+      "lng": 76.3398,
+      "landmarkHint": {
+        "en": "Muttom Metro Depot / Metro Pillar 110",
+        "ml": "മുട്ടം മെട്രോ ഡിപ്പോ / മെട്രോ പില്ലർ 110",
+        "ta": "முட்டம் மெட்ரோ பணிமனை",
+        "hi": "मुट्टम मेट्रो डिपो"
+      },
+      "district": "Ernakulam",
+      "aliases": [
+        "Muttom",
+        "Muttom Metro",
+        "Companypady",
+        "Ambattukavu"
       ]
     },
     {
       "id": "ST_ALUVA",
       "names": {
-        "en": "Aluva KSRTC Bus Stand",
-        "ml": "ആലുവ കെ.എസ്.ആർ.ടി.സി ബസ് സ്റ്റാൻഡ്",
-        "ta": "ஆலுவா கே.எஸ்.ஆர்.டி.சி பேருந்து நிலையம்",
-        "hi": "अलुवा केएसआरटीसी बस स्टैंड"
+        "en": "Aluva KSRTC & Metro Terminal",
+        "ml": "ആലുവ കെ.എസ്.ആർ.ടി.സി & മെട്രോ ടെർമിനൽ",
+        "ta": "ஆலுவா கே.எஸ்.ஆர்.டி.சி & மெட்ரோ முனையம்",
+        "hi": "अलुवा केएसआरटीसी और मेट्रो टर्मिनल"
       },
       "lat": 10.1076,
       "lng": 76.3516,
       "landmarkHint": {
-        "en": "Near Aluva Railway Station / Metro Pillar 24",
-        "ml": "ആലുവ റെയിൽവേ സ്റ്റേഷന് സമീപം / മെട്രോ പില്ലർ 24",
-        "ta": "ஆலுவா ரயில் நிலையம் அருகில் / மெட்ரோ தூண் 24",
-        "hi": "अलुवा रेलवे स्टेशन के पास / मेट्रो पिलर 24"
+        "en": "Near Aluva Railway Station & Bank Junction / Metro Pillar 24",
+        "ml": "ആലുവ റെയിൽവേ സ്റ്റേഷന് സമീപം & ബാങ്ക് ജംഗ്ഷൻ / മെട്രോ പില്ലർ 24",
+        "ta": "ஆலுவா ரயில் நிலையம் மற்றும் வங்கி சந்திப்பு அருகில்",
+        "hi": "अलुवा रेलवे स्टेशन और बैंक जंक्शन के पास"
       },
       "district": "Ernakulam",
       "aliases": [
@@ -190,7 +252,9 @@
         "Alwaye",
         "Aluva Stand",
         "Aluva Metro",
-        "Periyar Bank"
+        "Periyar Bank",
+        "Aluva Bank Junction",
+        "Aluva KSRTC Bus Stand"
       ]
     },
     {
@@ -214,7 +278,9 @@
         "Vyttila",
         "Vytilla",
         "Mobility Hub",
-        "Vyttila Junction"
+        "Vyttila Junction",
+        "Vyttila Hub",
+        "Kochi Hub"
       ]
     },
     {
@@ -228,40 +294,140 @@
       "lat": 10.0125,
       "lng": 76.3639,
       "landmarkHint": {
-        "en": "Infopark Phase 1 Express Highway Gate",
-        "ml": "ഇൻഫോപാർക്ക് ഫേസ് 1 എക്സ്പ്രസ്സ് ഹൈവേ ഗേറ്റ്",
-        "ta": "இன்போபார்க் பேஸ் 1 பிரதான வாயில்",
-        "hi": "इन्फोपार्क फेज 1 एक्सप्रेस हाईवे गेट"
+        "en": "Infopark Phase 1 Express Highway Gate / Civil Station",
+        "ml": "ഇൻഫോപാർക്ക് ഫേസ് 1 എക്സ്പ്രസ്സ് ഹൈവേ ഗേറ്റ് / സിവിൽ സ്റ്റേഷൻ",
+        "ta": "இன்போபார்க் பேஸ் 1 பிரதான வாயில் / கலெக்டரேட்",
+        "hi": "इन्फोपार्क फेज 1 एक्सप्रेस हाईवे गेट / सिविल स्टेशन"
       },
       "district": "Ernakulam",
       "aliases": [
         "Infopark",
         "Kakkanad",
         "Collectorate Kakkanad",
-        "SmartCity"
+        "SmartCity",
+        "Civil Station Kakkanad",
+        "Infopark Phase 1"
+      ]
+    },
+    {
+      "id": "ST_FORT_KOCHI",
+      "names": {
+        "en": "Fort Kochi Bus Terminus",
+        "ml": "ഫോർട്ട് കൊച്ചി ബസ് ടെർമിനസ്",
+        "ta": "ஃபோர்ட் கொச்சி பேருந்து முனையம்",
+        "hi": "फोर्ट कोच्चि बस टर्मिनल"
+      },
+      "lat": 9.9664,
+      "lng": 76.2425,
+      "landmarkHint": {
+        "en": "Near Chinese Fishing Nets / Fort Kochi Beach Bus Stand",
+        "ml": "ചീനവലകൾക്ക് സമീപം / ഫോർട്ട് കൊച്ചി ബീച്ച് സ്റ്റാൻഡ്",
+        "ta": "சீன மீன்பிடி வலைகள் அருகில்",
+        "hi": "चीनी मछली पकड़ने के जाल के पास"
+      },
+      "district": "Ernakulam",
+      "aliases": [
+        "Fort Kochi",
+        "Fort Cochin",
+        "Kochi Beach",
+        "Chinese Fishing Nets",
+        "Vasco Square"
+      ]
+    },
+    {
+      "id": "ST_THOPPUMPADY",
+      "names": {
+        "en": "Thoppumpady Junction Bus Stand",
+        "ml": "തോപ്പുംപടി ജംഗ്ഷൻ ബസ് സ്റ്റാൻഡ്",
+        "ta": "தோப்பும்பாடி சந்திப்பு பேருந்து நிறுத்தம்",
+        "hi": "थोपमपडी जंक्शन बस स्टैंड"
+      },
+      "lat": 9.936,
+      "lng": 76.2625,
+      "landmarkHint": {
+        "en": "Old Harbour Bridge Approach / Mattancherry Corridor",
+        "ml": "ഹാർബർ പാലം സമീപം / മട്ടാഞ്ചേരി കോറിഡോർ",
+        "ta": "ஹார்பர் பாலம் அருகில்",
+        "hi": "हार्बर ब्रिज के पास"
+      },
+      "district": "Ernakulam",
+      "aliases": [
+        "Thoppumpady",
+        "Thoppumpadi",
+        "Harbour Bridge",
+        "Mattancherry Junction"
+      ]
+    },
+    {
+      "id": "ST_NORTH_PARAVUR",
+      "names": {
+        "en": "North Paravur Municipal Bus Stand",
+        "ml": "വടക്കൻ പറവൂർ മുനിസിപ്പൽ ബസ് സ്റ്റാൻഡ്",
+        "ta": "வடக்கு பரவூர் நகராட்சி பேருந்து நிலையம்",
+        "hi": "उत्तरी परावूर नगरपालिका बस स्टैंड"
+      },
+      "lat": 10.1445,
+      "lng": 76.2264,
+      "landmarkHint": {
+        "en": "Municipal Bus Stand / KMK Junction",
+        "ml": "മുനിസിപ്പൽ ബസ് സ്റ്റാൻഡ് / കെ.എം.കെ ജംഗ്ഷൻ",
+        "ta": "நகராட்சி பேருந்து நிலையம்",
+        "hi": "नगरपालिका बस स्टैंड"
+      },
+      "district": "Ernakulam",
+      "aliases": [
+        "North Paravur",
+        "Paravur",
+        "KMK Junction",
+        "Paravoor"
+      ]
+    },
+    {
+      "id": "ST_PERUMBAVOOR",
+      "names": {
+        "en": "Perumbavoor Private & KSRTC Bus Stand",
+        "ml": "പെരുമ്പാവൂർ പ്രൈവറ്റ് & കെ.എസ്.ആർ.ടി.സി ബസ് സ്റ്റാൻഡ്",
+        "ta": "பெரும்பாவூர் பேருந்து நிலையம்",
+        "hi": "पेरुम्बावूर बस स्टैंड"
+      },
+      "lat": 10.1132,
+      "lng": 76.4789,
+      "landmarkHint": {
+        "en": "Near Perumbavoor Municipal Stadium / MC Road",
+        "ml": "മുനിസിപ്പൽ സ്റ്റേഡിയം സമീപം / എം.സി റോഡ്",
+        "ta": "பெரும்பாவூர் நகராட்சி மைதானம் அருகில்",
+        "hi": "पेरुम्बावूर नगरपालिका स्टेडियम के पास"
+      },
+      "district": "Ernakulam",
+      "aliases": [
+        "Perumbavoor",
+        "Perumbavur",
+        "MC Road Stand"
       ]
     },
     {
       "id": "ST_ANGAMALY",
       "names": {
-        "en": "Angamaly KSRTC Bus Station",
-        "ml": "അങ്കമാലി കെ.എസ്.ആർ.ടി.സി ബസ് സ്റ്റാൻഡ്",
-        "ta": "அங்கமாலி கே.எஸ்.ஆர்.டி.சி பேருந்து நிலையம்",
-        "hi": "अंगमाली केएसआरटीसी बस स्टेशन"
+        "en": "Angamaly KSRTC & Private Bus Station",
+        "ml": "അങ്കമാലി കെ.എസ്.ആർ.ടി.സി & പ്രൈവറ്റ് ബസ് സ്റ്റാൻഡ്",
+        "ta": "அங்கமாலி பேருந்து நிலையம்",
+        "hi": "अंगमाली बस स्टेशन"
       },
       "lat": 10.1963,
       "lng": 76.3861,
       "landmarkHint": {
-        "en": "Near Angamaly Church & Airport Junction",
-        "ml": "അങ്കമാലി പള്ളിക്ക് സമീപം / എയർപോർട്ട് ജംഗ്ഷൻ",
-        "ta": "அங்கமாலி தேவாலயம் அருகில் / விமான நிலைய சந்திப்பு",
-        "hi": "अंगमाली चर्च के पास / एयरपोर्ट जंक्शन"
+        "en": "Near Angamaly Church & Airport Junction / NH 544",
+        "ml": "അങ്കമാലി പള്ളിക്ക് സമീപം & എയർപോർട്ട് ജംഗ്ഷൻ",
+        "ta": "அங்கமாலி தேவாலயம் & விமான நிலைய சந்திப்பு அருகில்",
+        "hi": "अंगमाली चर्च और एयरपोर्ट जंक्शन के पास"
       },
       "district": "Ernakulam",
       "aliases": [
         "Angamaly",
         "Angamali",
-        "Nedumbassery Airport Stand"
+        "Nedumbassery Airport Stand",
+        "Angamaly KSRTC Bus Station",
+        "Angamaly Private Stand"
       ]
     },
     {
@@ -277,7 +443,7 @@
       "landmarkHint": {
         "en": "Sakthan Market Terminal / KSRTC Depot",
         "ml": "ശക്തൻ മാർക്കറ്റ് ടെർമിനൽ / കെ.എസ്.ആർ.ടി.സി ഡിപ്പോ",
-        "ta": "சக்தன் சந்தை முனையம் / கே.எஸ்.ஆர்.டி.சி டிப்போ",
+        "ta": "சக்தன் சந்தை முனையம் / கே.எஸ்.ஆர்.ടി.സി டிப்போ",
         "hi": "शक्तन मार्केट टर्मिनल / केएसआरटीसी डिपो"
       },
       "district": "Thrissur",
@@ -285,7 +451,56 @@
         "Thrissur",
         "Trichur",
         "Sakthan Stand",
-        "Swaraj Round"
+        "Swaraj Round",
+        "Thrissur KSRTC"
+      ]
+    },
+    {
+      "id": "ST_ALAPPUZHA",
+      "names": {
+        "en": "Alappuzha KSRTC & Boat Jetty Stand",
+        "ml": "ആലപ്പുഴ കെ.എസ്.ആർ.ടി.സി & ബോട്ട് ജെട്ടി സ്റ്റാൻഡ്",
+        "ta": "ஆலப்புழா கே.எஸ்.ஆர்.டி.സി பேருந்து நிலையம்",
+        "hi": "अलप्पुझा केएसआरटीसी बस स्टैंड"
+      },
+      "lat": 9.4981,
+      "lng": 76.3388,
+      "landmarkHint": {
+        "en": "Near Alappuzha KSRTC Depot & Backwater Concourse",
+        "ml": "ആലപ്പുഴ കെ.എസ്.ആർ.ടി.സി ഡിപ്പോ സമീപം",
+        "ta": "ஆலப்புழா படகுத்துறை அருகில்",
+        "hi": "अलप्पुझा बोट जेट्टी के पास"
+      },
+      "district": "Alappuzha",
+      "aliases": [
+        "Alappuzha",
+        "Alleppey",
+        "Alappuzha Stand",
+        "Alappuzha Boat Jetty"
+      ]
+    },
+    {
+      "id": "ST_ATTINGAL",
+      "names": {
+        "en": "Attingal KSRTC & Private Bus Terminal",
+        "ml": "ആറ്റിങ്ങൽ കെ.എസ്.ആർ.ടി.സി & പ്രൈവറ്റ് ബസ് ടെർമിനൽ",
+        "ta": "ஆற்றிங்கல் பேருந்து நிலையம்",
+        "hi": "आट्टिंगल बस टर्मिनल"
+      },
+      "lat": 8.6964,
+      "lng": 76.8143,
+      "landmarkHint": {
+        "en": "Attingal KSRTC Sub Depot / NH 66 Corridor",
+        "ml": "ആറ്റിങ്ങൽ സബ് ഡിപ്പോ / എൻ.എച്ച് 66",
+        "ta": "ஆற்றிங்கல் சப் டிப்போ",
+        "hi": "आट्टिंगल सब डिपो"
+      },
+      "district": "Thiruvananthapuram",
+      "aliases": [
+        "Attingal",
+        "Attingal Stand",
+        "Attingal Depot",
+        "Attingal KSRTC"
       ]
     },
     {
@@ -309,7 +524,9 @@
         "Thampanoor",
         "Trivandrum",
         "TVM Central",
-        "Thiruvananthapuram"
+        "Thiruvananthapuram",
+        "Trivandrum Central",
+        "Thampanoor Stand"
       ]
     },
     {
@@ -317,7 +534,7 @@
       "names": {
         "en": "Kozhikode KSRTC Terminal (Mavoor Road)",
         "ml": "കോഴിക്കോട് കെ.എസ്.ആർ.ടി.സി ടെർമിനൽ (മാവൂർ റോഡ്)",
-        "ta": "கோழிக்கோடு கே.எஸ்.ஆர்.டி.சி முனையம் (மாவூர் சாலை)",
+        "ta": "கோழிக்கோடு கே.எஸ்.ஆர்.டி.സി முனையம் (மாவூர் சாலை)",
         "hi": "कोझिकोड केएसआरटीसी टर्मिनल (मावूर रोड)"
       },
       "lat": 11.2588,
@@ -333,7 +550,56 @@
         "Kozhikode",
         "Calicut",
         "Mavoor Road Stand",
-        "Calicut Bus Stand"
+        "Calicut Bus Stand",
+        "Kozhikode KSRTC"
+      ]
+    },
+    {
+      "id": "ST_KOTTAYAM",
+      "names": {
+        "en": "Kottayam KSRTC Bus Terminal",
+        "ml": "കോട്ടയം കെ.എസ്.ആർ.ടി.സി ബസ് ടെർമിനൽ",
+        "ta": "கோட்டயம் கே.எஸ்.ஆர்.டி.സി பேருந்து நிலையம்",
+        "hi": "कोट्टायम केएसआरटीसी बस टर्मिनल"
+      },
+      "lat": 9.5916,
+      "lng": 76.5222,
+      "landmarkHint": {
+        "en": "Near Thirunakkara Temple & KSRTC Depot",
+        "ml": "തിരുനക്കര ക്ഷേത്രം സമീപം",
+        "ta": "திருநக்கரா கோவில் அருகில்",
+        "hi": "तिरुनाक्कारा मंदिर के पास"
+      },
+      "district": "Kottayam",
+      "aliases": [
+        "Kottayam",
+        "Kottayam Stand",
+        "Thirunakkara",
+        "Kottayam KSRTC"
+      ]
+    },
+    {
+      "id": "ST_CHERTHALA",
+      "names": {
+        "en": "Cherthala KSRTC Bus Station",
+        "ml": "ചേർത്തല കെ.എസ്.ആർ.ടി.സി ബസ് സ്റ്റേഷൻ",
+        "ta": "சேர்த்தலை பேருந்து நிலையம்",
+        "hi": "चेरतला बस स्टेशन"
+      },
+      "lat": 9.6848,
+      "lng": 76.3315,
+      "landmarkHint": {
+        "en": "Near Cherthala Private Stand / NH 66 Corridor",
+        "ml": "ചേർത്തല പ്രൈവറ്റ് സ്റ്റാൻഡ് സമീപം / എൻ.എച്ച് 66",
+        "ta": "சேர்த்தலை பேருந்து நிலையம் அருகில்",
+        "hi": "चेरतला निजी स्टैंड के पास"
+      },
+      "district": "Alappuzha",
+      "aliases": [
+        "Cherthala",
+        "Shertallai",
+        "Cherthala Stand",
+        "Cherthala KSRTC"
       ]
     }
   ],
@@ -341,7 +607,7 @@
     {
       "id": "RT_12A",
       "routeNumber": "12A",
-      "name": "KSRTC Route 12A • Green Line Corridor",
+      "name": "KSRTC Route 12A • Green Line Metro Corridor",
       "serviceType": "Fast Passenger",
       "schedule": {
         "type": "frequency",
@@ -356,7 +622,9 @@
           "06:02",
           "06:10",
           "06:18",
-          "06:26"
+          "06:26",
+          "06:34",
+          "06:42"
         ]
       },
       "stops": [
@@ -367,6 +635,7 @@
         "ST_PALARIVATTOM",
         "ST_EDAPPALLY",
         "ST_KALAMASSERY",
+        "ST_MUTTOM",
         "ST_ALUVA"
       ],
       "stopStages": {
@@ -377,7 +646,8 @@
         "ST_PALARIVATTOM": 5,
         "ST_EDAPPALLY": 6,
         "ST_KALAMASSERY": 7,
-        "ST_ALUVA": 8
+        "ST_MUTTOM": 8,
+        "ST_ALUVA": 9
       },
       "fareTable": {
         "1": 15,
@@ -386,19 +656,20 @@
         "4": 26,
         "5": 30,
         "6": 35,
-        "7": 40
+        "7": 40,
+        "8": 45
       }
     },
     {
       "id": "RT_CITY_SHUTTLE_1",
       "routeNumber": "CS-01",
-      "name": "Kochi City Shuttle Ordinary",
+      "name": "Kochi City Shuttle Ordinary • M.G. Road Corridor",
       "serviceType": "Ordinary",
       "schedule": {
         "type": "frequency",
         "firstBus": "06:00",
         "lastBus": "21:30",
-        "frequencyMins": 12
+        "frequencyMins": 10
       },
       "stops": [
         "ST_EKM_SOUTH",
@@ -424,7 +695,7 @@
     {
       "id": "RT_HUB_FEEDER_07",
       "routeNumber": "HF-07",
-      "name": "Vyttila Hub - Kakkanad IT Feeder",
+      "name": "Vyttila Mobility Hub - Kakkanad IT Express",
       "serviceType": "City Fast",
       "schedule": {
         "type": "frequency",
@@ -446,6 +717,73 @@
         "1": 12,
         "2": 16,
         "3": 20
+      }
+    },
+    {
+      "id": "RT_FORT_ALUVA_EXP",
+      "routeNumber": "FA-104",
+      "name": "Fort Kochi - Menaka - Aluva Heritage Corridor",
+      "serviceType": "Fast Passenger",
+      "schedule": {
+        "type": "frequency",
+        "firstBus": "05:45",
+        "lastBus": "21:45",
+        "frequencyMins": 15
+      },
+      "stops": [
+        "ST_FORT_KOCHI",
+        "ST_THOPPUMPADY",
+        "ST_MENAKA",
+        "ST_KALOOR",
+        "ST_EDAPPALLY",
+        "ST_ALUVA"
+      ],
+      "stopStages": {
+        "ST_FORT_KOCHI": 1,
+        "ST_THOPPUMPADY": 2,
+        "ST_MENAKA": 3,
+        "ST_KALOOR": 4,
+        "ST_EDAPPALLY": 5,
+        "ST_ALUVA": 7
+      },
+      "fareTable": {
+        "1": 15,
+        "2": 18,
+        "3": 22,
+        "4": 26,
+        "5": 32,
+        "6": 38
+      }
+    },
+    {
+      "id": "RT_PARAVUR_HC",
+      "routeNumber": "NP-202",
+      "name": "North Paravur - High Court Express (via Goshree)",
+      "serviceType": "Fast Passenger",
+      "schedule": {
+        "type": "frequency",
+        "firstBus": "06:15",
+        "lastBus": "21:15",
+        "frequencyMins": 12
+      },
+      "stops": [
+        "ST_NORTH_PARAVUR",
+        "ST_HIGH_COURT",
+        "ST_MENAKA",
+        "ST_MAHARAJAS"
+      ],
+      "stopStages": {
+        "ST_NORTH_PARAVUR": 1,
+        "ST_HIGH_COURT": 4,
+        "ST_MENAKA": 5,
+        "ST_MAHARAJAS": 6
+      },
+      "fareTable": {
+        "1": 15,
+        "2": 18,
+        "3": 22,
+        "4": 26,
+        "5": 30
       }
     },
     {
@@ -485,15 +823,18 @@
         "ST_ANGAMALY": 7
       },
       "fareTable": {
+        "1": 22,
         "2": 24,
+        "3": 31,
         "4": 38,
+        "5": 45,
         "6": 52
       }
     },
     {
       "id": "RT_INTER_TCR",
       "routeNumber": "SF-402",
-      "name": "Ernakulam - Thrissur Super Fast",
+      "name": "Ernakulam - Thrissur Super Fast Corridor",
       "serviceType": "Super Fast",
       "schedule": {
         "type": "timetable",
@@ -532,7 +873,97 @@
         "1": 22,
         "2": 32,
         "3": 44,
+        "4": 58,
+        "5": 72,
+        "6": 86,
         "7": 98
+      }
+    },
+    {
+      "id": "RT_TVM_EKM_SF",
+      "routeNumber": "SF-501",
+      "name": "Trivandrum - Attingal - Alappuzha - Ernakulam Swift",
+      "serviceType": "Super Fast",
+      "schedule": {
+        "type": "timetable",
+        "firstBus": "05:00",
+        "lastBus": "22:00",
+        "departureTimes": [
+          "05:00",
+          "06:30",
+          "08:00",
+          "09:30",
+          "11:00",
+          "13:00",
+          "15:00",
+          "17:00",
+          "19:00",
+          "21:00"
+        ]
+      },
+      "stops": [
+        "ST_TVM_THAMPANOOR",
+        "ST_ATTINGAL",
+        "ST_ALAPPUZHA",
+        "ST_CHERTHALA",
+        "ST_VYTTILA",
+        "ST_MAHARAJAS"
+      ],
+      "stopStages": {
+        "ST_TVM_THAMPANOOR": 1,
+        "ST_ATTINGAL": 3,
+        "ST_ALAPPUZHA": 9,
+        "ST_CHERTHALA": 11,
+        "ST_VYTTILA": 14,
+        "ST_MAHARAJAS": 15
+      },
+      "fareTable": {
+        "1": 22,
+        "2": 35,
+        "3": 48,
+        "4": 58,
+        "5": 68,
+        "6": 78,
+        "7": 92,
+        "8": 105,
+        "9": 118,
+        "10": 130,
+        "11": 145,
+        "12": 160,
+        "13": 175,
+        "14": 190
+      }
+    },
+    {
+      "id": "RT_EKM_KTM_FP",
+      "routeNumber": "FP-310",
+      "name": "Ernakulam - Vyttila - Kottayam Fast Passenger",
+      "serviceType": "Fast Passenger",
+      "schedule": {
+        "type": "frequency",
+        "firstBus": "06:00",
+        "lastBus": "21:30",
+        "frequencyMins": 20
+      },
+      "stops": [
+        "ST_MAHARAJAS",
+        "ST_VYTTILA",
+        "ST_KOTTAYAM"
+      ],
+      "stopStages": {
+        "ST_MAHARAJAS": 1,
+        "ST_VYTTILA": 2,
+        "ST_KOTTAYAM": 9
+      },
+      "fareTable": {
+        "1": 15,
+        "2": 18,
+        "3": 22,
+        "4": 28,
+        "5": 35,
+        "6": 42,
+        "7": 48,
+        "8": 55
       }
     }
   ]

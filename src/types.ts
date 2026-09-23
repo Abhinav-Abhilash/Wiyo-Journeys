@@ -89,6 +89,9 @@ export interface JourneyPlan {
     disclaimer: string;
     baseFare: number;
     stageFare: number;
+    sanityCheckFare?: number;
+    isFareVerified?: boolean;
+    straightLineDistanceKm?: number;
   };
   interchangeStop?: Stop;
   totalDurationMins: number;

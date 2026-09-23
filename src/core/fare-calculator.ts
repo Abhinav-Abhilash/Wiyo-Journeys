@@ -140,6 +140,64 @@ export function calculateAccurateKeralaFare(
   };
 }
 
+export interface FareSanityValidation {
+  isConsistent: boolean;
+  datasetFare: number;
+  sanityFare: number;
+  expectedMinFare: number;
+  expectedMaxFare: number;
+  straightLineDistanceKm: number;
+  busRoadDistanceKm: number;
+  warning?: string;
+}
+
+/**
+ * Calculates straight-line distance-based sanity check fare derived from dataset rate formulas
+ */
+export function calculateSanityCheckFare(
+  serviceClass: BusServiceClass,
+  straightLineKm: number
+): number {
+  const rules = OFFICIAL_KERALA_FARE_RATES[serviceClass] || OFFICIAL_KERALA_FARE_RATES['Ordinary'];
+  const extraKm = Math.max(0, straightLineKm - rules.minDistanceKm);
+  const rawFare = rules.minFare + extraKm * rules.ratePerKm;
+  return Math.max(rules.minFare, Math.round(rawFare));
+}
+
+/**
+ * Validates whether the dataset stage-fare is consistent with the physical distance
+ */
+export function validateFareConsistency(
+  datasetFare: number,
+  straightLineKm: number,
+  busRoadDistanceKm: number,
+  serviceClass: BusServiceClass = 'Ordinary'
+): FareSanityValidation {
+  const sanityFare = calculateSanityCheckFare(serviceClass, straightLineKm);
+  const rules = OFFICIAL_KERALA_FARE_RATES[serviceClass] || OFFICIAL_KERALA_FARE_RATES['Ordinary'];
+
+  // Allowed bounding range:
+  // Lower bound: minimum base fare or 80% of straight-line estimate
+  // Upper bound: 2.2x straight-line estimate (accounts for winding highways & stage boundaries)
+  const expectedMinFare = Math.max(rules.minFare, Math.floor(sanityFare * 0.75));
+  const expectedMaxFare = Math.max(rules.minFare + 6, Math.ceil(sanityFare * 2.2));
+
+  const isConsistent = datasetFare >= expectedMinFare && datasetFare <= expectedMaxFare;
+
+  return {
+    isConsistent,
+    datasetFare,
+    sanityFare,
+    expectedMinFare,
+    expectedMaxFare,
+    straightLineDistanceKm: Math.round(straightLineKm * 10) / 10,
+    busRoadDistanceKm: Math.round(busRoadDistanceKm * 10) / 10,
+    warning: isConsistent
+      ? undefined
+      : `Fare discrepancy detected: Dataset fare ₹${datasetFare} is outside expected range (₹${expectedMinFare} - ₹${expectedMaxFare}) for ${straightLineKm.toFixed(1)} km.`
+  };
+}
+
 /**
  * Fetch / Sync live fare tables from online endpoints with offline fallback
  */

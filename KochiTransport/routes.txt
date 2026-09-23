@@ -1,0 +1,474 @@
+route_id,agency_id,route_short_name,route_long_name,route_desc,route_type,route_url,route_color,route_text_color
+r10831465,Kochi city boat,,Vypin ↔ Fort Kochi (Ro Ro),,4,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=10831465,,
+r10831516,Mofussil Kochi bus,,High Court ↔ Nedungad (via Vypin),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=10831516,0000ff,ffffff
+r10831517,Mofussil Kochi bus,,Manjanakad ↔ High Court,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=10831517,0000ff,ffffff
+r10831518,Mofussil Kochi bus,,North Paravur ↔ High Court (via Vypin),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=10831518,0000ff,ffffff
+r12759113,Mofussil Kochi bus,,Munambam ↔ High Court (via Vypin),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=12759113,0000ff,ffffff
+r12759289,Ordinary bus,,North Paravur ↔ Ernakulam Boat Jetty,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=12759289,ffffff,000000
+r13374892,Mofussil Kochi bus,,North Paravur ↔ Kottuvally South (via Athani),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13374892,0000ff,ffffff
+r13374893,Mofussil Kochi bus,,North Paravur ↔ Munambam,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13374893,0000ff,ffffff
+r13478965,Mofussil Kochi bus,,North Paravur ↔ Ezhikkara,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13478965,0000ff,ffffff
+r13489073,Kochi city bus,,Fort Kochi ↔ Edakochi,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13489073,008000,ffffff
+r13497147,Mofussil Kochi bus,,High Court ↔ Panambukad (Vallarpadam),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13497147,0000ff,ffffff
+r13498566,Kochi city boat,,Ernakulam ↔ Vypin,,4,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13498566,,
+r13498742,Kochi city boat,,Ernakulam ↔ Fort Kochi,,4,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13498742,,
+r13498857,Kochi city boat,,Ernakulam ↔ Fort Kochi via Wellington Island,,4,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13498857,,
+r13500567,Kochi city bus,,"Vyttila Mobility Hub ↔ Vyttila Mobility Hub (clockwise, via Kadavanthra and Palarivattam bypass)",,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13500567,008000,ffffff
+r13500673,Kochi city bus,,"Vyttila Mobility Hub ↔ Vyttila Mobility Hub (anti-clockwise, via Thamannam and Kadavanthara)",,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13500673,008000,ffffff
+r13500936,Kochi city bus,,Fort Kochi ↔ Kumbalangi,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13500936,008000,ffffff
+r13510567,Kochi city bus,,Aluva ↔ Fort Kochi via Menaka,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13510567,008000,ffffff
+r13526775,Mofussil Kochi bus,,Aluva ↔ North Paravur,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13526775,0000ff,ffffff
+r13531471,Mofussil Kochi bus,,Aluva ↔ Perumbavoor (via Rajagiri),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13531471,0000ff,ffffff
+r13531919,Mofussil Kochi bus,,Ankamaly ↔ Perumbavoor,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13531919,0000ff,ffffff
+r13531974,Mofussil Kochi bus,,Ankamaly ↔ Kalady,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13531974,0000ff,ffffff
+r13534968,Kochi city bus,,Aluva ↔ Perumpadappu,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13534968,008000,ffffff
+r13535512,Kochi city bus,,Fort Kochi ↔ Wellington Island,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13535512,008000,ffffff
+r13539090,Kochi city bus,,Aluva ↔ Wellington Island,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13539090,008000,ffffff
+r13544303,Kochi city bus,,Aluva ↔ Chellanam (via Menaka),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13544303,008000,ffffff
+r13544888,Kochi city bus,,Fort Kochi ↔ Kakkanad (via Menaka),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13544888,008000,ffffff
+r13545124,Kochi city bus,,Aluva ↔ Thoppumpady via Menaka,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13545124,008000,ffffff
+r13546166,Kochi city bus,,Mattancherry ↔ Edakochi,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13546166,008000,ffffff
+r13546546,Kochi city bus,,Kakkanad ↔ Thevara,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13546546,008000,ffffff
+r13548914,Mofussil Kochi bus,,Kaloor ↔ North Paravur,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13548914,0000ff,ffffff
+r13549451,Kochi city bus,,Aluva ↔ Fort Kochi via Padma,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13549451,008000,ffffff
+r13551368,Mofussil Kochi bus,,Ankamaly ↔ North Paravur,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13551368,0000ff,ffffff
+r13551491,Kochi city bus,,Cheranellore ↔ Mattancherry (via Chittoor),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13551491,008000,ffffff
+r13552378,Kochi city bus,,Chittortemple ↔ Mattancherry,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13552378,008000,ffffff
+r13553060,Kochi city bus,,Aluva ↔ Mattancherry via Padma,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13553060,008000,ffffff
+r13553068,Mofussil Kochi bus,,North Paravur ↔ Vyttila (via Koonammavu),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13553068,0000ff,ffffff
+r13553738,Kochi city bus,,Aluva ↔ Cochinshipyard,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13553738,008000,ffffff
+r13555115,Mofussil Kochi bus,,Aluva ↔ Elavoor,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13555115,0000ff,ffffff
+r13556486,Kochi city bus,,Aluva ↔ Thevara,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13556486,008000,ffffff
+r13557270,Kochi city bus,,Chittortemple ↔ Kumbalangi,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13557270,008000,ffffff
+r13561115,Kochi city bus,,Kakkanad ↔ Perumpadappu (via Menaka),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13561115,008000,ffffff
+r13561410,Mofussil Kochi bus,,Aluva ↔ Varapuzha (via Kodungalloor),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13561410,0000ff,ffffff
+r13561807,Kochi city bus,,Cheranellore ↔ Thevara,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13561807,008000,ffffff
+r13562297,Kochi city bus,,Mattancherry ↔ Kumbalangi,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13562297,008000,ffffff
+r13562583,Kochi city bus,,Aluva ↔ Ernakulam South,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13562583,008000,ffffff
+r13562613,Kochi city bus,,Aluva ↔ Thevara (via NAD and Padma),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13562613,008000,ffffff
+r13562704,Kochi city bus,,Fort Kochi ↔ Perumpadappu,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13562704,008000,ffffff
+r13562782,Kochi city bus,,Aluva ↔ Mattancherry via Menaka,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13562782,008000,ffffff
+r13563616,Kochi city bus,,Cheranellore ↔ Fort Kochi (via Menaka),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13563616,008000,ffffff
+r13563806,Kochi city bus,,Aluva ↔ Konthuruthy,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13563806,008000,ffffff
+r13568407,Kochi city bus,,Chittoor Temple ↔ Edakochi,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13568407,008000,ffffff
+r13570055,Mofussil Kochi bus,,Chellanam ↔ Vyttila,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13570055,0000ff,ffffff
+r13570067,Kochi city bus,,Aluva ↔ Kumbalangi,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13570067,008000,ffffff
+r13570075,Kochi city bus,,Wellington Island ↔ Kumbalangi,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13570075,008000,ffffff
+r13570706,Kochi city bus,,Eloor ↔ Fort Kochi,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13570706,008000,ffffff
+r13571046,Kochi city bus,,Chittortemple ↔ Panangad,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13571046,008000,ffffff
+r13571066,Kochi city bus,,Cheranellore ↔ Panangad,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13571066,008000,ffffff
+r13571179,Kochi city bus,,Puthukkalavattom ↔ Thevara,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13571179,008000,ffffff
+r13571525,Mofussil Kochi bus,,Aluva ↔ Ankamaly,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13571525,0000ff,ffffff
+r13573162,Kochi city bus,,Aluva ↔ Panangad,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13573162,008000,ffffff
+r13574912,Kochi city bus,,Edakochi ↔ Kakkanad,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13574912,008000,ffffff
+r13575127,Kochi city bus,,Kakkanad ↔ Panangad,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13575127,008000,ffffff
+r13575547,Kochi city bus,,Eloor ↔ Mattancherry,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13575547,008000,ffffff
+r13577501,Kochi city bus,,Kaloor ↔ Poothotta,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13577501,008000,ffffff
+r13586170,Mofussil Kochi bus,,Kaloor ↔ Poothotta (via Kathrikadvu Road),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13586170,0000ff,ffffff
+r13589067,Kochi city bus,,Aluva ↔ Poothotta,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13589067,008000,ffffff
+r13590426,Kochi city bus,,Aluva ↔ Chottanikara,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13590426,008000,ffffff
+r13590488,Kochi city bus,,Aluva ↔ Eloor,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13590488,008000,ffffff
+r13594889,Kochi city bus,,Aluva ↔ Wellington Island (via NAD and Padma),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13594889,008000,ffffff
+r13595088,Kochi city bus,,Aluva ↔ Thoppumpady via Padma,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13595088,008000,ffffff
+r13600778,Kochi city bus,,Edakochi ↔ Ponekkara,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13600778,008000,ffffff
+r13601640,Mofussil Kochi bus,,Aluva ↔ Kalamassery,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13601640,0000ff,ffffff
+r13606652,Kochi city bus,,Kumbalangi ↔ Ponekkara,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13606652,008000,ffffff
+r13606821,Kochi city bus,,Mattancherry ↔ Ponekkara,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13606821,008000,ffffff
+r13606906,Kochi city bus,,Thrippoonithura ↔ Vyttila Mobility Hub,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13606906,008000,ffffff
+r13606972,Mofussil Kochi bus,,Aluva ↔ Keezhmadu,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13606972,0000ff,ffffff
+r13609456,Mofussil Kochi bus,,High Court ↔ Njarakkal (via Vypin and Light House),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13609456,0000ff,ffffff
+r13610212,Kochi city bus,,High Court ↔ Poothotta,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13610212,008000,ffffff
+r13610332,Kochi city bus,,Kakkanad ↔ Konthuruthy,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13610332,008000,ffffff
+r13610565,Kochi city bus,,Cheranelloor ↔ Perumpadappu,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13610565,008000,ffffff
+r13610651,Kochi city bus,,Cheranelloor ↔ Kadavanthra,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13610651,008000,ffffff
+r13610769,Mofussil Kochi bus,,Cheranelloor ↔ High Court,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13610769,0000ff,ffffff
+r13611748,Kochi city bus,,Chellanam ↔ Cheranellore,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13611748,008000,ffffff
+r13612020,Mofussil Kochi bus,,Aluva ↔ Kalady (via Puthiyedam),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13612020,0000ff,ffffff
+r13612174,Kochi city bus,,Eloor ↔ Ernakulam Jetty,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13612174,008000,ffffff
+r13616539,Mofussil Kochi bus,,Kadamakkudy ↔ Vyttila Mobility Hub,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13616539,0000ff,ffffff
+r13616622,Mofussil Kochi bus,,High Court ↔ Mulavukad,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13616622,0000ff,ffffff
+r13617326,Kochi city bus,,Chittoor Temple ↔ Chottanikara,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13617326,008000,ffffff
+r13617406,Kochi city bus,,Perumpadappu ↔ Amritha Hospital,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13617406,008000,ffffff
+r13619058,Kochi city bus,,Chittoor Ferry ↔ Fort Kochi,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13619058,008000,ffffff
+r13619115,Kochi city bus,,Aluva ↔ Thevara (via Menaka),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13619115,008000,ffffff
+r13626159,Mofussil Kochi bus,,High Court ↔ Pukkad,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13626159,0000ff,ffffff
+r13626314,Kochi city bus,,Chittoor Ferry ↔ Mattancherry,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13626314,008000,ffffff
+r13626336,Kochi city bus,,Fort Kochi ↔ Kaloor,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13626336,008000,ffffff
+r13626947,Kochi city bus,,Chittoor Ferry ↔ Thevara,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13626947,008000,ffffff
+r13627018,Kochi city bus,,Fort Kochi ↔ Ponekkara,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13627018,008000,ffffff
+r13627037,Kochi city bus,,Chellanam ↔ Kaloor,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13627037,008000,ffffff
+r13627109,Kochi city bus,,Chittoor Temple ↔ Perumpadappu,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13627109,008000,ffffff
+r13627138,Kochi city bus,,Cheranelloor ↔ Edakochi,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13627138,008000,ffffff
+r13628936,Kochi city bus,,High Court ↔ Thrippoonithura,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13628936,008000,ffffff
+r13629035,Kochi city bus,,Chittoor Ferry ↔ Thrippoonithura,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13629035,008000,ffffff
+r13629056,Kochi city bus,,Fort Kochi ↔ Palluruthy,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13629056,008000,ffffff
+r13629057,Mofussil Kochi bus,,North Paravur ↔ High Court,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13629057,0000ff,ffffff
+r13629058,Mofussil Kochi bus,,Munambam ↔ High Court,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13629058,0000ff,ffffff
+r13629393,Kochi city bus,,Aluva ↔ Thrippoonithura (via Palikkara),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13629393,008000,ffffff
+r13635071,Kochi city bus,,Cheranellore ↔ Fort Kochi (via Padma),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13635071,008000,ffffff
+r13637600,Mofussil Kochi bus,,North Paravur ↔ Vyttila (via Kottuvalli),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13637600,0000ff,ffffff
+r13637925,Mofussil Kochi bus,,North Paravur ↔ Kadamakkudy,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13637925,0000ff,ffffff
+r13638090,Mofussil Kochi bus,,North Paravur ↔ Kottayil Kovilakam,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13638090,0000ff,ffffff
+r13638179,Mofussil Kochi bus,,High Court ↔ Appangad,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13638179,0000ff,ffffff
+r13641243,Kochi city bus,,Cheranelloor ↔ Mundamveli,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13641243,008000,ffffff
+r13641520,Mofussil Kochi bus,,Aluva ↔ Thrippoonithura,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13641520,0000ff,ffffff
+r13641805,Mofussil Kochi bus,,Aluva ↔ Perumbavoor (via Kizhakambalam and Kadalikunnu),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13641805,0000ff,ffffff
+r13641967,Mofussil Kochi bus,,Kaloor ↔ Kumbalangi,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13641967,0000ff,ffffff
+r13642113,Kochi city bus,,Kakkanad ↔ Ernakulam South,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13642113,008000,ffffff
+r13642226,Kochi city bus,,Ponekkara ↔ Ernakulam Boat Jetty,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13642226,008000,ffffff
+r13642293,Kochi city bus,,Kaloor ↔ Panangad,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13642293,008000,ffffff
+r13642446,Mofussil Kochi bus,,Aluva ↔ Karimugal,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13642446,0000ff,ffffff
+r13642666,Mofussil Kochi bus,,Aluva ↔ Edayar,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13642666,0000ff,ffffff
+r13642737,Mofussil Kochi bus,,Vyttila ↔ Varapuzha,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13642737,0000ff,ffffff
+r13644289,Kochi city bus,,Cheranelloor ↔ Thevara Ferry (via Chittor and Menaka),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13644289,008000,ffffff
+r13644321,Kochi city bus,,Chittoor ↔ Thevara Ferry,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13644321,008000,ffffff
+r13644432,Kochi city bus,,Ponekkara ↔ Thevara Ferry,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13644432,008000,ffffff
+r13644659,Mofussil Kochi bus,,Kakkanad ↔ Perumbavoor,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13644659,0000ff,ffffff
+r13644836,Mofussil Kochi bus,,Kakkanad ↔ Thrippoonithura,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13644836,0000ff,ffffff
+r13645172,Mofussil Kochi bus,,Thrippoonithura ↔ Infopark,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13645172,0000ff,ffffff
+r13645287,Mofussil Kochi bus,,Aluva ↔ Puthencruz (via Pazhamthottam),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13645287,0000ff,ffffff
+r13645363,Mofussil Kochi bus,,Aluva ↔ Puthencruz (via Poothanamparambu),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13645363,0000ff,ffffff
+r13645795,Mofussil Kochi bus,,North Paravur ↔ Kottuvally South (via Kalikulangara),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13645795,0000ff,ffffff
+r13646546,Mofussil Kochi bus,,Aluva ↔ Cochinshipyard,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13646546,0000ff,ffffff
+r13648803,Kochi city bus,,Chittoor ↔ Kochu Kadavanthara,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13648803,008000,ffffff
+r13648844,Mofussil Kochi bus,,Thrippoonithura ↔ Perumbavoor (via Kizhakkambalam),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13648844,0000ff,ffffff
+r13649197,Kochi city bus,,Mattancherry ↔ Pukkattupady,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13649197,008000,ffffff
+r13649217,Kochi city bus,,Fort Kochi ↔ Pukkattupady,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13649217,008000,ffffff
+r13649242,Kochi city bus,,Kakkanad ↔ Mattancherry,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13649242,008000,ffffff
+r13649914,Kochi city bus,,Chellanam ↔ Thoppumpady,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13649914,008000,ffffff
+r13653991,Kochi city bus,,Ponekkara ↔ Thevara,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13653991,008000,ffffff
+r13656366,Kochi city bus,,Chittethukara ↔ Fort Kochi,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13656366,008000,ffffff
+r13656569,Kochi city bus,,Kakkanad ↔ Wellington Island,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13656569,008000,ffffff
+r13656692,Kochi city bus,,Eloor ↔ Kadavanthra,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13656692,008000,ffffff
+r13656752,Kochi city bus,,Eloor ↔ Wellington Island,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13656752,008000,ffffff
+r13657023,Kochi city bus,,Eloor ↔ Kumbalam,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13657023,008000,ffffff
+r13657357,Mofussil Kochi bus,,Aluva ↔ Manjali (via Athani),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13657357,0000ff,ffffff
+r13663933,Mofussil Kochi bus,,North Paravur ↔ Perumbavoor,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13663933,0000ff,ffffff
+r13667682,Kochi city bus,,Chottanikkara ↔ Kothad Ferry,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13667682,008000,ffffff
+r13668802,Kochi city bus,,Chittoor Temple ↔ Fort Kochi,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13668802,008000,ffffff
+r13669763,Kochi city bus,,Kakkanad ↔ Perumpadappu (via Padma),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13669763,008000,ffffff
+r13669818,Mofussil Kochi bus,,Ernakulam South ↔ North Paravur,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13669818,0000ff,ffffff
+r13669870,Kochi city bus,,Perumpadappu ↔ Chittoor Ferry,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13669870,008000,ffffff
+r13670060,Kochi city bus,,Perumpadappu ↔ Kaloor,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13670060,008000,ffffff
+r13671522,Kochi city bus,,Thevara Ferry ↔ Kakkanad,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13671522,008000,ffffff
+r13671533,Kochi city bus,,Eloor Dippo ↔ Thevara ferry,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13671533,008000,ffffff
+r13671558,Kochi city bus,,Chellanam ↔ Chittoor,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13671558,008000,ffffff
+r13671857,Kochi city bus,,Cheranellore ↔ Mattancherry (via Edapally Bypass),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13671857,008000,ffffff
+r13672029,Mofussil Kochi bus,,Aluva ↔ Varapuzha (via via UC College and Alangad),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13672029,0000ff,ffffff
+r13672401,Kochi city bus,,Fort Kochi ↔ Thuthiyoor,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13672401,008000,ffffff
+r13672568,Kochi city bus,,Cheranelloor ↔ Puthiakavu,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13672568,008000,ffffff
+r13672587,Kochi city bus,,Thevara ↔ Thuthiyoor,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13672587,008000,ffffff
+r13672630,Mofussil Kochi bus,,Aluva ↔ Pathalam,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13672630,0000ff,ffffff
+r13672764,Mofussil Kochi bus,,Chellanam ↔ Thoppumpady,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13672764,0000ff,ffffff
+r13673125,Mofussil Kochi bus,,Thrippoonithura ↔ Thoppumpady,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13673125,0000ff,ffffff
+r13673203,Mofussil Kochi bus,,Kaloor ↔ Gonduparambu,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13673203,0000ff,ffffff
+r13673315,Mofussil Kochi bus,,Munambam ↔ Thathapilly,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13673315,0000ff,ffffff
+r13673318,Kochi city bus,,Fort Kochi ↔ Methanam (Eloor North),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13673318,008000,ffffff
+r13673330,Mofussil Kochi bus,,North Paravur ↔ Thathappilly,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13673330,0000ff,ffffff
+r13673356,Mofussil Kochi bus,,Edappally ↔ Vyttila,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13673356,0000ff,ffffff
+r13673475,Mofussil Kochi bus,,Pallithode ↔ Thoppumpady,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13673475,0000ff,ffffff
+r13673497,Mofussil Kochi bus,,High court ↔ Poothotta,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13673497,0000ff,ffffff
+r13674025,Mofussil Kochi bus,,North Paravur ↔ Chennur,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13674025,0000ff,ffffff
+r13674447,Mofussil Kochi bus,,Chellanam ↔ Kaloor,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13674447,0000ff,ffffff
+r13675465,Mofussil Kochi bus,,Aluva ↔ Aluva,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13675465,0000ff,ffffff
+r13675601,Mofussil Kochi bus,,Mannamthurth ↔ Munambam,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13675601,0000ff,ffffff
+r13675635,Kochi city bus,,Thrippoonithura ↔ Medical college (via Menaka),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13675635,008000,ffffff
+r13675715,Kochi city bus,,Fort Kochi ↔ Medical college,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13675715,008000,ffffff
+r13675765,Kochi city bus,,Fort Kochi ↔ Edachira,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13675765,008000,ffffff
+r13675842,Kochi city bus,,Fort Kochi ↔ KMP Nagar,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13675842,008000,ffffff
+r13675967,Mofussil Kochi bus,,Chittoor Temple ↔ Chottanikkara,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13675967,0000ff,ffffff
+r13676122,Mofussil Kochi bus,,Aluva ↔ Manjali (via Puthuvassery),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13676122,0000ff,ffffff
+r13676171,Kochi city bus,,Thrippoonithura ↔ Infopark,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13676171,008000,ffffff
+r13676349,Kochi city bus,,Thevara Ferry ↔ Elamakkara,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13676349,008000,ffffff
+r13676385,Kochi city bus,,Cheranelloor ↔ Thevara Ferry (via Elamakkara and Menaka),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13676385,008000,ffffff
+r13676418,Kochi city bus,,Kothad Ferry ↔ Thevara,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13676418,008000,ffffff
+r13676422,Mofussil Kochi bus,,Chittoor Ferry ↔ Kumbalam,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13676422,0000ff,ffffff
+r13676487,Mofussil Kochi bus,,Thrippoonithura ↔ Perumbavoor (via Pattimattom),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13676487,0000ff,ffffff
+r13676537,Kochi city bus,,Fort Kochi ↔ Kakkanad (via Padma),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13676537,008000,ffffff
+r13677217,Mofussil Kochi bus,,Munambam ↔ Ankamaly,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13677217,0000ff,ffffff
+r13678268,Mofussil Kochi bus,,North Paravur ↔ Panangad,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13678268,0000ff,ffffff
+r13679145,Mofussil Kochi bus,,Munambam ↔ Kottuvally South,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13679145,0000ff,ffffff
+r13679265,Mofussil Kochi bus,,Munambam ↔ Cheranellore,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13679265,0000ff,ffffff
+r13679626,Mofussil Kochi bus,,Aluva ↔ Kothad Ferry,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13679626,0000ff,ffffff
+r13689658,Mofussil Kochi bus,,Aluva ↔ Vyttila Mobility Hub,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13689658,0000ff,ffffff
+r13691656,Ordinary bus,,Cherai ↔ Ernakulam Boat Jetty,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13691656,ffffff,000000
+r13718237,Mofussil Kochi bus,,Kaloor ↔ Poothotta (via Padma),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13718237,0000ff,ffffff
+r13718887,Kochi city bus,,Fort Kochi ↔ Puthukkalavattom,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13718887,008000,ffffff
+r13718986,Mofussil Kochi bus,,Poothotta ↔ Puthukkalavattom,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13718986,0000ff,ffffff
+r13719331,Kochi city bus,,Chottanikkara ↔ Puthukkalavattom,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13719331,008000,ffffff
+r13724742,Kochi city bus,,Cheranellore ↔ Thrippoonithura (via Maradu),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13724742,008000,ffffff
+r13725408,Mofussil Kochi bus,,Perumbavoor ↔ Thevara,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13725408,0000ff,ffffff
+r13725470,Kochi city bus,,Chellanam ↔ Methanam,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13725470,008000,ffffff
+r13725518,Kochi city bus,,Chittethukara ↔ Thevara,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13725518,008000,ffffff
+r13749933,Mofussil Kochi bus,,High Court ↔ Njarakkal (via Light House),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13749933,0000ff,ffffff
+r13749958,Mofussil Kochi bus,,High Court ↔ Njarakkal,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13749958,0000ff,ffffff
+r13749971,Mofussil Kochi bus,,High Court ↔ Njarakkal (via Vypin),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13749971,0000ff,ffffff
+r13750047,Kochi city bus,,Aluva ↔ Ernakulam South (via Menaka),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13750047,008000,ffffff
+r13750103,Kochi city bus,,Aluva ↔ Wellington Island (via Menaka),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13750103,008000,ffffff
+r13750121,Mofussil Kochi bus,,Aluva ↔ Chittoorferry,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13750121,0000ff,ffffff
+r13750132,Kochi city bus,,Chittoor Temple ↔ Thevara,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13750132,008000,ffffff
+r13750190,Kochi city bus,,Eloor ↔ Poothotta (via Menaka),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13750190,008000,ffffff
+r13750199,Kochi city bus,,Chellanam ↔ High Court,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13750199,008000,ffffff
+r13750240,Kochi city bus,,Eloor ferry ↔ Gandhinagar,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13750240,008000,ffffff
+r13750380,Kochi city bus,,"Vyttila Mobility Hub ↔ Vyttila Mobility Hub (anti-clockwise, via Palarivattom Bypass, Kadavanthara)",,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13750380,008000,ffffff
+r13750469,Kochi city bus,,"Vyttila Mobility Hub ↔ Vyttila Mobility Hub (clockwise, via Kadavanthara and Thamannam)",,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13750469,008000,ffffff
+r13750488,Kochi city bus,,Aluva ↔ Edakochi,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13750488,008000,ffffff
+r13750598,Kochi city bus,,Thrippoonithura ↔ Thrippoonithura,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13750598,008000,ffffff
+r13750640,Kochi city bus,,Chottanikkara ↔ Elamakkara,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13750640,008000,ffffff
+r13750694,Mofussil Kochi bus,,Kakkanad ↔ North Paravur,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13750694,0000ff,ffffff
+r13754397,Kochi city bus,,Edakochi ↔ Thuthiyoor,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13754397,008000,ffffff
+r13755059,Kochi city bus,,Thuthiyoor ↔ Pambayimoola,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13755059,008000,ffffff
+r13755126,Kochi city bus,,Kothad Church ↔ Kundannoor,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13755126,008000,ffffff
+r13755241,Kochi city bus,,Kundannoor ↔ Kundannoor,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13755241,008000,ffffff
+r13755265,Kochi city bus,,Aluva ↔ Palluruthy,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13755265,008000,ffffff
+r13755297,Mofussil Kochi bus,,Thrippoonithura ↔ Puthencruz,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13755297,0000ff,ffffff
+r13755381,Kochi city bus,,Kadavanthra ↔ Kadavanthra,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13755381,008000,ffffff
+r13755423,Kochi city bus,,Thevara Ferry ↔ Kakkanad CEPZ,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13755423,008000,ffffff
+r13758565,Kochi city bus,,Chittethukara ↔ Kumbalangi,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13758565,008000,ffffff
+r13758647,Kochi city bus,,Kakkanad ↔ Kumbalangi,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13758647,008000,ffffff
+r13758901,Kochi city bus,,Fort Kochi ↔ Palarivattom,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13758901,008000,ffffff
+r13758931,Kochi city bus,,Chellanam ↔ Fort Kochi,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13758931,008000,ffffff
+r13761899,Kochi city bus,,Cheranellore ↔ Kumbalangi,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13761899,008000,ffffff
+r13761930,Kochi city bus,,Chellanam ↔ Palarivattom,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13761930,008000,ffffff
+r13761960,Mofussil Kochi bus,,Thrippoonithura ↔ Wellington Island,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13761960,0000ff,ffffff
+r13761992,Kochi city bus,,Cheranellore ↔ Thrippoonithura,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13761992,008000,ffffff
+r13762115,Mofussil Kochi bus,,Aluva ↔ Kalady,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13762115,0000ff,ffffff
+r13775320,Kochi city bus,,Chottanikkara ↔ Kaloor (via Menaka),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13775320,008000,ffffff
+r13781303,Kochi city bus,,Kaloor ↔ Kumbalangi,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13781303,008000,ffffff
+r13781430,Mofussil Kochi bus,,Kaloor ↔ Pukkattupady,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13781430,0000ff,ffffff
+r13781463,Mofussil Kochi bus,,Ernakulam South ↔ Perumbavoor,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13781463,0000ff,ffffff
+r13781491,Kochi city bus,,Kaloor ↔ Thrippoonithura,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13781491,008000,ffffff
+r13781528,Mofussil Kochi bus,,Aluva ↔ Kaloor,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13781528,0000ff,ffffff
+r13791383,Mofussil Kochi bus,,High Court ↔ Nedungad,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13791383,0000ff,ffffff
+r13791384,Mofussil Kochi bus,,Manjanakad ↔ High Court (via Vypin),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13791384,0000ff,ffffff
+r13791533,Mofussil Kochi bus,,North Paravur ↔ Kadamakkudy (via Pizhalakadavu),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13791533,0000ff,ffffff
+r13791621,Kochi city bus,,Cheranellore ↔ Thrippoonithura (via Pipeline),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13791621,008000,ffffff
+r13791696,Kochi city bus,,Cheranellore ↔ Thrippoonithura (via KK Road),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13791696,008000,ffffff
+r13791758,Kochi city bus,,Cheranellore ↔ Fort Kochi,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13791758,008000,ffffff
+r13792383,Kochi city bus,,Eroor ↔ Eroor,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13792383,008000,ffffff
+r13792747,Kochi city bus,,Thrippoonithura ↔ Medical college (via Bypass),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13792747,008000,ffffff
+r13792775,Kochi city bus,,Kozhivettumveli ↔ Kozhivettumveli,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13792775,008000,ffffff
+r13792894,Kochi city bus,,Aluva ↔ Chathamma,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13792894,008000,ffffff
+r13792943,Mofussil Kochi bus,,Kakkanad ↔ Manakkakadavu,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13792943,0000ff,ffffff
+r13793165,Kochi city bus,,Aluva ↔ Illichuvadu Junction,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13793165,008000,ffffff
+r13796243,Mofussil Kochi bus,,North Paravur ↔ Vypin,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13796243,0000ff,ffffff
+r13810977,Mofussil Kochi bus,,Thevara ↔ Pukkattupady,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13810977,0000ff,ffffff
+r13812889,Ordinary bus,,Ernakulam Boat Jetty ↔ Pizhala,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13812889,ffffff,000000
+r13813338,Ordinary bus,,Aluva ↔ Thrippoonithura,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13813338,ffffff,000000
+r13818643,Ordinary bus,,Piravom ↔ Vyttila,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13818643,ffffff,000000
+r13825414,Mofussil Kochi bus,,High Court ↔ Appangad (via Vypin),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13825414,0000ff,ffffff
+r13825425,Mofussil Kochi bus,,Vyttila ↔ Gonduparambu,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13825425,0000ff,ffffff
+r13825502,Mofussil Kochi bus,,Perumbavoor ↔ Thevara Ferry,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13825502,0000ff,ffffff
+r13825517,Mofussil Kochi bus,,Chettibhagam ↔ Kadamakudy,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13825517,0000ff,ffffff
+r13825522,Mofussil Kochi bus,,Chettibhagam ↔ North Paravur,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13825522,0000ff,ffffff
+r13825532,Mofussil Kochi bus,,Chettibhagam ↔ Pizhalakkadavu,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13825532,0000ff,ffffff
+r13834627,Kochi city bus,,Edachira ↔ Ernakulam South,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13834627,008000,ffffff
+r13834680,Kochi city bus,,Kumbalangi ↔ Thoppumpady,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13834680,008000,ffffff
+r13834697,Kochi city bus,,Palarivattom ↔ Wellington Island,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13834697,008000,ffffff
+r13834709,Kochi city bus,,Ernakulam South ↔ Pukkattupady,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13834709,008000,ffffff
+r13834767,Kochi city bus,,Ernakulam South ↔ Thevara Ferry,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13834767,008000,ffffff
+r13834780,Kochi city bus,,Ernakulam South ↔ Thevara Junction,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13834780,008000,ffffff
+r13834820,Mofussil Kochi bus,,Kadamakudy ↔ Pizhalakkadavu,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13834820,0000ff,ffffff
+r13834840,Mofussil Kochi bus,,Aluva ↔ Muppathadam,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13834840,0000ff,ffffff
+r13834852,Mofussil Kochi bus,,Aluva ↔ Vattapparambu,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13834852,0000ff,ffffff
+r13835426,Kochi city bus,,Chittethukara ↔ Thevara Ferry,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13835426,008000,ffffff
+r13835478,Kochi city bus,,Aluva ↔ NAD,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13835478,008000,ffffff
+r13835644,Kochi city bus,,Medical College ↔ Poothotta,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13835644,008000,ffffff
+r13835657,Mofussil Kochi bus,,Aluva ↔ Eloor,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13835657,0000ff,ffffff
+r13837312,Mofussil Kochi bus,,Aluva ↔ Ernakulam South,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13837312,0000ff,ffffff
+r13837374,Kochi city bus,,Chottanikkara ↔ Ponekkara,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13837374,008000,ffffff
+r13837511,Kochi city bus,,Chittethukara ↔ Perumpadappu,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13837511,008000,ffffff
+r13837569,Kochi city bus,,Eloor ↔ Poothotta (via Bypass),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13837569,008000,ffffff
+r13837630,Kochi city bus,,Aluva ↔ Chottanikkara (via Bypass),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13837630,008000,ffffff
+r13837791,Kochi city bus,,Chottanikkara ↔ Kaloor (via Bypass),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13837791,008000,ffffff
+r13837821,Mofussil Kochi bus,,Kaloor ↔ Thrippoonithura,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13837821,0000ff,ffffff
+r13838046,Mofussil Kochi bus,,Poothota ↔ Irumpanam,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13838046,0000ff,ffffff
+r13838061,Mofussil Kochi bus,,Poothota ↔ Perumbavoor,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13838061,0000ff,ffffff
+r13838092,Mofussil Kochi bus,,Kakkanad ↔ Poothotta,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13838092,0000ff,ffffff
+r13838211,Mofussil Kochi bus,,Kakkanad ↔ Chellanam,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13838211,0000ff,ffffff
+r13838258,Kochi city bus,,Edakochi ↔ Puthukkalavattom,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13838258,008000,ffffff
+r13838449,Kochi city bus,,Chittoor ↔ Eroor,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13838449,008000,ffffff
+r13838501,Kochi city bus,,Eroor ↔ Kothad Ferry,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13838501,008000,ffffff
+r13838567,Kochi city bus,,Aluva ↔ Chottanikkara (via Ponekkara),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13838567,008000,ffffff
+r13838750,Mofussil Kochi bus,,North Paravur ↔ Thevara Junction,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13838750,0000ff,ffffff
+r13838881,Ordinary bus,,North Paravur ↔ Chathanad,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13838881,ffffff,000000
+r13838898,Mofussil Kochi bus,,Kaloor ↔ Chathanad,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13838898,0000ff,ffffff
+r13839195,Ordinary bus,,Aluva ↔ North Paravur,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13839195,ffffff,000000
+r13839224,Kochi city bus,,Thrippoonithura ↔ Thoppumpady,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13839224,008000,ffffff
+r13839959,Mofussil Kochi bus,,Kaloor ↔ Nechoor,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13839959,0000ff,ffffff
+r13840066,Kochi city bus,,Kaloor ↔ Amaeda,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13840066,008000,ffffff
+r13840073,Ordinary bus,,Kakkanad ↔ Thrippoonithura,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13840073,ffffff,000000
+r13840084,Kochi city bus,,Aluva ↔ Chellanam (via Padma),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13840084,008000,ffffff
+r13840178,Ordinary bus,,Aluva ↔ Vyttila,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13840178,ffffff,000000
+r13840234,Ordinary bus,,Kundannoor ↔ Vyttila,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13840234,ffffff,000000
+r13840281,Ordinary bus,,Aluva ↔ Ankamaly,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13840281,ffffff,000000
+r13840365,Ordinary bus,,Aluva ↔ Kakkanad,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13840365,ffffff,000000
+r13847529,Ordinary bus,,Ankamaly ↔ Thoppumpady,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13847529,ffffff,000000
+r13850236,Ordinary bus,,Ankamaly ↔ Ernakulam Boat Jetty,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13850236,ffffff,000000
+r13850732,Ordinary bus,,North Paravur ↔ Vyttila,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13850732,ffffff,000000
+r13874627,Kochi city bus,,Edachira ↔ Edakochi,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13874627,008000,ffffff
+r13874633,Kochi city bus,,Elamakkara ↔ Ernakulam South,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13874633,008000,ffffff
+r13874700,Kochi city bus,,Thevara Junction ↔ Edachira,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13874700,008000,ffffff
+r13874701,Kochi city bus,,Edachira ↔ Pambayimoola,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13874701,008000,ffffff
+r13874787,Kochi city bus,,Thuthiyoor ↔ Ernakulam South,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13874787,008000,ffffff
+r13874795,Kochi city bus,,Thuthiyoor ↔ Thevara Ferry,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13874795,008000,ffffff
+r13874803,Kochi city bus,,Chittethukara ↔ Kakkanad,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13874803,008000,ffffff
+r13874892,Kochi city bus,,Kakkanad ↔ Mundamveli,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13874892,008000,ffffff
+r13874910,Kochi city bus,,Thuthiyoor ↔ Mundamveli,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13874910,008000,ffffff
+r13874972,Kochi city bus,,Kakkanad CEPZ ↔ Fortkochi,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13874972,008000,ffffff
+r13874992,Kochi city bus,,Kakkanad CEPZ ↔ Thevara Junction,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13874992,008000,ffffff
+r13875009,Kochi city bus,,Chittethukara ↔ Edakochi,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13875009,008000,ffffff
+r13875069,Kochi city bus,,Kaloor ↔ Poothotta (via Menaka),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13875069,008000,ffffff
+r13875116,Kochi city bus,,Chittethukara ↔ Poothotta (via Menaka),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13875116,008000,ffffff
+r13875148,Kochi city bus,,Chittethukara ↔ Mundamveli,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13875148,008000,ffffff
+r13876531,Kochi city bus,,Mattancherry ↔ Nilampathijamukal,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13876531,008000,ffffff
+r13876545,Kochi city bus,,Konthuruthy ↔ Nilampathijamukal,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13876545,008000,ffffff
+r13876572,Kochi city bus,,Thevakkal ↔ Kakkanad,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13876572,008000,ffffff
+r13876608,Kochi city bus,,Chittethukara ↔ Konthuruthy,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13876608,008000,ffffff
+r13876614,Kochi city bus,,Kakkanad CEPZ ↔ Perumpadappu,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13876614,008000,ffffff
+r13876620,Kochi city bus,,Edachira ↔ Thevara Ferry,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13876620,008000,ffffff
+r13876626,Kochi city bus,,Chittethukara ↔ Ernakulam South,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13876626,008000,ffffff
+r13876636,Kochi city bus,,Thevakkal ↔ Thevara Ferry,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13876636,008000,ffffff
+r13876652,Kochi city bus,,Thevakkal ↔ Edakochi,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13876652,008000,ffffff
+r13876655,Kochi city bus,,Nilampathijamukal ↔ Mundamveli,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13876655,008000,ffffff
+r13876681,Mofussil Kochi bus,,Kavumthazham ↔ Thrippoonithura,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13876681,0000ff,ffffff
+r13876761,Kochi city bus,,Chittethukara ↔ Poothotta (via Padma),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13876761,008000,ffffff
+r13876773,Kochi city bus,,Chittethukara ↔ Poothotta (via Bypass),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13876773,008000,ffffff
+r13876836,Kochi city bus,,Nilampathijamukal ↔ Thevara Ferry,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13876836,008000,ffffff
+r13876839,Kochi city bus,,Fort Kochi ↔ Nilampathijamukal,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13876839,008000,ffffff
+r13876847,Kochi city bus,,Kakkanad ↔ Kaloor,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13876847,008000,ffffff
+r13876859,Kochi city bus,,Kakkanad CEPZ ↔ Edakochi,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13876859,008000,ffffff
+r13876903,Kochi city bus,,Kakkanad ↔ Medical College,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13876903,008000,ffffff
+r13876930,Ordinary bus,,Amrutha Hospital ↔ North Paravur,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13876930,ffffff,000000
+r13880472,Mofussil Kochi bus,,Kakkanad ↔ Kaloor,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13880472,0000ff,ffffff
+r13880518,Mofussil Kochi bus,,Kinfra ↔ Thrippoonithura,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13880518,0000ff,ffffff
+r13880777,Mofussil Kochi bus,,HMT Colony Junction ↔ Thrippoonithura,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13880777,0000ff,ffffff
+r13880914,Mofussil Kochi bus,,BM College ↔ Thrippoonithura,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13880914,0000ff,ffffff
+r13880993,Mofussil Kochi bus,,Padathikkara ↔ Thoppumpady,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13880993,0000ff,ffffff
+r13881199,Mofussil Kochi bus,,Padathikkara ↔ Thrippoonithura,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13881199,0000ff,ffffff
+r13881291,Mofussil Kochi bus,,Kinfra ↔ Kundannoor,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13881291,0000ff,ffffff
+r13881313,Mofussil Kochi bus,,Kinfra ↔ Thoppumpady,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13881313,0000ff,ffffff
+r13881342,Mofussil Kochi bus,,HMT Junction ↔ Thoppumpady,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13881342,0000ff,ffffff
+r13881364,Mofussil Kochi bus,,HMT Junction ↔ Kundannoor,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13881364,0000ff,ffffff
+r13881373,Mofussil Kochi bus,,Thrippoonithura ↔ Kalamassery,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13881373,0000ff,ffffff
+r13881389,Mofussil Kochi bus,,Kakkanad ↔ Kalamassery,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13881389,0000ff,ffffff
+r13881486,Mofussil Kochi bus,,Mulanthuruthy ↔ Kakkanad,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13881486,0000ff,ffffff
+r13881505,Mofussil Kochi bus,,Thrippoonithura ↔ Edachira,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13881505,0000ff,ffffff
+r13881512,Mofussil Kochi bus,,Thrippoonithura ↔ HMT Junction,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13881512,0000ff,ffffff
+r13881577,Kochi city bus,,Kakkanad ↔ Poothotta (via KK Road),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13881577,008000,ffffff
+r13881584,Kochi city bus,,Rajagiri ↔ High Court,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13881584,008000,ffffff
+r13881608,Kochi city bus,,Chellanam ↔ Kothad ferry,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13881608,008000,ffffff
+r13881616,Mofussil Kochi bus,,Perumbavoor ↔ Wellington Island,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13881616,0000ff,ffffff
+r13881662,Mofussil Kochi bus,,High Court ↔ Kottuvally,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13881662,0000ff,ffffff
+r13881684,Kochi city bus,,Ambalamugal ↔ Kakkanad,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13881684,008000,ffffff
+r13881708,Mofussil Kochi bus,,Kalamassery ↔ Mulanthuruthy,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13881708,0000ff,ffffff
+r13881745,Kochi city bus,,Ernakulam South ↔ Perumpadappu,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13881745,008000,ffffff
+r13881798,Kochi city bus,,Poothotta ↔ Thrippoonithura,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13881798,008000,ffffff
+r13881820,Kochi city bus,,Poothotta ↔ Kakkanad CEPZ,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13881820,008000,ffffff
+r13881825,Kochi city bus,,Thrippoonithura ↔ Kakkanad CEPZ,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13881825,008000,ffffff
+r13881885,Kochi city bus,,Ambalamugal ↔ Thrippoonithura,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13881885,008000,ffffff
+r13881908,Kochi city bus,,Thrippoonithura ↔ Elamakkara,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13881908,008000,ffffff
+r13881936,Mofussil Kochi bus,,Thrippoonithura ↔ Thrippoonithura,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13881936,0000ff,ffffff
+r13882036,Kochi city bus,,Chottanikkara ↔ High Court,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13882036,008000,ffffff
+r13882058,Mofussil Kochi bus,,Kaloor ↔ Aroor,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13882058,0000ff,ffffff
+r13882166,Mofussil Kochi bus,,Vyttila ↔ Perumbavoor,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13882166,0000ff,ffffff
+r13882191,Mofussil Kochi bus,,Kaloor ↔ Poothotta,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13882191,0000ff,ffffff
+r13884598,Ordinary bus,,Amrutha Hospital ↔ Ankamaly,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13884598,ffffff,000000
+r13903189,Ordinary bus,,Aroor ↔ Ernakulam South,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13903189,ffffff,000000
+r13904698,Ordinary bus,,Ernakulam south ↔ Poothotta,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13904698,ffffff,000000
+r13906443,Ordinary bus,,Ankamaly ↔ Thoppumpady (via Eloor),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13906443,ffffff,000000
+r13906521,Ordinary bus,,North Paravur ↔ Thathappilly,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13906521,ffffff,000000
+r13907492,Ordinary bus,,HMT ↔ Medical College,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13907492,ffffff,000000
+r13909778,Ordinary bus,,Ernakulam Boat Jetty ↔ Malliankara,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13909778,ffffff,000000
+r13909820,Ordinary bus,,Ernakulam South ↔ Piravom (via Nadakavu and Vettickal),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13909820,ffffff,000000
+r13910486,Ordinary bus,,Vyttila ↔ Aroor,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13910486,ffffff,000000
+r13910537,Ordinary bus,,Thoppumpady ↔ Aroor,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13910537,ffffff,000000
+r13910734,Ordinary bus,,Ernakulam South ↔ Piravom (via Maneed),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13910734,ffffff,000000
+r13910870,Kochi city boat,,High Court ↔ Mulavukad,,4,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13910870,,
+r13911254,Kochi city boat,,Ernakulam Boat Jetty ↔ Eloor,,4,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13911254,,
+r13911262,Kochi city boat,,Eloor ↔ Chittoor,,4,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13911262,,
+r13911376,Kochi city boat,,Chittoor ↔ Kadamakkudy,,4,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13911376,,
+r13913117,Ordinary bus,,Amrutha Hospital ↔ Perumbavoor,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13913117,ffffff,000000
+r13913605,Ordinary bus,,Piravom ↔ Vyttila (via Maneed),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13913605,ffffff,000000
+r13913676,Ordinary bus,,Eloor ↔ Thrippoonithura,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13913676,ffffff,000000
+r13913784,Ordinary bus,,Aluva ↔ Ernakulam Boat Jetty,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13913784,ffffff,000000
+r13913848,Ordinary bus,,High Court ↔ North Paravur,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13913848,ffffff,000000
+r13913981,Ordinary bus,,Kakkanad ↔ North Paravur,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13913981,ffffff,000000
+r13914088,Ordinary bus,,Aluva ↔ Perumbavoor,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13914088,ffffff,000000
+r13914117,Ordinary bus,,Ernakulam Boat Jetty ↔ Perumbavoor,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13914117,ffffff,000000
+r13914137,Ordinary bus,,Ernakulam South ↔ Perumbavoor,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13914137,ffffff,000000
+r13914140,Ordinary bus,,Poothotta ↔ Eloor,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13914140,ffffff,000000
+r13914203,Ordinary bus,,Amrutha Hospital ↔ Piravom,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13914203,ffffff,000000
+r13914222,Ordinary bus,,Ankamaly ↔ Thrippoonithura,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13914222,ffffff,000000
+r13914247,Ordinary bus,,Aluva ↔ Kalamassery,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13914247,ffffff,000000
+r13916416,Mofussil Kochi bus,,Aluva ↔ Thrippoonithura (via Kakkanad),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13916416,0000ff,ffffff
+r13950508,Mofussil Kochi bus,,Cherai ↔ Vypin,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13950508,0000ff,ffffff
+r13951395,Mofussil Kochi bus,,Munambam ↔ Vypin,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13951395,0000ff,ffffff
+r13952129,Mofussil Kochi bus,,Ernakulam South ↔ Puthukkalavattam,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13952129,0000ff,ffffff
+r13953586,Kochi city bus,,Aluva ↔ Thrippoonithura (via Kakkanad),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13953586,008000,ffffff
+r13953621,Kochi city bus,,Aluva ↔ Thrippoonithura (via Menaka),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13953621,008000,ffffff
+r13953626,Kochi city bus,,Irumpanam ↔ Thrippoonithura,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13953626,008000,ffffff
+r13953641,Kochi city bus,,Chittoor ↔ Kakkanad,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13953641,008000,ffffff
+r13953702,Kochi city bus,,Chottanikkara ↔ Pukkattupady,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13953702,008000,ffffff
+r13953732,Kochi city bus,,High Court ↔ Kakkanad,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13953732,008000,ffffff
+r13953737,Kochi city bus,,Kakkanad ↔ Poothotta,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13953737,008000,ffffff
+r13954095,Mofussil Kochi bus,,Infopark ↔ Karimugal,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13954095,0000ff,ffffff
+r13954116,Ordinary bus,,North Paravur ↔ Varapuzha,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13954116,ffffff,000000
+r13954124,Kochi city bus,,Thrippoonithura ↔ Kakkanad,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13954124,008000,ffffff
+r13954345,Kochi city bus,,Perumpadappu ↔ Mattancherry,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13954345,008000,ffffff
+r13954356,Kochi city bus,,Irumpanam ↔ Chittoor Temple,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13954356,008000,ffffff
+r13954389,Kochi city bus,,Kakkanad ↔ Palarivattom,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13954389,008000,ffffff
+r13954410,Kochi city bus,,Pukkattupady ↔ Thrippoonithura,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13954410,008000,ffffff
+r13954424,Kochi city bus,,Infopark ↔ Thevara Ferry,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13954424,008000,ffffff
+r13954437,Kochi city bus,,Infopark ↔ Ernakulam Boat Jetty,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13954437,008000,ffffff
+r13954457,Kochi city bus,,Edachira ↔ Ernakulam Boat Jetty,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13954457,008000,ffffff
+r13954841,Kochi city bus,,Kakkanad ↔ Poothotta (via Bypass),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13954841,008000,ffffff
+r13956157,Kochi city bus,,Kakkanad ↔ Chathamma,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13956157,008000,ffffff
+r13956262,Kochi city bus,,Ponekkara ↔ Perumpadappu,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13956262,008000,ffffff
+r13957653,Kochi city bus,,Thevakkal ↔ Kumbalam Railway Station,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13957653,008000,ffffff
+r13957657,Kochi city bus,,Kakkanad ↔ Kumbalam Railway Station,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13957657,008000,ffffff
+r13957676,Kochi city bus,,Kakkanad ↔ Pambayimoola,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13957676,008000,ffffff
+r13957690,Kochi city bus,,Kakkanad ↔ HMT Junction,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13957690,008000,ffffff
+r13957732,Kochi city bus,,Kaloor ↔ Cheppanam,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13957732,008000,ffffff
+r13957760,Kochi city bus,,Thrippoonithura ↔ Cheppanam,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13957760,008000,ffffff
+r13957778,Kochi city bus,,High Court ↔ Kakkanad CEPZ,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13957778,008000,ffffff
+r13957779,Kochi city bus,,High Court ↔ Irumpanam,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13957779,008000,ffffff
+r13957787,Kochi city bus,,Chittoor Ferry ↔ Ernakulam South,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13957787,008000,ffffff
+r13957793,Kochi city bus,,Elamakkara ↔ Thevara,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13957793,008000,ffffff
+r13957801,Kochi city bus,,Ponekkara ↔ Ernakulam South,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13957801,008000,ffffff
+r13957809,Kochi city bus,,Kannamaly ↔ Chellanam,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13957809,008000,ffffff
+r13957896,Kochi city bus,,Kandakkadavu ↔ Mattancherry,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13957896,008000,ffffff
+r13957907,Kochi city bus,,Kandakkadavu ↔ Thoppumpady,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13957907,008000,ffffff
+r13957927,Kochi city bus,,Chottanikkara ↔ Thrippoonithura,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13957927,008000,ffffff
+r13957936,Kochi city bus,,Kozhivettumveli ↔ Thrippoonithura,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13957936,008000,ffffff
+r13957965,Kochi city bus,,Karimugal ↔ Kaloor,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13957965,008000,ffffff
+r13957988,Mofussil Kochi bus,,Karimugal ↔ Thrippoonithura,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13957988,0000ff,ffffff
+r13958030,Mofussil Kochi bus,,Munambam ↔ Kakkanad,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13958030,0000ff,ffffff
+r13958049,Mofussil Kochi bus,,West Kadungalloor ↔ Pathalam,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13958049,0000ff,ffffff
+r13958060,Mofussil Kochi bus,,West Kadungalloor ↔ Kothad Ferry,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13958060,0000ff,ffffff
+r13958093,Mofussil Kochi bus,,Nadakkavu ↔ Kaloor,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13958093,0000ff,ffffff
+r13958107,Mofussil Kochi bus,,Nadakkavu ↔ Amrutha Hospital,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13958107,0000ff,ffffff
+r13961434,Kochi city bus,,Kozhivettumveli ↔ Kozhivettumveli (via Chottanikkara),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13961434,008000,ffffff
+r13961485,Kochi city bus,,Infopark ↔ Medical College,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13961485,008000,ffffff
+r13961513,Mofussil Kochi bus,,Thrippoonithura ↔ Medical College,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13961513,0000ff,ffffff
+r13961523,Mofussil Kochi bus,,Angamaly ↔ Chowara,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13961523,0000ff,ffffff
+r13961533,Mofussil Kochi bus,,Aluva ↔ Pukkattupady,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13961533,0000ff,ffffff
+r13961618,Mofussil Kochi bus,,Keezhmadu ↔ HMT Junction,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13961618,0000ff,ffffff
+r13961664,Kochi city bus,,Ernakulam South ↔ Chittoor Temple,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13961664,008000,ffffff
+r13961671,Kochi city bus,,Glass Factory ↔ Panangad,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13961671,008000,ffffff
+r13961680,Kochi city bus,,Glass Factory ↔ Chathamma,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13961680,008000,ffffff
+r13961702,Mofussil Kochi bus,,Pukkattupady ↔ Ernakulam South,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13961702,0000ff,ffffff
+r13961707,Ordinary bus,,High Court ↔ Piravom,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13961707,ffffff,000000
+r13961738,Ordinary bus,,Aluva ↔ Njarakkal,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13961738,ffffff,000000
+r13961822,Kochi city bus,,Kakkanad ↔ Chathamma (via Bypass),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13961822,008000,ffffff
+r13961873,Mofussil Kochi bus,,North Paravur ↔ Cherai,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13961873,0000ff,ffffff
+r13968495,Mofussil Kochi bus,,Ernakulam South ↔ Ponekkara,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13968495,0000ff,ffffff
+r13981857,Ordinary bus,,High Court ↔ Aluva,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13981857,ffffff,000000
+r13981896,Ordinary bus,,High Court ↔ Aluva (via Eloor),,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13981896,ffffff,000000
+r13981912,Ordinary bus,,Aluva ↔ Fort Kochi,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13981912,ffffff,000000
+r13981927,Ordinary bus,,Fort Kochi ↔ Kakkanad,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13981927,ffffff,000000
+r13982061,Ordinary bus,,Kaloor ↔ North Paravur,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13982061,ffffff,000000
+r13982100,Ordinary bus,,Aluva ↔ Kaloor,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13982100,ffffff,000000
+r13982117,Ordinary bus,,Aluva ↔ Pathalam,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13982117,ffffff,000000
+r13982150,Ordinary bus,,Aluva ↔ Piravom,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13982150,ffffff,000000
+r13982207,Ordinary bus,,Ankamaly ↔ Vyttila,,3,https://jungle-bus.github.io/unroll/route.html?name_l10n=ml&line=13982207,ffffff,000000

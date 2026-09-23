@@ -1,0 +1,33 @@
+City_Name,New_Registrations_Count,Vehicle_Type,Year
+Trivandrum,136,Buses,2017-18
+Trivandrum,100,Buses,2016-17
+Trivandrum,96,Buses,2015-16
+Trivandrum,70,Buses,2014-15
+Trivandrum,12456,Light Motor Vehicles,2017-18
+Trivandrum,11153,Light Motor Vehicles,2016-17
+Trivandrum,10319,Light Motor Vehicles,2015-16
+Trivandrum,9308,Light Motor Vehicles,2014-15
+Trivandrum,690,Goods Carrier Vehicles,2017-18
+Trivandrum,566,Goods Carrier Vehicles,2016-17
+Trivandrum,514,Goods Carrier Vehicles,2015-16
+Trivandrum,487,Goods Carrier Vehicles,2014-15
+Trivandrum,25789,Two-Wheeler Vehicles,2017-18
+Trivandrum,24227,Two-Wheeler Vehicles,2016-17
+Trivandrum,22367,Two-Wheeler Vehicles,2015-16
+Trivandrum,22995,Two-Wheeler Vehicles,2014-15
+Trivandrum,12987,Four-Wheeler Vehicles,2017-18
+Trivandrum,11628,Four-Wheeler Vehicles,2016-17
+Trivandrum,10829,Four-Wheeler Vehicles,2015-16
+Trivandrum,9813,Four-Wheeler Vehicles,2014-15
+Trivandrum,3655,Miscellaneous,2017-18
+Trivandrum,3815,Miscellaneous,2016-17
+Trivandrum,4749,Miscellaneous,2015-16
+Trivandrum,4941,Miscellaneous,2014-15
+Kerala (Total),35444,Total Light Motor Vehicles (Goods),2011-12
+Kerala (Total),6396,Total Buses,2011-12
+Kerala (Total),12211,Total Taxis,2011-12
+Kerala (Total),57022,Total Light Motor Vehicles (Passengers),2011-12
+Kerala (Total),115502,Total Transport *,2011-12
+Kerala (Total),516390,Total Two wheelers,2011-12
+Kerala (Total),705793,Total Non-Transport,2011-12
+Kerala (Total),821295,Grand Total (Transport + Non-Transport),2011-12

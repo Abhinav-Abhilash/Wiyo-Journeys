@@ -1,0 +1,85 @@
+City_Name,Zone_Name,Ward_Name,Ward_No,Total_Junctions,Operational_Signalized_Intersections,Signalization_Rate
+Thruvananthapuram City,Traffic North,AMBALATHARA,67,2,0,0.0
+Thruvananthapuram City,Traffic North,Aarannoor ,93,1,0,0.0
+Thruvananthapuram City,Traffic North,BEEMAPALLY EAST,77,1,0,0.0
+Thruvananthapuram City,Traffic North,CHAKAI,86,1,1,1.0
+Thruvananthapuram City,Traffic North,Edavacodu,7,1,0,0.0
+Thruvananthapuram City,Traffic North,KAMALESWARAM,68,3,0,0.0
+Thruvananthapuram City,Traffic North,Kachani,10,2,0,0.0
+Thruvananthapuram City,Traffic North,Kanjirampara,30,2,0,0.0
+Thruvananthapuram City,Traffic North,Kodunganoor,37,1,0,0.0
+Thruvananthapuram City,Traffic North,MANIKYAVILAKAM,75,2,0,0.0
+Thruvananthapuram City,Traffic North,Nettayam,33,3,0,0.0
+Thruvananthapuram City,Traffic North,P T P Nagar,38,1,0,0.0
+Thruvananthapuram City,Traffic North,PERUMTHANI,84,1,1,1.0
+Thruvananthapuram City,Traffic North,PETTAH ,93,3,2,0.67
+Thruvananthapuram City,Traffic North,POWNDUKADAVU,99,10,8,0.8
+Thruvananthapuram City,Traffic North,PUTHENPALLY,74,2,5,2.5
+Thruvananthapuram City,Traffic North,Pangode,86,1,0,0.0
+Thruvananthapuram City,Traffic North,Poojappura,89,1,0,0.0
+Thruvananthapuram City,Traffic North,SREEKANDESWARAM,83,4,2,0.5
+Thruvananthapuram City,Traffic North,Sreekaryam,4,3,0,0.0
+Thruvananthapuram City,Traffic North,Thirumala,87,1,0,0.0
+Thruvananthapuram City,Traffic North,VANCHIYOOR,82,3,6,2.0
+Thruvananthapuram City,Traffic North,VIZHINJAM,62,5,0,0.0
+Thruvananthapuram City,Traffic North,Valiyavila,41,3,0,0.0
+Thruvananthapuram City,Traffic North,Valiyavila,88,1,0,0.0
+Thruvananthapuram City,Traffic North,Vattiyoorkavu,36,4,0,0.0
+Thruvananthapuram City,Traffic South Zone,AMBALATHARA,67,4,6,1.5
+Thruvananthapuram City,Traffic South Zone,ARANOOR,46,3,0,0.0
+Thruvananthapuram City,Traffic South Zone,ATTUKAL,70,3,1,0.33
+Thruvananthapuram City,Traffic South Zone,Attipra ,98,1,0,0.0
+Thruvananthapuram City,Traffic South Zone,CHAKKAI,86,3,1,0.33
+Thruvananthapuram City,Traffic South Zone,CHALA,71,4,1,0.25
+Thruvananthapuram City,Traffic South Zone,CHALAI,71,1,1,1.0
+Thruvananthapuram City,Traffic South Zone,Chandavila ,2,1,2,2.0
+Thruvananthapuram City,Traffic South Zone,Chenkottukonam ,11,1,0,0.0
+Thruvananthapuram City,Traffic South Zone,Estate,53,1,1,1.0
+Thruvananthapuram City,Traffic South Zone,FORT,80,5,4,0.8
+Thruvananthapuram City,Traffic South Zone,HARBAR,63,4,1,0.25
+Thruvananthapuram City,Traffic South Zone,Jagathi,44,3,1,0.33
+Thruvananthapuram City,Traffic South Zone,KADAKAMPALLY,92,5,0,0.0
+Thruvananthapuram City,Traffic South Zone,KALADY,55,1,0,0.0
+Thruvananthapuram City,Traffic South Zone,KANNAMOOLA,94,5,1,0.2
+Thruvananthapuram City,Traffic South Zone,KARAMANA,45,4,1,0.25
+Thruvananthapuram City,Traffic South Zone,KARIKKAKAM,91,3,0,0.0
+Thruvananthapuram City,Traffic South Zone,KUNNUKUZHI,26,3,3,1.0
+Thruvananthapuram City,Traffic South Zone,KURIYATHY,73,1,0,0.0
+Thruvananthapuram City,Traffic South Zone,Kazhakuttom ,1,1,0,0.0
+Thruvananthapuram City,Traffic South Zone,Kowdiar,23,1,1,1.0
+Thruvananthapuram City,Traffic South Zone,Kowdiyar,23,3,1,0.33
+Thruvananthapuram City,Traffic South Zone,Kudappanakunnu,19,1,0,0.0
+Thruvananthapuram City,Traffic South Zone,Kunnukuzhi,26,7,3,0.43
+Thruvananthapuram City,Traffic South Zone,Kuravankonam,24,2,2,1.0
+Thruvananthapuram City,Traffic South Zone,MANACAUD,72,2,2,1.0
+Thruvananthapuram City,Traffic South Zone,MEDICAL COLLEGE,16,8,8,1.0
+Thruvananthapuram City,Traffic South Zone,MELAMCODE,56,1,0,0.0
+Thruvananthapuram City,Traffic South Zone,MUDAVANMUKAL,47,1,0,0.0
+Thruvananthapuram City,Traffic South Zone,MUTTADA,18,3,3,1.0
+Thruvananthapuram City,Traffic South Zone,MUTTATHARA,78,2,2,1.0
+Thruvananthapuram City,Traffic South Zone,Melamcode,56,6,4,0.67
+Thruvananthapuram City,Traffic South Zone,NEDUNGAD,54,1,0,0.0
+Thruvananthapuram City,Traffic South Zone,Nalachira,14,4,3,0.75
+Thruvananthapuram City,Traffic South Zone,Nandancode ,25,3,2,0.67
+Thruvananthapuram City,Traffic South Zone,PAPPANAMCODE,52,3,1,0.33
+Thruvananthapuram City,Traffic South Zone,PATTOM,17,12,13,1.08
+Thruvananthapuram City,Traffic South Zone,PERUNTHANNI,84,1,0,0.0
+Thruvananthapuram City,Traffic South Zone,PETTAH,93,4,2,0.5
+Thruvananthapuram City,Traffic South Zone,POONKULAM,58,3,0,0.0
+Thruvananthapuram City,Traffic South Zone,PUNCHAKKARI,57,1,0,0.0
+Thruvananthapuram City,Traffic South Zone,Palayam,27,11,7,0.64
+Thruvananthapuram City,Traffic South Zone,Pallichal Panchayath,21,1,1,1.0
+Thruvananthapuram City,Traffic South Zone,Pallichal Panchayath,23,1,1,1.0
+Thruvananthapuram City,Traffic South Zone,Patttom,17,1,1,1.0
+Thruvananthapuram City,Traffic South Zone,Peroorkada,31,3,3,1.0
+Thruvananthapuram City,Traffic South Zone,SREEVARAHAM,79,5,0,0.0
+Thruvananthapuram City,Traffic South Zone,Sasthamangalam,22,3,0,0.0
+Thruvananthapuram City,Traffic South Zone,THAMPANOOR,81,4,4,1.0
+Thruvananthapuram City,Traffic South Zone,THIRUVALLAM,65,4,1,0.25
+Thruvananthapuram City,Traffic South Zone,Thampanoor Ward,81,9,5,0.56
+Thruvananthapuram City,Traffic South Zone,Thuruthumoola,32,1,0,0.0
+Thruvananthapuram City,Traffic South Zone,Thycadu,28,4,1,0.25
+Thruvananthapuram City,Traffic South Zone,ULLOOR,6,4,4,1.0
+Thruvananthapuram City,Traffic South Zone,VELLAR,64,2,0,0.0
+Thruvananthapuram City,Traffic South Zone,VENGANOOR,59,2,0,0.0
+Thruvananthapuram City,Traffic South Zone,vazhuthakadu,29,3,1,0.33

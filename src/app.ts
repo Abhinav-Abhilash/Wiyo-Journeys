@@ -618,7 +618,7 @@ function renderPopularStops(candidates?: Stop[]) {
     };
 
     const safeLocalName = escapeHtml(stop.names[currentLanguage] || stop.names.en);
-    const localDistrict = districtNames[currentLanguage][stop.district] || stop.district || 'Kerala';
+    const localDistrict = (stop.district && districtNames[currentLanguage]?.[stop.district]) || stop.district || 'Kerala';
     const subline = currentLanguage === 'en'
       ? `${escapeHtml(stop.names.en)} • ${escapeHtml(localDistrict)}`
       : `${escapeHtml(localDistrict)}`;
@@ -786,9 +786,9 @@ async function executeFindBus() {
         selectedOriginStop = parsed.origin.stop;
       }
     } else {
-      const stopMatch = findStopByName(typedDest, lang);
-      if (stopMatch) {
-        selectedDestStop = stopMatch;
+      const match = searchStop(typedDest);
+      if (match.status === 'matched') {
+        selectedDestStop = match.stop;
       }
     }
   }
@@ -873,14 +873,19 @@ function populateDetailsScreen(plan: JourneyPlan) {
   const fallbackExplanation = document.getElementById('fallback-explanation-text');
   const detailsDirectLineBadge = document.getElementById('details-direct-line-badge');
 
-  const destName = plan.destination.names[currentLanguage] || plan.destination.names.en;
+  const requestedDestStop = (plan.type === 'fallback_nearest' && (plan.requestedDestination || plan.fallbackInfo?.requestedDestination))
+    ? (plan.requestedDestination || plan.fallbackInfo?.requestedDestination)!
+    : plan.destination;
+
+  const destName = requestedDestStop.names[currentLanguage] || requestedDestStop.names.en;
+  const alightName = plan.destination.names[currentLanguage] || plan.destination.names.en;
   const originName = plan.origin.names[currentLanguage] || plan.origin.names.en;
 
   // Handle fallback nearest stop presentation
   if (plan.type === 'fallback_nearest' && plan.fallbackInfo) {
     const fb = plan.fallbackInfo;
     const targetName = fb.requestedDestination?.names[currentLanguage] || fb.requestedDestination?.names.en || destName;
-    const alightName = fb.nearestReachableStop?.names[currentLanguage] || fb.nearestReachableStop?.names.en || destName;
+    const alightStopName = fb.nearestReachableStop?.names[currentLanguage] || fb.nearestReachableStop?.names.en || alightName;
     const distKm = fb.walkDistanceKm || (fb.walkDistanceMeters ? (fb.walkDistanceMeters / 1000).toFixed(1) : '0');
     const dirStr = fb.compassDirection?.[currentLanguage] || fb.compassDirection?.en || '';
 
@@ -891,7 +896,7 @@ function populateDetailsScreen(plan: JourneyPlan) {
       fallbackExplanation.textContent = strings.fallbackExplanation(
         originName,
         targetName,
-        alightName,
+        alightStopName,
         distKm,
         dirStr,
         leg.routeNumber
@@ -911,12 +916,19 @@ function populateDetailsScreen(plan: JourneyPlan) {
   if (routeNumber) routeNumber.textContent = ksrtcRouteLabel[currentLanguage](leg.routeNumber);
   if (routeName) routeName.textContent = leg.routeName;
   if (timePill) timePill.textContent = plan.departureTime;
-  if (boardHeader) boardHeader.textContent = strings.towardsVia(destName, leg.routeNumber);
+  if (boardHeader) boardHeader.textContent = strings.towardsVia(alightName, leg.routeNumber);
   if (durationPill) durationPill.textContent = strings.rideDuration(plan.totalDurationMins);
   if (stopsCount) stopsCount.textContent = strings.intermediateStops(leg.intermediateStops.length + 1);
   if (fareAmount) fareAmount.textContent = `₹${plan.totalFare.amount}.00`;
   if (fareBreakdown) {
-    fareBreakdown.textContent = strings.fareBreakdown(plan.totalFare.baseFare, plan.totalFare.stageFare);
+    if (plan.type === 'fallback_nearest') {
+      fareBreakdown.textContent = `${strings.fareBreakdown(plan.totalFare.baseFare, plan.totalFare.stageFare)} (Bus to ${alightName})`;
+    } else {
+      fareBreakdown.textContent = strings.fareBreakdown(plan.totalFare.baseFare, plan.totalFare.stageFare);
+    }
+  }
+  if (detailsConductorDisclaimer) {
+    detailsConductorDisclaimer.textContent = plan.totalFare.disclaimer || strings.conductorDisclaimer;
   }
 
   // Render schematic nodes
@@ -953,20 +965,24 @@ function populateDetailsScreen(plan: JourneyPlan) {
   if (!currentJourneyPlan) return;
   const leg = currentJourneyPlan.legs[0];
   const originName = currentJourneyPlan.origin.names[currentLanguage] || currentJourneyPlan.origin.names.en;
-  const destName = currentJourneyPlan.destination.names[currentLanguage] || currentJourneyPlan.destination.names.en;
+  const requestedDestStop = (currentJourneyPlan.type === 'fallback_nearest' && (currentJourneyPlan.requestedDestination || currentJourneyPlan.fallbackInfo?.requestedDestination))
+    ? (currentJourneyPlan.requestedDestination || currentJourneyPlan.fallbackInfo?.requestedDestination)!
+    : currentJourneyPlan.destination;
+  const destName = requestedDestStop.names[currentLanguage] || requestedDestStop.names.en;
+  const alightName = currentJourneyPlan.destination.names[currentLanguage] || currentJourneyPlan.destination.names.en;
   const strings = i18n[currentLanguage];
 
   if (currentJourneyPlan.type === 'fallback_nearest' && currentJourneyPlan.fallbackInfo) {
     const fb = currentJourneyPlan.fallbackInfo;
     const targetName = fb.requestedDestination?.names[currentLanguage] || fb.requestedDestination?.names.en || destName;
-    const alightName = fb.nearestReachableStop?.names[currentLanguage] || fb.nearestReachableStop?.names.en || destName;
+    const alightStopName = fb.nearestReachableStop?.names[currentLanguage] || fb.nearestReachableStop?.names.en || alightName;
     const distKm = fb.walkDistanceKm || (fb.walkDistanceMeters ? (fb.walkDistanceMeters / 1000).toFixed(1) : '0');
     const dirStr = fb.compassDirection?.[currentLanguage] || fb.compassDirection?.en || '';
 
     const phrase = strings.fallbackSpoken(
       originName,
       targetName,
-      alightName,
+      alightStopName,
       distKm,
       dirStr,
       leg.routeNumber,
@@ -988,15 +1004,8 @@ function populateDetailsScreen(plan: JourneyPlan) {
     phrase = `${originName} से ${destName} के लिए बस रूट ${leg.routeNumber} लें। अनुमानित किराया ${currentJourneyPlan.totalFare.amount} रुपये है।`;
   }
 
-  const isDefaultDemoRoute =
-    currentJourneyPlan.origin.id === 'ST_MAHARAJAS' &&
-    currentJourneyPlan.destination.id === 'ST_EDAPPALLY' &&
-    leg.routeNumber === '12A' &&
-    currentJourneyPlan.totalFare.amount === 22;
-
   showToast('Voice Audio', phrase);
   speakText(phrase, currentLanguage, 1.0, {
-    phraseKey: isDefaultDemoRoute ? `${currentLanguage}_route_details` : undefined,
     onError: (err) => showToast('Voice Notice', typeof err === 'string' ? err : 'Speech playback error')
   });
 };
@@ -1150,9 +1159,7 @@ async function initLiveLeafletMap() {
         : `Journey started on Route ${leg.routeNumber}. Live GPS tracking is active.`;
 
   showToast('Trip Started', startMsg);
-  const isDefaultDemoStart = leg.routeNumber === '12A';
   speakText(startMsg, currentLanguage, 1.0, {
-    phraseKey: isDefaultDemoStart ? `${currentLanguage}_journey_start` : undefined,
     onError: (err) => showToast('Voice Notice', typeof err === 'string' ? err : 'Speech playback error')
   });
 
@@ -1230,9 +1237,7 @@ function handleGpsUpdate(result: ReturnType<JourneyTracker['updatePosition']>) {
           ? `ध्यान दें। आपका स्टॉप ${stopName} 30 सेकंड में आने वाला है।`
           : `Attention. Your stop ${stopName} is approaching in 30 seconds. Please get ready to alight.`;
 
-    const isDefaultDemoAlert = result.approachingStop.id === 'ST_EDAPPALLY';
     speakText(announcement, currentLanguage, 1.0, {
-      phraseKey: isDefaultDemoAlert ? `${currentLanguage}_stop_alert` : undefined,
       onError: (err) => showToast('Voice Notice', typeof err === 'string' ? err : 'Speech playback error')
     });
   }

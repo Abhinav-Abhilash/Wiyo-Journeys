@@ -1,0 +1,9 @@
+City_Name,Bus_Type,Bus_Count,Bus_Terminals,Bus_Stands,Bus_Stops
+Thiruvananthapuram,JN AC,56,4.0,13.0,1232.0
+Thiruvananthapuram,JN NON AC,37,4.0,13.0,
+Thiruvananthapuram,RTC NON AC,321,4.0,13.0,
+Thiruvananthapuram,JnNURM A/C,190,6.0,18.0,
+Thiruvananthapuram,JnNURM,120,6.0,18.0,
+Thiruvananthapuram,CITY FAST,176,6.0,18.0,
+Thiruvananthapuram,CITY ORDINARY,43,6.0,18.0,
+Thiruvananthapuram,ORDINARY,57,6.0,18.0,
