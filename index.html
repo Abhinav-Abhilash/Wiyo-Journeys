@@ -703,8 +703,8 @@
 
           <!-- Find Bus Action -->
           <div class="mt-2 mb-6">
-            <button class="w-full h-13 py-3.5 bg-primary hover:bg-primary-container text-white font-bold rounded-2xl shadow-lg flex items-center justify-center gap-2 active:scale-[0.98] transition-all" onclick="executeFindBus()">
-              <span class="material-symbols-outlined text-[22px]">directions_bus</span>
+            <button id="find-bus-btn" class="w-full h-13 py-3.5 bg-primary hover:bg-primary-container text-white font-bold rounded-2xl shadow-lg flex items-center justify-center gap-2 active:scale-[0.98] transition-all disabled:opacity-75 disabled:pointer-events-none" onclick="executeFindBus()">
+              <span id="find-bus-btn-icon" class="material-symbols-outlined text-[22px]">directions_bus</span>
               <span id="find-bus-btn-text">Find My Bus</span>
             </button>
             <div class="flex items-center justify-center gap-1 text-slate-500 dark:text-slate-400 text-[11px] mt-2">
@@ -736,6 +736,20 @@
         </header>
 
         <div class="p-5 flex flex-col gap-4">
+          <!-- Fallback Warning Banner (Shown only when no direct bus exists) -->
+          <div id="details-fallback-banner" class="hidden rounded-2xl bg-amber-500/10 border-2 border-amber-500/40 p-3.5 flex flex-col gap-2">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-1.5 text-amber-700 dark:text-amber-300 font-extrabold text-xs uppercase tracking-wide">
+                <span class="material-symbols-outlined text-[18px]">alt_route</span>
+                <span id="fallback-badge-title">Closest Available Option</span>
+              </div>
+              <span class="px-2 py-0.5 rounded-full bg-amber-500 text-slate-950 font-bold text-[10px]" id="fallback-tag">No Direct Bus</span>
+            </div>
+            <p id="fallback-explanation-text" class="text-xs text-slate-800 dark:text-slate-200 font-medium leading-relaxed">
+              <!-- Dynamically populated -->
+            </p>
+          </div>
+
           <!-- Target Destination Banner -->
           <div class="flex items-center gap-3 bg-white rounded-2xl border border-outline-variant/30 shadow-sm p-3">
             <div class="w-9 h-9 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0">

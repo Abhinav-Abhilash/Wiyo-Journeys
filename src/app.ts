@@ -108,7 +108,14 @@ const i18n = {
     boardNode: '(Board)',
     alightNode: '(Alight)',
     stopNode: 'Stop',
-    nearestNotice: 'Showing closest direct stop to destination.'
+    nearestNotice: 'Showing closest direct stop to destination.',
+    findingBus: 'Finding bus...',
+    fallbackTitle: 'Closest Available Option • No Direct Bus',
+    fallbackTag: 'Nearest Stop',
+    fallbackExplanation: (origin: string, dest: string, nearest: string, dist: string, dir: string, route: string) =>
+      `No direct bus to ${dest}. Take ${route} from ${origin} and alight at ${nearest}. Your destination is ${dist} km ${dir} from this stop (short walk / auto transfer).`,
+    fallbackSpoken: (origin: string, dest: string, nearest: string, dist: string, dir: string, route: string, fare: number) =>
+      `No direct bus to ${dest}. Please take Route ${route} from ${origin} and get off at ${nearest}, which is the closest reachable stop, ${dist} kilometers ${dir} from your destination. Estimated fare is ${fare} rupees.`
   },
   ml: {
     tagline: 'യാത്രകൾ ഇനി ലളിതം.',
@@ -167,7 +174,14 @@ const i18n = {
     boardNode: '(കയറുക)',
     alightNode: '(ഇറങ്ങുക)',
     stopNode: 'സ്റ്റോപ്പ്',
-    nearestNotice: 'ലക്ഷ്യസ്ഥാനത്തേക്ക് ഏറ്റവും അടുത്തുള്ള സ്റ്റോപ്പ് കാണിക്കുന്നു.'
+    nearestNotice: 'ലക്ഷ്യസ്ഥാനത്തേക്ക് ഏറ്റവും അടുത്തുള്ള സ്റ്റോപ്പ് കാണിക്കുന്നു.',
+    findingBus: 'ബസ് കണ്ടെത്തുന്നു...',
+    fallbackTitle: 'ഏറ്റവും അടുത്തുള്ള സ്റ്റോപ്പ് • നേരിട്ടുള്ള ബസ് ലഭ്യമല്ല',
+    fallbackTag: 'അടുത്ത സ്റ്റോപ്പ്',
+    fallbackExplanation: (origin: string, dest: string, nearest: string, dist: string, dir: string, route: string) =>
+      `${dest}ലേക്ക് നേരിട്ട് ബസ്സില്ല. ${origin}ൽ നിന്ന് ${route} ബസ്സിൽ കയറി ${nearest}ൽ ഇറങ്ങുക. അവിടെ നിന്ന് നിങ്ങളുടെ ലക്ഷ്യസ്ഥാനത്തേക്ക് ${dist} കി.മീ ${dir} യാത്രയുണ്ട് (നടപ്പ് / ഓട്ടോ).`,
+    fallbackSpoken: (origin: string, dest: string, nearest: string, dist: string, dir: string, route: string, fare: number) =>
+      `${dest}ലേക്ക് നേരിട്ട് ബസ്സില്ല. ${origin}ൽ നിന്ന് റൂട്ട് ${route} ബസ്സിൽ കയറി ${nearest}ൽ ഇറങ്ങുക. ലക്ഷ്യസ്ഥാനം അവിടെ നിന്ന് ${dist} കി.മീ ${dir} അകലെയാണ്. പ്രതീക്ഷിക്കുന്ന നിരക്ക് ${fare} രൂപ.`
   },
   ta: {
     tagline: 'உங்கள் பயணம், எளிதாக்கப்பட்டது.',
@@ -226,7 +240,14 @@ const i18n = {
     boardNode: '(ஏறவும்)',
     alightNode: '(இறங்கவும்)',
     stopNode: 'நிறுத்தம்',
-    nearestNotice: 'இலக்குக்கு அருகிலுள்ள பேருந்து நிறுத்தம் காட்டப்படுகிறது.'
+    nearestNotice: 'இலக்குக்கு அருகிலுள்ள பேருந்து நிறுத்தம் காட்டப்படுகிறது.',
+    findingBus: 'பேருந்து தேடுகிறது...',
+    fallbackTitle: 'அருகிலுள்ள நிறுத்தம் • நேரடி பேருந்து இல்லை',
+    fallbackTag: 'அருகிலுள்ள நிறுத்தம்',
+    fallbackExplanation: (origin: string, dest: string, nearest: string, dist: string, dir: string, route: string) =>
+      `${dest}க்கு நேரடி பேருந்து இல்லை. ${origin} முதல் ${route} பேருந்தில் சென்று ${nearest} இல் இறங்கவும். உங்கள் இலக்கு ${dist} கி.மீ ${dir} தொலைவில் உள்ளது.`,
+    fallbackSpoken: (origin: string, dest: string, nearest: string, dist: string, dir: string, route: string, fare: number) =>
+      `${dest}க்கு நேரடி பேருந்து இல்லை. ${origin} இல் இருந்து ரூட் ${route} பேருந்தில் ஏறி ${nearest} இல் இறங்கவும். கட்டணம் ${fare} ரூபாய்.`
   },
   hi: {
     tagline: 'आपकी यात्रा, अब हुई आसान।',
@@ -285,7 +306,14 @@ const i18n = {
     boardNode: '(चढ़ें)',
     alightNode: '(उतरें)',
     stopNode: 'स्टॉप',
-    nearestNotice: 'गंतव्य के सबसे नजदीकी स्टॉप दिखाया जा रहा है।'
+    nearestNotice: 'गंतव्य के सबसे नजदीकी स्टॉप दिखाया जा रहा है।',
+    findingBus: 'बस खोजी जा रही है...',
+    fallbackTitle: 'निकटतम उपलब्ध स्टॉप • कोई सीधी बस नहीं',
+    fallbackTag: 'निकटतम स्टॉप',
+    fallbackExplanation: (origin: string, dest: string, nearest: string, dist: string, dir: string, route: string) =>
+      `${dest} के लिए सीधी बस नहीं है। ${origin} से ${route} बस लें और ${nearest} पर उतरें। आपका गंतव्य यहाँ से ${dist} किमी ${dir} दूर है।`,
+    fallbackSpoken: (origin: string, dest: string, nearest: string, dist: string, dir: string, route: string, fare: number) =>
+      `${dest} के लिए कोई सीधी बस नहीं है। ${origin} से रूट ${route} बस लें और ${nearest} पर उतरें। अनुमानित किराया ${fare} रुपये है।`
   }
 };
 
@@ -722,29 +750,101 @@ function selectDestinationStop(stop: Stop) {
   });
 };
 
+let isFindingBus = false;
+
 /**
  * Execute Route Lookup & populate Screen 3
  */
-function executeFindBus() {
+async function executeFindBus() {
+  if (isFindingBus) return;
+
+  // Immediately cancel any active speech recognition or queued synthesis
+  if (stopVoiceInputFn) {
+    try { stopVoiceInputFn(); } catch (e) { /* ignore */ }
+    stopVoiceInputFn = null;
+  }
+  const micBtn = document.getElementById('voice-input-btn');
+  micBtn?.classList.remove('bg-amber-500', 'text-white', 'animate-pulse');
+  micBtn?.classList.add('bg-teal-50', 'text-primary');
+
+  if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+    try { window.speechSynthesis.cancel(); } catch (e) { /* ignore */ }
+  }
+
+  // Read current language synchronously at execution time
+  const lang = currentLanguage;
+  const strings = i18n[lang];
+
+  // Inspect typed input in destination field if modified by user
+  const destInput = document.getElementById('destination-input') as HTMLInputElement | null;
+  const typedDest = destInput?.value?.trim();
+  if (typedDest) {
+    const parsed = parseNaturalQuery(typedDest, selectedOriginStop || undefined);
+    if (parsed.destination.status === 'matched') {
+      selectedDestStop = parsed.destination.stop;
+      if (parsed.origin.status === 'matched') {
+        selectedOriginStop = parsed.origin.stop;
+      }
+    } else {
+      const stopMatch = findStopByName(typedDest, lang);
+      if (stopMatch) {
+        selectedDestStop = stopMatch;
+      }
+    }
+  }
+
   if (!selectedOriginStop || !selectedDestStop) {
     const stops = getAllStops();
     selectedOriginStop = selectedOriginStop || stops[0];
     selectedDestStop = selectedDestStop || stops[4]; // Lulu mall
   }
 
-  const plans = findJourneys(selectedOriginStop.id, selectedDestStop.id);
-  if (plans.length === 0) {
-    showToast('Notice', i18n[currentLanguage].nearestNotice);
-    return;
-  }
+  // Visible loading state and re-entrancy guard
+  const findBtn = document.getElementById('find-bus-btn') as HTMLButtonElement | null;
+  const findBtnIcon = document.getElementById('find-bus-btn-icon');
+  const findBtnText = document.getElementById('find-bus-btn-text');
 
-  currentJourneyPlan = plans[0];
-  if (currentJourneyPlan.notes) {
-    showToast('Notice', currentJourneyPlan.notes[currentLanguage] || currentJourneyPlan.notes.en);
+  isFindingBus = true;
+  if (findBtn) findBtn.disabled = true;
+  if (findBtnIcon) {
+    findBtnIcon.innerHTML = `<svg class="animate-spin h-5 w-5 text-white inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path></svg>`;
   }
+  if (findBtnText) findBtnText.textContent = strings.findingBus;
 
-  populateDetailsScreen(currentJourneyPlan);
-  (window as any).goToScreen('screen-details');
+  try {
+    const plans = await Promise.race([
+      new Promise<JourneyPlan[]>((resolve) => {
+        const res = findJourneys(selectedOriginStop!.id, selectedDestStop!.id);
+        resolve(res);
+      }),
+      new Promise<JourneyPlan[]>((_, reject) =>
+        setTimeout(() => reject(new Error('Search timed out. Please try again.')), 4500)
+      )
+    ]);
+
+    if (plans.length === 0) {
+      showToast('Notice', strings.nearestNotice);
+      return;
+    }
+
+    currentJourneyPlan = plans[0];
+    if (currentJourneyPlan.notes) {
+      showToast('Notice', currentJourneyPlan.notes[lang] || currentJourneyPlan.notes.en);
+    }
+
+    populateDetailsScreen(currentJourneyPlan);
+    (window as any).goToScreen('screen-details');
+  } catch (err: any) {
+    console.error('Error finding bus:', err);
+    showToast('Search Error', err?.message || 'Failed to complete route search.');
+  } finally {
+    isFindingBus = false;
+    if (findBtn) findBtn.disabled = false;
+    if (findBtnIcon) {
+      findBtnIcon.innerHTML = '<span class="material-symbols-outlined text-[22px]">directions_bus</span>';
+    }
+    if (findBtnText) findBtnText.textContent = i18n[currentLanguage].findBus;
+  }
 }
 (window as any).executeFindBus = executeFindBus;
 
@@ -766,8 +866,42 @@ function populateDetailsScreen(plan: JourneyPlan) {
   const fareAmount = document.getElementById('details-fare-amount');
   const fareBreakdown = document.getElementById('details-fare-breakdown');
 
+  // Fallback banner elements
+  const fallbackBanner = document.getElementById('details-fallback-banner');
+  const fallbackBadgeTitle = document.getElementById('fallback-badge-title');
+  const fallbackTag = document.getElementById('fallback-tag');
+  const fallbackExplanation = document.getElementById('fallback-explanation-text');
+  const detailsDirectLineBadge = document.getElementById('details-direct-line-badge');
+
   const destName = plan.destination.names[currentLanguage] || plan.destination.names.en;
   const originName = plan.origin.names[currentLanguage] || plan.origin.names.en;
+
+  // Handle fallback nearest stop presentation
+  if (plan.type === 'fallback_nearest' && plan.fallbackInfo) {
+    const fb = plan.fallbackInfo;
+    const targetName = fb.targetDestination.names[currentLanguage] || fb.targetDestination.names.en;
+    const alightName = fb.nearestReachableStop.names[currentLanguage] || fb.nearestReachableStop.names.en;
+    const distKm = (fb.distanceMeters / 1000).toFixed(1);
+    const dirStr = fb.compassDirection[currentLanguage] || fb.compassDirection.en;
+
+    if (fallbackBanner) fallbackBanner.classList.remove('hidden');
+    if (fallbackBadgeTitle) fallbackBadgeTitle.textContent = strings.fallbackTitle;
+    if (fallbackTag) fallbackTag.textContent = strings.fallbackTag;
+    if (fallbackExplanation) {
+      fallbackExplanation.textContent = strings.fallbackExplanation(
+        originName,
+        targetName,
+        alightName,
+        distKm,
+        dirStr,
+        leg.routeNumber
+      );
+    }
+    if (detailsDirectLineBadge) detailsDirectLineBadge.textContent = strings.fallbackTag;
+  } else {
+    if (fallbackBanner) fallbackBanner.classList.add('hidden');
+    if (detailsDirectLineBadge) detailsDirectLineBadge.textContent = strings.directLine;
+  }
 
   if (destTitle) destTitle.textContent = destName;
   if (boardName) boardName.textContent = originName;
@@ -812,14 +946,38 @@ function populateDetailsScreen(plan: JourneyPlan) {
 
 /**
  * Speak Route Details
- * FIX: Only use pre-cached phraseKey for the exact default demo route (Maharajas -> Edappally, 12A, Rs 22).
- * For ALL other stops and fares, synthesize dynamically with the exact selected place and calculated fare!
+ * FIX: If fallback plan, announce nearest reachable stop, remaining walking/transfer distance, and compass direction!
+ * For standard direct routes, synthesize dynamically with the exact selected place and calculated fare.
  */
 (window as any).speakRouteDetails = () => {
   if (!currentJourneyPlan) return;
   const leg = currentJourneyPlan.legs[0];
   const originName = currentJourneyPlan.origin.names[currentLanguage] || currentJourneyPlan.origin.names.en;
   const destName = currentJourneyPlan.destination.names[currentLanguage] || currentJourneyPlan.destination.names.en;
+  const strings = i18n[currentLanguage];
+
+  if (currentJourneyPlan.type === 'fallback_nearest' && currentJourneyPlan.fallbackInfo) {
+    const fb = currentJourneyPlan.fallbackInfo;
+    const targetName = fb.targetDestination.names[currentLanguage] || fb.targetDestination.names.en;
+    const alightName = fb.nearestReachableStop.names[currentLanguage] || fb.nearestReachableStop.names.en;
+    const distKm = (fb.distanceMeters / 1000).toFixed(1);
+    const dirStr = fb.compassDirection[currentLanguage] || fb.compassDirection.en;
+
+    const phrase = strings.fallbackSpoken(
+      originName,
+      targetName,
+      alightName,
+      distKm,
+      dirStr,
+      leg.routeNumber,
+      currentJourneyPlan.totalFare.amount
+    );
+    showToast('Voice Audio', phrase);
+    speakText(phrase, currentLanguage, 1.0, {
+      onError: (err) => showToast('Voice Notice', typeof err === 'string' ? err : 'Speech playback error')
+    });
+    return;
+  }
 
   let phrase = `Please take bus Route ${leg.routeNumber} from ${originName} towards ${destName}. Estimated fare is ${currentJourneyPlan.totalFare.amount} rupees.`;
   if (currentLanguage === 'ml') {

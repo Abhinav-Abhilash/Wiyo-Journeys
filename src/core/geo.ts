@@ -1,4 +1,4 @@
-import { Stop, TrackingProgress, JourneyPlan } from '../types';
+import { Stop, TrackingProgress, JourneyPlan, MultilingualText } from '../types';
 
 /**
  * Computes Haversine distance in meters between two lat/lng points
@@ -20,6 +20,33 @@ export function calculateHaversineDistance(
       Math.sin(dLon / 2);
   const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
   return Math.round(R * c);
+}
+
+/**
+ * Calculates 8-point compass bearing from origin to destination
+ */
+export function calculateCompassDirection(
+  lat1: number,
+  lng1: number,
+  lat2: number,
+  lng2: number
+): MultilingualText {
+  const dLng = ((lng2 - lng1) * Math.PI) / 180;
+  const y = Math.sin(dLng) * Math.cos((lat2 * Math.PI) / 180);
+  const x =
+    Math.cos((lat1 * Math.PI) / 180) * Math.sin((lat2 * Math.PI) / 180) -
+    Math.sin((lat1 * Math.PI) / 180) * Math.cos((lat2 * Math.PI) / 180) * Math.cos(dLng);
+  let bearing = (Math.atan2(y, x) * 180) / Math.PI;
+  bearing = (bearing + 360) % 360;
+
+  if (bearing >= 337.5 || bearing < 22.5) return { en: 'North', ml: 'വടക്ക്', ta: 'வடக்கு', hi: 'उत्तर' };
+  if (bearing >= 22.5 && bearing < 67.5) return { en: 'North-East', ml: 'വടക്കുകിഴക്ക്', ta: 'வடகிழக்கு', hi: 'उत्तर-पूर्व' };
+  if (bearing >= 67.5 && bearing < 112.5) return { en: 'East', ml: 'കിഴക്ക്', ta: 'கிழக்கு', hi: 'पूर्व' };
+  if (bearing >= 112.5 && bearing < 157.5) return { en: 'South-East', ml: 'തെക്കുകിഴക്ക്', ta: 'தென்கிழக்கு', hi: 'दक्षिण-पूर्व' };
+  if (bearing >= 157.5 && bearing < 202.5) return { en: 'South', ml: 'തെക്ക്', ta: 'தெற்கு', hi: 'दक्षिण' };
+  if (bearing >= 202.5 && bearing < 247.5) return { en: 'South-West', ml: 'തെക്കുപടിഞ്ഞാറ്', ta: 'தென்மேற்கு', hi: 'दक्षिण-पश्चिम' };
+  if (bearing >= 247.5 && bearing < 292.5) return { en: 'West', ml: 'പടിഞ്ഞാറ്', ta: 'மேற்கு', hi: 'पश्चिम' };
+  return { en: 'North-West', ml: 'വടക്കുപടിഞ്ഞാറ്', ta: 'வடமேற்கு', hi: 'उत्तर-पश्चिम' };
 }
 
 export interface NearestStopResult {

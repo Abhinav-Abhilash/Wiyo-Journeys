@@ -66,11 +66,21 @@ export interface JourneyLeg {
   alightingLandmark?: string;
 }
 
+export interface FallbackStopInfo {
+  nearestReachableStop: Stop;
+  requestedDestination: Stop;
+  walkDistanceMeters: number;
+  walkDistanceKm: string;
+  compassDirection: MultilingualText;
+}
+
 export interface JourneyPlan {
   id: string;
-  type: 'direct' | 'transfer';
+  type: 'direct' | 'transfer' | 'fallback_nearest';
   origin: Stop;
   destination: Stop;
+  requestedDestination?: Stop;
+  fallbackInfo?: FallbackStopInfo;
   legs: JourneyLeg[];
   totalFare: {
     fare_estimate: true;
