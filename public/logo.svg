@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <rect width="200" height="200" rx="44" fill="#0f766e"/>
+  <!-- Bus icon at top -->
+  <rect x="84" y="48" width="32" height="24" rx="6" fill="#ffffff"/>
+  <rect x="88" y="52" width="10" height="8" rx="2" fill="#0f766e"/>
+  <rect x="102" y="52" width="10" height="8" rx="2" fill="#0f766e"/>
+  <circle cx="91" cy="72" r="3" fill="#1e293b"/>
+  <circle cx="109" cy="72" r="3" fill="#1e293b"/>
+  
+  <!-- Stylized Orange W transit path -->
+  <path d="M 44 72 L 72 136 L 100 84 L 128 136 L 152 76" fill="none" stroke="#f59e0b" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Endpoint circle dot on W -->
+  <circle cx="152" cy="76" r="11" fill="#f59e0b"/>
+  <circle cx="152" cy="76" r="7" fill="#ffffff"/>
+</svg>

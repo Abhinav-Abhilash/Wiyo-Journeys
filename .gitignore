@@ -1,0 +1,15 @@
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Node modules & build
+node_modules/
+dist/
+out/
+
+# Local MCP & AI Agent configs
+.mcp.json
+.agents/
+.claude/
+skills-lock.json
