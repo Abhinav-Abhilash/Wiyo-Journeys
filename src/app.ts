@@ -52,105 +52,262 @@ function escapeHtml(str: string): string {
 // Pure localization strings (zero mixed English in regional views)
 const i18n = {
   en: {
+    tagline: 'Your journey, made simple.',
+    chooseLang: 'Choose your language',
+    continue: 'Continue',
+    noLogin: 'No login required • 100% Offline Ready',
     greeting: 'Good morning!',
     whereTo: 'Where do you want to go?',
     whereToSub: 'Enter stop or destination',
-    findBus: 'Find My Bus',
+    destSelection: 'Destination Selection',
+    boardingStop: 'Boarding Bus Stop',
+    gpsActive: 'GPS Active',
+    walkFromYou: (dist: number) => `${dist}m walk from you`,
     popularStops: 'Popular Bus Stops',
-    continue: 'Continue',
-    boarding: 'Boarding Point',
-    recommended: 'Recommended Bus',
+    searchPlaceholder: 'Enter stop or destination (e.g. Lulu Mall)...',
+    findBus: 'Find My Bus',
+    mvdFaresNotice: 'Official Kerala MVD Stage Fares',
+    noStopFound: (q: string) => `No matching bus stop found for "${q}".`,
+    busDetails: 'Bus Details & Fare',
+    destination: 'Destination',
+    boardingPoint: 'Boarding Point',
+    walkSummary: '180m • 3 min walk',
+    walkInstruction: 'Walk past the stadium arch and turn right at junction shelter. Boarding bay is immediately on your left.',
+    recommendedBus: 'Recommended Bus',
+    departsInMins: (m: number) => `Departs in ${m} mins`,
+    departsBay: 'Departs bay',
+    busBoardHeader: 'Bus Board Header',
+    towardsVia: (dest: string, route: string) => `Towards ${dest} via ${route}`,
+    rideDuration: (mins: number) => `~${mins} mins ride`,
+    intermediateStops: (count: number) => `${count} intermediate stops`,
+    routeProgression: 'Route Progression & Fare',
+    directLine: 'Direct Line',
     estimatedFare: 'Estimated Fare',
+    fareBreakdown: (base: number, stage: number) => `Base fare: ₹${base}.00 • Stages: ₹${stage}.00`,
+    conductorDisclaimer: 'Official Estimate: Pay directly to conductor inside the bus via Cash or Chalo / UPI tap.',
     startJourney: 'Start Journey',
     savePass: 'Save Offline Bus Pass',
     passSaved: 'Pass Cached Offline ✓',
-    alightingAlert: 'Alighting Alert • Stop Approaching',
-    alightingSub: 'Your bus stop is ~30 seconds away. Please get ready to alight.',
-    destSelection: 'Destination Selection',
-    busDetails: 'Bus Details & Fare',
     journeyProgress: 'Bus Journey in Progress',
-    gpsActive: 'GPS Active',
-    offlineReady: '100% Offline Ready',
+    superFast: 'Super Fast',
+    fastPassenger: 'Fast Passenger',
+    ordinary: 'Ordinary',
+    nextStop: 'Next Stop',
+    nextFinalStop: 'Next / Final Stop',
+    estTime: 'Est. Time',
+    distance: 'Distance',
+    speedGps: (spd: number) => `${spd} km/h • GPS Active`,
+    alightingAlert: 'Alighting Alert • Stop Approaching',
+    secAway: '~30 sec away',
+    alightReadyDesc: (stop: string) => `Your bus stop ${stop} is 250m away. Please get ready to alight safely.`,
     repeatAudio: 'Repeat Audio',
     speakSlower: 'Speak Slower',
-    nextStop: 'Next Stop',
+    tripCompleteBtn: 'Trip Complete • Alighted from Bus',
+    tripFinishedDone: 'Trip Finished ✓',
+    tripCompleteBanner: '🎉 You have alighted safely at destination. Thank you for riding KSRTC!',
+    boardNode: '(Board)',
+    alightNode: '(Alight)',
+    stopNode: 'Stop',
     nearestNotice: 'Showing closest direct stop to destination.'
   },
   ml: {
+    tagline: 'യാത്രകൾ ഇനി ലളിതം.',
+    chooseLang: 'നിങ്ങളുടെ ഭാഷ തിരഞ്ഞെടുക്കുക',
+    continue: 'തുടരുക',
+    noLogin: 'ലോഗിൻ ആവശ്യമില്ല • 100% ഓഫ്‌ലൈൻ തയ്യാറാണ്',
     greeting: 'സുപ്രഭാതം!',
     whereTo: 'എങ്ങോട്ടാണ് പോകേണ്ടത്?',
     whereToSub: 'ബസ് സ്റ്റോപ്പ് അല്ലെങ്കിൽ സ്ഥലം നൽകുക',
+    destSelection: 'ലക്ഷ്യസ്ഥാനം തിരഞ്ഞെടുക്കുക',
+    boardingStop: 'കയറേണ്ട സ്റ്റോപ്പ്',
+    gpsActive: 'ജിപിഎസ് സജീവം',
+    walkFromYou: (dist: number) => `നിങ്ങളിൽ നിന്ന് ${dist} മീറ്റർ നടപ്പ്`,
+    popularStops: 'പ്രധാന ബസ് സ്റ്റോപ്പുകൾ',
+    searchPlaceholder: 'സ്റ്റോപ്പ് അല്ലെങ്കിൽ ലക്ഷ്യസ്ഥാനം നൽകുക (ഉദാ: ലുലു മാൾ)...',
     findBus: 'ബസ് കണ്ടെത്തുക',
-    popularStops: 'പ്രധാന സ്റ്റോപ്പുകൾ',
-    continue: 'തുടരുക',
-    boarding: 'കയറേണ്ട സ്റ്റോപ്പ്',
-    recommended: 'നിർദ്ദേശിക്കുന്ന ബസ്',
+    mvdFaresNotice: 'ഔദ്യോഗിക കേരള എം.വി.ഡി നിരക്കുകൾ',
+    noStopFound: (q: string) => `"${q}" എന്നതിന് അനുയോജ്യമായ ബസ് സ്റ്റോപ്പ് കണ്ടെത്താനായില്ല.`,
+    busDetails: 'ബസ് വിവരങ്ങളും നിരക്കും',
+    destination: 'ലക്ഷ്യസ്ഥാനം',
+    boardingPoint: 'കയറേണ്ട സ്റ്റോപ്പ്',
+    walkSummary: '180 മീ • 3 മിനിറ്റ് നടപ്പ്',
+    walkInstruction: 'സ്റ്റേഡിയം കവാടം കഴിഞ്ഞ് ജംഗ്ഷൻ ഷെൽട്ടറിലേക്ക് തിരിയുക. ബസ് ബേ ഇടത് വശത്താണ്.',
+    recommendedBus: 'നിർദ്ദേശിക്കുന്ന ബസ്',
+    departsInMins: (m: number) => `${m} മിനിറ്റിൽ പുറപ്പെടും`,
+    departsBay: 'പുറപ്പെടുന്ന സമയം',
+    busBoardHeader: 'ബസ് ബോർഡ് വിവരണം',
+    towardsVia: (dest: string, route: string) => `${dest} ലേക്ക് (റൂട്ട് ${route})`,
+    rideDuration: (mins: number) => `~${mins} മിനിറ്റ് യാത്ര`,
+    intermediateStops: (count: number) => `${count} ഇട സ്റ്റോപ്പുകൾ`,
+    routeProgression: 'റൂട്ട് വിവരങ്ങളും നിരക്കും',
+    directLine: 'നേരിട്ടുള്ള റൂട്ട്',
     estimatedFare: 'പ്രതീക്ഷിക്കുന്ന നിരക്ക്',
+    fareBreakdown: (base: number, stage: number) => `അടിസ്ഥാന നിരക്ക്: ₹${base}.00 • സ്റ്റേജ് നിരക്ക്: ₹${stage}.00`,
+    conductorDisclaimer: 'ഔദ്യോഗിക നിരക്ക്: ബസ്സിനുള്ളിൽ കണ്ടക്ടർക്ക് പണമായോ യുപിഐ വഴിയോ നേരിട്ട് നൽകുക.',
     startJourney: 'യാത്ര ആരംഭിക്കുക',
     savePass: 'ഓഫ്‌ലൈൻ പാസ് സേവ് ചെയ്യുക',
     passSaved: 'പാസ് സേവ് ചെയ്തു ✓',
-    alightingAlert: 'സ്റ്റോപ്പ് ഉടൻ എത്തും',
-    alightingSub: 'ബസ് സ്റ്റോപ്പ് 30 സെക്കൻഡിൽ എത്തും. ഇറങ്ങാൻ തയ്യാറാകുക.',
-    destSelection: 'ലക്ഷ്യസ്ഥാനം തിരഞ്ഞെടുക്കുക',
-    busDetails: 'ബസ് വിവരങ്ങളും നിരക്കും',
     journeyProgress: 'യാത്ര പുരോഗമിക്കുന്നു',
-    gpsActive: 'ജിപിഎസ് സജീവം',
-    offlineReady: 'ഓഫ്‌ലൈൻ തയ്യാറാണ്',
+    superFast: 'സൂപ്പർ ഫാസ്റ്റ്',
+    fastPassenger: 'ഫാസ്റ്റ് പാസഞ്ചർ',
+    ordinary: 'ഓർഡിനറി',
+    nextStop: 'അടുത്ത സ്റ്റോപ്പ്',
+    nextFinalStop: 'അടുത്ത സ്റ്റോപ്പ്',
+    estTime: 'സമയം',
+    distance: 'ദൂരം',
+    speedGps: (spd: number) => `${spd} കി.മീ/മണിക്കൂർ • ജിപിഎസ് സജീവം`,
+    alightingAlert: 'സ്റ്റോപ്പ് ഉടൻ എത്തും',
+    secAway: '~30 സെക്കൻഡിൽ',
+    alightReadyDesc: (stop: string) => `നിങ്ങളുടെ ബസ് സ്റ്റോപ്പ് ${stop} 250 മീറ്റർ അകലെയാണ്. ഇറങ്ങാൻ തയ്യാറാകുക.`,
     repeatAudio: 'ശബ്ദം വീണ്ടും കേൾക്കുക',
     speakSlower: 'പതുക്കെ കേൾക്കുക',
-    nextStop: 'അടുത്ത സ്റ്റോപ്പ്',
+    tripCompleteBtn: 'യാത്ര പൂർത്തിയായി • ബസ്സിൽ നിന്ന് ഇറങ്ങി',
+    tripFinishedDone: 'യാത്ര പൂർത്തിയായി ✓',
+    tripCompleteBanner: '🎉 നിങ്ങൾ സുരക്ഷിതമായി എത്തിച്ചേർന്നു. കെ.എസ്.ആർ.ടി.സി യാത്രയ്ക്ക് നന്ദി!',
+    boardNode: '(കയറുക)',
+    alightNode: '(ഇറങ്ങുക)',
+    stopNode: 'സ്റ്റോപ്പ്',
     nearestNotice: 'ലക്ഷ്യസ്ഥാനത്തേക്ക് ഏറ്റവും അടുത്തുള്ള സ്റ്റോപ്പ് കാണിക്കുന്നു.'
   },
   ta: {
+    tagline: 'உங்கள் பயணம், எளிதாக்கப்பட்டது.',
+    chooseLang: 'உங்கள் மொழியைத் தேர்ந்தெடுக்கவும்',
+    continue: 'தொடரவும்',
+    noLogin: 'உள்நுழைவு தேவையில்லை • 100% ஆஃப்லைன் தயார்',
     greeting: 'காலை வணக்கம்!',
     whereTo: 'எங்கு செல்ல வேண்டும்?',
     whereToSub: 'பேருந்து நிறுத்தம் உள்ளிடவும்',
+    destSelection: 'இடத்தை தேர்வு செய்யவும்',
+    boardingStop: 'ஏறும் இடம்',
+    gpsActive: 'ஜிபிஎஸ் செயலில் உள்ளது',
+    walkFromYou: (dist: number) => `உங்களிலிருந்து ${dist} மீ நடைபயணம்`,
+    popularStops: 'முக்கிய பேருந்து நிறுத்தங்கள்',
+    searchPlaceholder: 'நிறுத்தம் அல்லது இலக்கை உள்ளிடவும் (எ.கா: லுலு மால்)...',
     findBus: 'பேருந்தை கண்டறியவும்',
-    popularStops: 'முக்கிய நிறுத்தங்கள்',
-    continue: 'தொடரவும்',
-    boarding: 'ஏறும் இடம்',
-    recommended: 'பரிந்துரைக்கப்பட்ட பேருந்து',
+    mvdFaresNotice: 'அதிகாரப்பூர்வ கேரள எம்விடி கட்டணங்கள்',
+    noStopFound: (q: string) => `"${q}" க்கான பேருந்து நிறுத்தம் எதுவும் கிடைக்கவில்லை.`,
+    busDetails: 'பேருந்து விவரங்கள் மற்றும் கட்டணம்',
+    destination: 'செல்லும் இடம்',
+    boardingPoint: 'ஏறும் இடம்',
+    walkSummary: '180 மீ • 3 நிமிட நடை',
+    walkInstruction: 'ஸ்டேடியம் வளைவை கடந்து சந்திப்பு நிழற்குடை நோக்கி செல்லவும். பேருந்து நிறுத்தம் இடதுபுறம் உள்ளது.',
+    recommendedBus: 'பரிந்துரைக்கப்பட்ட பேருந்து',
+    departsInMins: (m: number) => `${m} நிமிடங்களில் புறப்படும்`,
+    departsBay: 'புறப்படும் நேரம்',
+    busBoardHeader: 'பேருந்து பலகை',
+    towardsVia: (dest: string, route: string) => `${dest} நோக்கி (வழித்தடம் ${route})`,
+    rideDuration: (mins: number) => `~${mins} நிமிட பயணம்`,
+    intermediateStops: (count: number) => `${count} இடை நிறுத்தங்கள்`,
+    routeProgression: 'வழித்தடம் மற்றும் கட்டணம்',
+    directLine: 'நேரடி வழி',
     estimatedFare: 'மதிப்பிடப்பட்ட கட்டணம்',
+    fareBreakdown: (base: number, stage: number) => `அடிப்படை கட்டணம்: ₹${base}.00 • நிலை கட்டணம்: ₹${stage}.00`,
+    conductorDisclaimer: 'அதிகாரப்பூர்வ கட்டணம்: பேருந்தில் நடத்துனரிடம் பணம் அல்லது யுபிஐ மூலம் செலுத்தவும்.',
     startJourney: 'பயணத்தை தொடங்குங்கள்',
     savePass: 'ஆஃப்லைன் பாஸ் சேமிக்கவும்',
     passSaved: 'பாஸ் சேமிக்கப்பட்டது ✓',
-    alightingAlert: 'இறங்கும் நேரம் நெருங்குகிறது',
-    alightingSub: 'பேருந்து நிறுத்தம் 30 வினாடிகளில் வரவுள்ளது.',
-    destSelection: 'இடத்தை தேர்வு செய்யவும்',
-    busDetails: 'பேருந்து விவரங்கள் மற்றும் கட்டணம்',
     journeyProgress: 'பயணம் தொடர்கிறது',
-    gpsActive: 'ஜிபிஎஸ் செயலில் உள்ளது',
-    offlineReady: 'ஆஃப்லைன் தயார்',
+    superFast: 'சூப்பர் பாஸ்ட்',
+    fastPassenger: 'பாஸ்ட் பாссажиர்',
+    ordinary: 'சாதாரண பேருந்து',
+    nextStop: 'அடுத்த நிறுத்தம்',
+    nextFinalStop: 'அடுத்த நிறுத்தம்',
+    estTime: 'நேரம்',
+    distance: 'தொலைவு',
+    speedGps: (spd: number) => `${spd} கி.மீ/மணி • ஜிபிஎஸ் செயலில் உள்ளது`,
+    alightingAlert: 'இறங்கும் நேரம் நெருங்குகிறது',
+    secAway: '~30 வினாடிகளில்',
+    alightReadyDesc: (stop: string) => `உங்கள் பேருந்து நிறுத்தம் ${stop} 250 மீ தொலைவில் உள்ளது. இறங்க தயாராகுங்கள்.`,
     repeatAudio: 'மீண்டும் கேட்கவும்',
     speakSlower: 'மெதுவாக கேட்கவும்',
-    nextStop: 'அடுத்த நிறுத்தம்',
+    tripCompleteBtn: 'பயணம் முடிந்தது • இறங்கியாச்சு',
+    tripFinishedDone: 'பயணம் முடிந்தது ✓',
+    tripCompleteBanner: '🎉 நீங்கள் பாதுகாப்பாக வந்தடைந்துவிட்டீர்கள். கே.எஸ்.ஆர்.டி.சி பயணத்திற்கு நன்றி!',
+    boardNode: '(ஏறவும்)',
+    alightNode: '(இறங்கவும்)',
+    stopNode: 'நிறுத்தம்',
     nearestNotice: 'இலக்குக்கு அருகிலுள்ள பேருந்து நிறுத்தம் காட்டப்படுகிறது.'
   },
   hi: {
+    tagline: 'आपकी यात्रा, अब हुई आसान।',
+    chooseLang: 'अपनी भाषा चुनें',
+    continue: 'आगे बढ़ें',
+    noLogin: 'लॉगिन की आवश्यकता नहीं • 100% ऑफ़लाइन तैयार',
     greeting: 'शुभ प्रभात!',
     whereTo: 'आप कहाँ जाना चाहते हैं?',
     whereToSub: 'बस स्टॉप या गंतव्य दर्ज करें',
-    findBus: 'मेरी बस खोजें',
+    destSelection: 'गंतव्य चुनें',
+    boardingStop: 'बोर्डिंग पॉइंट',
+    gpsActive: 'जीपीएस सक्रिय है',
+    walkFromYou: (dist: number) => `आपसे ${dist} मीटर पैदल दूरी`,
     popularStops: 'प्रमुख बस स्टॉप',
-    continue: 'आगे बढ़ें',
-    boarding: 'बोर्डिंग पॉइंट',
-    recommended: 'सुझाई गई बस',
+    searchPlaceholder: 'स्टॉप या गंतव्य दर्ज करें (उदा. लुलु मॉल)...',
+    findBus: 'मेरी बस खोजें',
+    mvdFaresNotice: 'आधिकारिक केरल एमवीडी चरण किराया',
+    noStopFound: (q: string) => `"${q}" के लिए कोई मेल खाता बस स्टॉप नहीं मिला।`,
+    busDetails: 'बस विवरण और किराया',
+    destination: 'गंतव्य',
+    boardingPoint: 'बोर्डिंग पॉइंट',
+    walkSummary: '180 मी • 3 मिनट पैदल',
+    walkInstruction: 'स्टेडियम गेट पार करके जंक्शन शेल्टर की ओर मुड़ें। बस बे बाईं ओर है।',
+    recommendedBus: 'सुझाई गई बस',
+    departsInMins: (m: number) => `${m} मिनट में प्रस्थान`,
+    departsBay: 'प्रस्थान समय',
+    busBoardHeader: 'बस बोर्ड विवरण',
+    towardsVia: (dest: string, route: string) => `${dest} की ओर (रूट ${route})`,
+    rideDuration: (mins: number) => `~${mins} मिनट की यात्रा`,
+    intermediateStops: (count: number) => `${count} मध्यवर्ती स्टॉप`,
+    routeProgression: 'मार्ग विवरण और किराया',
+    directLine: 'सीधा मार्ग',
     estimatedFare: 'अनुमानित किराया',
+    fareBreakdown: (base: number, stage: number) => `मूल किराया: ₹${base}.00 • चरण किराया: ₹${stage}.00`,
+    conductorDisclaimer: 'आधिकारिक अनुमान: बस में कंडक्टर को नकद या यूपीआई द्वारा सीधे भुगतान करें।',
     startJourney: 'यात्रा शुरू करें',
     savePass: 'ऑफ़लाइन पास सहेजें',
     passSaved: 'पास सुरक्षित हो गया ✓',
-    alightingAlert: 'उतरने का समय आ रहा है',
-    alightingSub: 'आपका बस स्टॉप 30 सेकंड में आने वाला है।',
-    destSelection: 'गंतव्य चुनें',
-    busDetails: 'बस विवरण और किराया',
     journeyProgress: 'यात्रा जारी है',
-    gpsActive: 'जीपीएस सक्रिय है',
-    offlineReady: 'ऑफ़लाइन तैयार',
+    superFast: 'सुपर फास्ट',
+    fastPassenger: 'फास्ट पैसेंजर',
+    ordinary: 'साधारण बस',
+    nextStop: 'अगला स्टॉप',
+    nextFinalStop: 'अगला स्टॉप',
+    estTime: 'समय',
+    distance: 'दूरी',
+    speedGps: (spd: number) => `${spd} किमी/घंटा • जीपीएस सक्रिय`,
+    alightingAlert: 'उतरने का समय आ रहा है',
+    secAway: '~30 सेकंड में',
+    alightReadyDesc: (stop: string) => `आपका बस स्टॉप ${stop} 250 मीटर दूर है। कृपया सुरक्षित उतरने के लिए तैयार रहें।`,
     repeatAudio: 'पुनः सुनें',
     speakSlower: 'धीमी गति से सुनें',
-    nextStop: 'अगला स्टॉप',
+    tripCompleteBtn: 'यात्रा पूर्ण • बस से उतरे',
+    tripFinishedDone: 'यात्रा पूर्ण ✓',
+    tripCompleteBanner: '🎉 आप सुरक्षित रूप से पहुंच गए हैं। केएसआरटीसी से यात्रा करने के लिए धन्यवाद!',
+    boardNode: '(चढ़ें)',
+    alightNode: '(उतरें)',
+    stopNode: 'स्टॉप',
     nearestNotice: 'गंतव्य के सबसे नजदीकी स्टॉप दिखाया जा रहा है।'
   }
+};
+
+const districtNames: Record<SupportedLanguage, Record<string, string>> = {
+  en: { Ernakulam: 'Ernakulam', Thrissur: 'Thrissur', Alappuzha: 'Alappuzha', Kottayam: 'Kottayam', Thiruvananthapuram: 'Thiruvananthapuram', Kozhikode: 'Kozhikode' },
+  ml: { Ernakulam: 'എറണാകുളം', Thrissur: 'തൃശ്ശൂർ', Alappuzha: 'ആലപ്പുഴ', Kottayam: 'കോട്ടയം', Thiruvananthapuram: 'തിരുവനന്തപുരം', Kozhikode: 'കോഴിക്കോട്' },
+  ta: { Ernakulam: 'எர்ணாகுளம்', Thrissur: 'திருச்சூர்', Alappuzha: 'ஆலப்புழா', Kottayam: 'கோட்டயம்', Thiruvananthapuram: 'திருவனந்தபுரம்', Kozhikode: 'கோழிக்கோடு' },
+  hi: { Ernakulam: 'एर्नाकुलम', Thrissur: 'त्रिशूर', Alappuzha: 'अलप्पुझा', Kottayam: 'कोट्टायम', Thiruvananthapuram: 'तिरुवनंतपुरम', Kozhikode: 'कोझिकोड' }
+};
+
+const serviceTypes: Record<SupportedLanguage, Record<string, string>> = {
+  en: { 'Fast Passenger': 'Fast Passenger', 'Super Fast': 'Super Fast', Ordinary: 'Ordinary' },
+  ml: { 'Fast Passenger': 'ഫാസ്റ്റ് പാസഞ്ചർ', 'Super Fast': 'സൂപ്പർ ഫാസ്റ്റ്', Ordinary: 'ഓർഡിനറി' },
+  ta: { 'Fast Passenger': 'பாஸ்ட் பாссажиர்', 'Super Fast': 'சூப்பர் பாஸ்ட்', Ordinary: 'சாதாரண பேருந்து' },
+  hi: { 'Fast Passenger': 'फास्ट पैसेंजर', 'Super Fast': 'सुपर फास्ट', Ordinary: 'साधारण बस' }
+};
+
+const ksrtcRouteLabel: Record<SupportedLanguage, (r: string) => string> = {
+  en: (r) => `KSRTC Route ${r}`,
+  ml: (r) => `കെ.എസ്.ആർ.ടി.സി റൂട്ട് ${r}`,
+  ta: (r) => `கே.எஸ்.ஆர்.டி.சி வழித்தடம் ${r}`,
+  hi: (r) => `केएसआरटीसी रूट ${r}`
 };
 
 // Spoken greetings in each language
@@ -162,9 +319,29 @@ const languageGreetings: Record<SupportedLanguage, string> = {
 };
 
 /**
+ * Theme Manager: Light / Dark Mode with smooth animation
+ */
+function initTheme() {
+  const saved = localStorage.getItem('wiyo_theme');
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const isDark = saved ? saved === 'dark' : prefersDark;
+  if (isDark) {
+    document.documentElement.classList.add('dark');
+  } else {
+    document.documentElement.classList.remove('dark');
+  }
+}
+
+(window as any).toggleTheme = () => {
+  const isDark = document.documentElement.classList.toggle('dark');
+  localStorage.setItem('wiyo_theme', isDark ? 'dark' : 'light');
+};
+
+/**
  * Initialize on page load
  */
 window.addEventListener('DOMContentLoaded', async () => {
+  initTheme();
   const status = initAssistant();
   const statusEl = document.getElementById('system-status-text');
   if (statusEl) {
@@ -176,7 +353,7 @@ window.addEventListener('DOMContentLoaded', async () => {
   selectedOriginStop = stops.find((s) => s.id === 'ST_MAHARAJAS') || stops[0];
   selectedDestStop = stops.find((s) => s.id === 'ST_EDAPPALLY') || stops[1];
 
-  renderPopularStops();
+  updateUILanguage();
   detectGPSLocation();
 });
 
@@ -189,6 +366,18 @@ window.addEventListener('DOMContentLoaded', async () => {
   if (target) {
     target.classList.remove('hidden');
     target.scrollTop = 0;
+  }
+
+  const topBar = document.getElementById('phone-top-bar');
+  const brand = document.getElementById('mobile-top-brand');
+  if (topBar) {
+    if (screenId === 'screen-language') {
+      topBar.classList.remove('bg-surface');
+      if (brand) brand.className = 'text-[11px] font-extrabold text-white/90 tracking-wide drop-shadow-xs';
+    } else {
+      topBar.classList.add('bg-surface');
+      if (brand) brand.className = 'text-[11px] font-extrabold text-slate-700 dark:text-slate-200 tracking-wide';
+    }
   }
 
   if (screenId === 'screen-tracking') {
@@ -230,11 +419,6 @@ window.addEventListener('DOMContentLoaded', async () => {
     }
   });
 
-  const continueText = document.getElementById('lang-continue-text');
-  if (continueText) {
-    continueText.textContent = i18n[lang].continue;
-  }
-
   updateUILanguage();
 
   if (speakOnSelect) {
@@ -255,17 +439,111 @@ window.addEventListener('DOMContentLoaded', async () => {
 
 function updateUILanguage() {
   const strings = i18n[currentLanguage];
+
+  // Screen 1: Language Selection elements
+  const taglineEl = document.getElementById('lang-screen-tagline');
+  const instructionEl = document.getElementById('lang-screen-instruction');
+  const continueText = document.getElementById('lang-continue-text');
+  const disclaimerText = document.getElementById('lang-disclaimer-text');
+
+  if (taglineEl) taglineEl.textContent = 'Your journey, made simple.';
+  if (instructionEl) instructionEl.textContent = strings.chooseLang;
+  if (continueText) continueText.textContent = strings.continue;
+  if (disclaimerText) disclaimerText.textContent = strings.noLogin;
+
+  // Screen 2: Destination Selection elements
+  const screen2Title = document.getElementById('screen2-header-title');
   const greetingEl = document.getElementById('greeting-text');
   const whereTitle = document.getElementById('where-to-go-title');
   const whereSub = document.getElementById('where-to-go-sub');
-  const findBtn = document.getElementById('find-bus-btn-text');
+  const destInput = document.getElementById('destination-input') as HTMLInputElement;
+  const boardingLabel = document.getElementById('boarding-stop-label');
+  const gpsActiveBadge = document.getElementById('gps-active-badge-text');
   const resultsTitle = document.getElementById('results-header-title');
+  const findBtn = document.getElementById('find-bus-btn-text');
+  const mvdDisclaimer = document.getElementById('mvd-disclaimer-text');
 
+  if (screen2Title) screen2Title.textContent = strings.destSelection;
   if (greetingEl) greetingEl.textContent = strings.greeting;
   if (whereTitle) whereTitle.textContent = strings.whereTo;
   if (whereSub) whereSub.textContent = strings.whereToSub;
-  if (findBtn) findBtn.textContent = strings.findBus;
+  if (destInput) destInput.placeholder = strings.searchPlaceholder;
+  if (boardingLabel) boardingLabel.textContent = strings.boardingStop;
+  if (gpsActiveBadge) gpsActiveBadge.textContent = strings.gpsActive;
   if (resultsTitle) resultsTitle.textContent = strings.popularStops;
+  if (findBtn) findBtn.textContent = strings.findBus;
+  if (mvdDisclaimer) mvdDisclaimer.textContent = strings.mvdFaresNotice;
+
+  // Screen 3: Bus Details & Fare elements
+  const screen3Title = document.getElementById('screen3-header-title');
+  const destBannerLabel = document.getElementById('dest-banner-label');
+  const detailsBoardingLabel = document.getElementById('details-boarding-label');
+  const detailsWalkPill = document.getElementById('details-walk-pill');
+  const detailsWalkInstruction = document.getElementById('details-walk-instruction');
+  const detailsDepartsBayLabel = document.getElementById('details-departs-bay-label');
+  const detailsBoardHeaderLabel = document.getElementById('details-board-header-label');
+  const detailsProgressionTitle = document.getElementById('details-progression-title');
+  const detailsDirectLineBadge = document.getElementById('details-direct-line-badge');
+  const detailsEstimatedFareLabel = document.getElementById('details-estimated-fare-label');
+  const detailsConductorDisclaimer = document.getElementById('details-conductor-disclaimer');
+  const startJourneyBtnText = document.getElementById('start-journey-btn-text');
+  const savePassText = document.getElementById('save-pass-text');
+
+  if (screen3Title) screen3Title.textContent = strings.busDetails;
+  if (destBannerLabel) destBannerLabel.textContent = strings.destination;
+  if (detailsBoardingLabel) detailsBoardingLabel.textContent = strings.boardingPoint;
+  if (detailsWalkPill) detailsWalkPill.textContent = strings.walkSummary;
+  if (detailsWalkInstruction) detailsWalkInstruction.textContent = strings.walkInstruction;
+  if (detailsDepartsBayLabel) detailsDepartsBayLabel.textContent = strings.departsBay;
+  if (detailsBoardHeaderLabel) detailsBoardHeaderLabel.textContent = strings.busBoardHeader;
+  if (detailsProgressionTitle) detailsProgressionTitle.textContent = strings.routeProgression;
+  if (detailsDirectLineBadge) detailsDirectLineBadge.textContent = strings.directLine;
+  if (detailsEstimatedFareLabel) detailsEstimatedFareLabel.textContent = strings.estimatedFare;
+  if (detailsConductorDisclaimer) detailsConductorDisclaimer.textContent = strings.conductorDisclaimer;
+  if (startJourneyBtnText) startJourneyBtnText.textContent = strings.startJourney;
+  if (savePassText) savePassText.textContent = strings.savePass;
+
+  // Screen 4: Live Journey Tracking elements
+  const trackTitle = document.getElementById('track-title');
+  const trackGpsText = document.getElementById('track-gps-text');
+  const nextStopBtnText = document.getElementById('next-stop-btn-text');
+  const hudNextStopLabel = document.getElementById('hud-next-stop-label');
+  const hudTimeLabel = document.getElementById('hud-time-label');
+  const hudDistLabel = document.getElementById('hud-dist-label');
+  const alightingAlertTitle = document.getElementById('alighting-alert-title');
+  const alightingAlertPill = document.getElementById('alighting-alert-pill');
+  const repeatAudioBtnText = document.getElementById('repeat-audio-btn-text');
+  const speakSlowerBtnText = document.getElementById('speak-slower-btn-text');
+  const tripFinishBtnText = document.getElementById('trip-finish-btn-text');
+  const tripCompleteBanner = document.getElementById('trip-complete-banner');
+
+  if (trackTitle) trackTitle.textContent = strings.journeyProgress;
+  if (trackGpsText) trackGpsText.textContent = strings.gpsActive;
+  if (nextStopBtnText) nextStopBtnText.textContent = strings.nextStop;
+  if (hudNextStopLabel) hudNextStopLabel.textContent = strings.nextFinalStop;
+  if (hudTimeLabel) hudTimeLabel.textContent = strings.estTime;
+  if (hudDistLabel) hudDistLabel.textContent = strings.distance;
+  if (alightingAlertTitle) alightingAlertTitle.textContent = strings.alightingAlert;
+  if (alightingAlertPill) alightingAlertPill.textContent = strings.secAway;
+  if (repeatAudioBtnText) repeatAudioBtnText.textContent = strings.repeatAudio;
+  if (speakSlowerBtnText) speakSlowerBtnText.textContent = strings.speakSlower;
+  if (tripFinishBtnText) tripFinishBtnText.textContent = strings.tripCompleteBtn;
+  if (tripCompleteBanner) tripCompleteBanner.textContent = strings.tripCompleteBanner;
+
+  // Update dynamic content if plan exists
+  if (currentJourneyPlan) {
+    populateDetailsScreen(currentJourneyPlan);
+  }
+
+  // Update detected boarding stop text if already set
+  if (selectedOriginStop) {
+    const nameEl = document.getElementById('detected-stop-name');
+    const hintEl = document.getElementById('detected-stop-hint');
+    if (nameEl) nameEl.textContent = selectedOriginStop.names[currentLanguage] || selectedOriginStop.names.en;
+    if (hintEl && selectedOriginStop.landmarkHint) {
+      hintEl.textContent = `${selectedOriginStop.landmarkHint[currentLanguage] || selectedOriginStop.landmarkHint.en}.`;
+    }
+  }
 
   renderPopularStops();
 }
@@ -286,9 +564,9 @@ async function detectGPSLocation() {
     const hintEl = document.getElementById('detected-stop-hint');
 
     if (nameEl) nameEl.textContent = nearest.stop.names[currentLanguage] || nearest.stop.names.en;
-    if (distEl) distEl.textContent = `${nearest.distanceMeters}m walk from you`;
+    if (distEl) distEl.textContent = i18n[currentLanguage].walkFromYou(nearest.distanceMeters);
     if (hintEl && nearest.stop.landmarkHint) {
-      hintEl.textContent = `${nearest.stop.landmarkHint[currentLanguage] || nearest.stop.landmarkHint.en}. Auto-matched from location.`;
+      hintEl.textContent = `${nearest.stop.landmarkHint[currentLanguage] || nearest.stop.landmarkHint.en}.`;
     }
   }
 }
@@ -306,23 +584,25 @@ function renderPopularStops(candidates?: Stop[]) {
 
   stops.forEach((stop) => {
     const card = document.createElement('button');
-    card.className = 'w-full text-left bg-white hover:bg-surface-container-low active:scale-[0.99] p-3 rounded-xl shadow-xs border border-outline-variant/30 flex items-center justify-between transition-all';
+    card.className = 'w-full text-left bg-white dark:bg-slate-800 hover:bg-surface-container-low dark:hover:bg-slate-700/60 active:scale-[0.99] p-3 rounded-xl shadow-xs border border-outline-variant/30 dark:border-slate-700/50 flex items-center justify-between transition-all';
     card.onclick = () => {
       selectDestinationStop(stop);
     };
 
     const safeLocalName = escapeHtml(stop.names[currentLanguage] || stop.names.en);
-    const safeEnName = escapeHtml(stop.names.en);
-    const safeDistrict = escapeHtml(stop.district || 'Kerala');
+    const localDistrict = districtNames[currentLanguage][stop.district] || stop.district || 'Kerala';
+    const subline = currentLanguage === 'en'
+      ? `${escapeHtml(stop.names.en)} • ${escapeHtml(localDistrict)}`
+      : `${escapeHtml(localDistrict)}`;
 
     card.innerHTML = `
       <div class="flex items-center gap-3 min-w-0">
-        <div class="w-9 h-9 rounded-xl bg-teal-50 text-primary flex items-center justify-center shrink-0">
+        <div class="w-9 h-9 rounded-xl bg-teal-50 dark:bg-teal-900/40 text-primary flex items-center justify-center shrink-0">
           <span class="material-symbols-outlined text-[20px]">directions_bus</span>
         </div>
         <div class="flex flex-col min-w-0">
           <span class="font-bold text-sm text-on-surface truncate">${safeLocalName}</span>
-          <span class="text-xs text-on-surface-variant truncate">${safeEnName} • ${safeDistrict}</span>
+          <span class="text-xs text-on-surface-variant truncate">${subline}</span>
         </div>
       </div>
       <span class="material-symbols-outlined text-slate-400 text-[18px]">north_east</span>
@@ -365,8 +645,8 @@ function selectDestinationStop(stop: Stop) {
     if (container) {
       container.innerHTML = '';
       const noMatch = document.createElement('div');
-      noMatch.className = 'p-4 bg-slate-50 text-center rounded-xl text-xs text-slate-500';
-      noMatch.textContent = `No matching bus stop found for "${query}". Try searching in English, Malayalam, Tamil, or Hindi.`;
+      noMatch.className = 'p-4 bg-slate-50 dark:bg-slate-800 text-center rounded-xl text-xs text-slate-500 dark:text-slate-400';
+      noMatch.textContent = i18n[currentLanguage].noStopFound(query);
       container.appendChild(noMatch);
     }
   }
@@ -398,7 +678,7 @@ function selectDestinationStop(stop: Stop) {
 
   micBtn?.classList.add('bg-amber-500', 'text-white', 'animate-pulse');
   micBtn?.classList.remove('bg-teal-50', 'text-primary');
-  showToast('Listening...', `Listening in ${currentLanguage.toUpperCase()}... Speak stop or say "repeat" / "slower"`);
+  showToast('Listening...', `Listening in ${currentLanguage.toUpperCase()}...`);
 
   stopVoiceInputFn = startVoiceInput({
     lang: currentLanguage,
@@ -470,6 +750,7 @@ function executeFindBus() {
 
 function populateDetailsScreen(plan: JourneyPlan) {
   const leg = plan.legs[0];
+  const strings = i18n[currentLanguage];
 
   const destTitle = document.getElementById('details-dest-title');
   const boardName = document.getElementById('details-boarding-name');
@@ -485,20 +766,23 @@ function populateDetailsScreen(plan: JourneyPlan) {
   const fareAmount = document.getElementById('details-fare-amount');
   const fareBreakdown = document.getElementById('details-fare-breakdown');
 
-  if (destTitle) destTitle.textContent = plan.destination.names[currentLanguage] || plan.destination.names.en;
-  if (boardName) boardName.textContent = plan.origin.names[currentLanguage] || plan.origin.names.en;
-  if (boardLandmark) boardLandmark.textContent = plan.origin.landmarkHint?.[currentLanguage] || plan.origin.landmarkHint?.en || 'Boarding platform';
-  if (busDeparture) busDeparture.textContent = `${i18n[currentLanguage].recommended} • Departs in 6 mins`;
-  if (serviceBadge) serviceBadge.textContent = leg.serviceType;
-  if (routeNumber) routeNumber.textContent = `KSRTC ${leg.routeNumber}`;
+  const destName = plan.destination.names[currentLanguage] || plan.destination.names.en;
+  const originName = plan.origin.names[currentLanguage] || plan.origin.names.en;
+
+  if (destTitle) destTitle.textContent = destName;
+  if (boardName) boardName.textContent = originName;
+  if (boardLandmark) boardLandmark.textContent = plan.origin.landmarkHint?.[currentLanguage] || plan.origin.landmarkHint?.en || strings.boardingPoint;
+  if (busDeparture) busDeparture.textContent = `${strings.recommendedBus} • ${strings.departsInMins(6)}`;
+  if (serviceBadge) serviceBadge.textContent = serviceTypes[currentLanguage][leg.serviceType] || leg.serviceType;
+  if (routeNumber) routeNumber.textContent = ksrtcRouteLabel[currentLanguage](leg.routeNumber);
   if (routeName) routeName.textContent = leg.routeName;
   if (timePill) timePill.textContent = plan.departureTime;
-  if (boardHeader) boardHeader.textContent = leg.busBoardHeader[currentLanguage] || leg.busBoardHeader.en;
-  if (durationPill) durationPill.textContent = `~${plan.totalDurationMins} mins`;
-  if (stopsCount) stopsCount.textContent = `${leg.intermediateStops.length + 1} intermediate stops`;
+  if (boardHeader) boardHeader.textContent = strings.towardsVia(destName, leg.routeNumber);
+  if (durationPill) durationPill.textContent = strings.rideDuration(plan.totalDurationMins);
+  if (stopsCount) stopsCount.textContent = strings.intermediateStops(leg.intermediateStops.length + 1);
   if (fareAmount) fareAmount.textContent = `₹${plan.totalFare.amount}.00`;
   if (fareBreakdown) {
-    fareBreakdown.textContent = `Base fare: ₹${plan.totalFare.baseFare}.00 • Distance stages: ₹${plan.totalFare.stageFare}.00`;
+    fareBreakdown.textContent = strings.fareBreakdown(plan.totalFare.baseFare, plan.totalFare.stageFare);
   }
 
   // Render schematic nodes
@@ -506,18 +790,19 @@ function populateDetailsScreen(plan: JourneyPlan) {
   if (schematicContainer) {
     const allStopNodes = [plan.origin, ...leg.intermediateStops.slice(0, 2), plan.destination];
     schematicContainer.innerHTML = `
-      <div class="absolute left-4 right-4 top-4 h-1 bg-slate-200 -z-0"></div>
+      <div class="absolute left-4 right-4 top-4 h-1 bg-slate-200 dark:bg-slate-700 -z-0"></div>
       <div class="absolute left-4 right-1/3 top-4 h-1 bg-primary -z-0"></div>
       ${allStopNodes.map((node, i) => {
       const isFirst = i === 0;
       const isLast = i === allStopNodes.length - 1;
+      const nodeLabel = isFirst ? strings.boardNode : isLast ? strings.alightNode : strings.stopNode;
       return `
           <div class="flex flex-col items-center z-10 text-center w-1/4">
             <div class="w-6 h-6 rounded-full ${isFirst ? 'bg-primary text-white' : isLast ? 'bg-amber-600 text-white' : 'bg-primary text-white'} flex items-center justify-center shadow">
               <span class="material-symbols-outlined text-[12px]">${isFirst ? 'departure_board' : isLast ? 'pin_drop' : 'circle'}</span>
             </div>
             <span class="text-[10px] font-bold text-on-surface mt-1 truncate max-w-[70px]">${escapeHtml(node.names[currentLanguage] || node.names.en)}</span>
-            <span class="text-[9px] ${isFirst ? 'text-primary font-bold' : isLast ? 'text-amber-700 font-bold' : 'text-slate-400'}">${isFirst ? '(Board)' : isLast ? '(Alight)' : 'Stop'}</span>
+            <span class="text-[9px] ${isFirst ? 'text-primary font-bold' : isLast ? 'text-amber-600 dark:text-amber-400 font-bold' : 'text-slate-400 dark:text-slate-500'}">${nodeLabel}</span>
           </div>
         `;
     }).join('')}
@@ -527,6 +812,8 @@ function populateDetailsScreen(plan: JourneyPlan) {
 
 /**
  * Speak Route Details
+ * FIX: Only use pre-cached phraseKey for the exact default demo route (Maharajas -> Edappally, 12A, Rs 22).
+ * For ALL other stops and fares, synthesize dynamically with the exact selected place and calculated fare!
  */
 (window as any).speakRouteDetails = () => {
   if (!currentJourneyPlan) return;
@@ -536,16 +823,22 @@ function populateDetailsScreen(plan: JourneyPlan) {
 
   let phrase = `Please take bus Route ${leg.routeNumber} from ${originName} towards ${destName}. Estimated fare is ${currentJourneyPlan.totalFare.amount} rupees.`;
   if (currentLanguage === 'ml') {
-    phrase = `${originName}ൽ നിന്ന് ${destName} ലേക്ക് റൂട്ട് ${leg.routeNumber} ബസ് കയറുക. പ്രതീക്ഷിക്കുന്ന നിരക്ക് ${currentJourneyPlan.totalFare.amount} രൂപ.`;
+    phrase = `${originName}ൽ നിന്ന് ${destName}ലേക്ക് റൂട്ട് ${leg.routeNumber} ബസ് കയറുക. പ്രതീക്ഷിക്കുന്ന നിരക്ക് ${currentJourneyPlan.totalFare.amount} രൂപ.`;
   } else if (currentLanguage === 'ta') {
     phrase = `${originName} முதல் ${destName} வரை செல்லும் பேருந்து ${leg.routeNumber} இல் செல்லவும். கட்டணம் ${currentJourneyPlan.totalFare.amount} ரூபாய்.`;
   } else if (currentLanguage === 'hi') {
     phrase = `${originName} से ${destName} के लिए बस रूट ${leg.routeNumber} लें। अनुमानित किराया ${currentJourneyPlan.totalFare.amount} रुपये है।`;
   }
 
+  const isDefaultDemoRoute =
+    currentJourneyPlan.origin.id === 'ST_MAHARAJAS' &&
+    currentJourneyPlan.destination.id === 'ST_EDAPPALLY' &&
+    leg.routeNumber === '12A' &&
+    currentJourneyPlan.totalFare.amount === 22;
+
   showToast('Voice Audio', phrase);
   speakText(phrase, currentLanguage, 1.0, {
-    phraseKey: `${currentLanguage}_route_details`,
+    phraseKey: isDefaultDemoRoute ? `${currentLanguage}_route_details` : undefined,
     onError: (err) => showToast('Voice Notice', typeof err === 'string' ? err : 'Speech playback error')
   });
 };
@@ -555,6 +848,23 @@ function populateDetailsScreen(plan: JourneyPlan) {
  */
 (window as any).startLiveJourneyFromDetails = () => {
   if (!currentJourneyPlan) return;
+  const leg = currentJourneyPlan.legs[0];
+  const destName = currentJourneyPlan.destination.names[currentLanguage] || currentJourneyPlan.destination.names.en;
+  const trackRouteBadge = document.getElementById('track-route-badge');
+  const trackDestBadge = document.getElementById('track-dest-badge');
+  const trackServicePill = document.getElementById('track-service-pill');
+
+  if (trackRouteBadge) trackRouteBadge.textContent = ksrtcRouteLabel[currentLanguage](leg.routeNumber);
+  if (trackDestBadge) {
+    trackDestBadge.textContent = currentLanguage === 'ml'
+      ? `${destName} ലേക്ക്`
+      : currentLanguage === 'ta'
+        ? `${destName} நோக்கி`
+        : currentLanguage === 'hi'
+          ? `${destName} की ओर`
+          : `To ${destName}`;
+  }
+  if (trackServicePill) trackServicePill.textContent = serviceTypes[currentLanguage][leg.serviceType] || leg.serviceType;
   (window as any).goToScreen('screen-tracking');
 };
 
@@ -682,8 +992,9 @@ async function initLiveLeafletMap() {
         : `Journey started on Route ${leg.routeNumber}. Live GPS tracking is active.`;
 
   showToast('Trip Started', startMsg);
+  const isDefaultDemoStart = leg.routeNumber === '12A';
   speakText(startMsg, currentLanguage, 1.0, {
-    phraseKey: `${currentLanguage}_journey_start`,
+    phraseKey: isDefaultDemoStart ? `${currentLanguage}_journey_start` : undefined,
     onError: (err) => showToast('Voice Notice', typeof err === 'string' ? err : 'Speech playback error')
   });
 
@@ -733,7 +1044,7 @@ function handleGpsUpdate(result: ReturnType<JourneyTracker['updatePosition']>) {
   }
 
   if (speedText) {
-    speedText.textContent = `${result.progress.speedKmh} km/h • GPS Active`;
+    speedText.textContent = i18n[currentLanguage].speedGps(result.progress.speedKmh);
   }
 
   // Update Bus Marker Position on Map
@@ -748,6 +1059,11 @@ function handleGpsUpdate(result: ReturnType<JourneyTracker['updatePosition']>) {
     });
 
     const stopName = result.approachingStop.names[currentLanguage] || result.approachingStop.names.en;
+    const alertSubtext = document.getElementById('alert-stop-subtext');
+    const alertStopHeading = document.getElementById('alert-stop-heading');
+    if (alertStopHeading) alertStopHeading.textContent = stopName;
+    if (alertSubtext) alertSubtext.textContent = i18n[currentLanguage].alightReadyDesc(stopName);
+
     const announcement = currentLanguage === 'ml'
       ? `ശ്രദ്ധിക്കുക. നിങ്ങളുടെ സ്റ്റോപ്പ് ${stopName} 30 സെക്കൻഡിൽ എത്തും. ഇറങ്ങാൻ തയ്യാറാകുക.`
       : currentLanguage === 'ta'
@@ -756,8 +1072,9 @@ function handleGpsUpdate(result: ReturnType<JourneyTracker['updatePosition']>) {
           ? `ध्यान दें। आपका स्टॉप ${stopName} 30 सेकंड में आने वाला है।`
           : `Attention. Your stop ${stopName} is approaching in 30 seconds. Please get ready to alight.`;
 
+    const isDefaultDemoAlert = result.approachingStop.id === 'ST_EDAPPALLY';
     speakText(announcement, currentLanguage, 1.0, {
-      phraseKey: `${currentLanguage}_stop_alert`,
+      phraseKey: isDefaultDemoAlert ? `${currentLanguage}_stop_alert` : undefined,
       onError: (err) => showToast('Voice Notice', typeof err === 'string' ? err : 'Speech playback error')
     });
   }
@@ -815,9 +1132,12 @@ function handleGpsUpdate(result: ReturnType<JourneyTracker['updatePosition']>) {
   const banner = document.getElementById('trip-complete-banner');
   if (btn) {
     btn.classList.add('opacity-60', 'pointer-events-none');
-    btn.innerHTML = '<span class="material-symbols-outlined text-[20px]">check</span> Trip Finished';
+    btn.innerHTML = `<span class="material-symbols-outlined text-[20px]">check</span> ${i18n[currentLanguage].tripFinishedDone}`;
   }
-  if (banner) banner.classList.remove('hidden');
+  if (banner) {
+    banner.textContent = i18n[currentLanguage].tripCompleteBanner;
+    banner.classList.remove('hidden');
+  }
 
   const finishMsg = currentLanguage === 'ml'
     ? 'നിങ്ങൾ സുരക്ഷിതമായി ലക്ഷ്യസ്ഥാനത്ത് എത്തിച്ചേർന്നു. നന്ദി.'

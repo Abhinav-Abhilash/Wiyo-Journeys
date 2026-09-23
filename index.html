@@ -70,37 +70,31 @@
     ::-webkit-scrollbar { width: 6px; height: 6px; }
     ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
     
-    /* Device frame wrapper for laptop mode with scenic KSRTC Kerala rainforest background */
+    /* Device frame wrapper for laptop mode: clean plain dark background without image */
     .laptop-canvas {
       min-height: 100vh;
-      background-image:
-        radial-gradient(circle at 50% 20%, rgba(15, 23, 42, 0.45) 0%, rgba(11, 28, 48, 0.78) 100%),
-        url('/images/bg-desktop.jpg');
-      background-size: cover;
-      background-position: center 38%;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
+      background-color: #090d16;
+      background-image: radial-gradient(circle at 50% 30%, #151d2e 0%, #07090f 100%);
     }
 
-    /* Mobile phone container with portrait KSRTC background and frosted glass */
+    /* Mobile phone container with KSRTC bus photo background + dark gradient overlay inside frame */
     .mobile-ksrtc-bg {
       background-image:
-        linear-gradient(180deg, rgba(248, 249, 255, 0.88) 0%, rgba(240, 244, 255, 0.93) 48%, rgba(235, 240, 255, 0.97) 100%),
-        url('/images/bg-mobile.jpg');
+        linear-gradient(180deg, rgba(11, 18, 30, 0.62) 0%, rgba(11, 18, 30, 0.70) 50%, rgba(6, 10, 18, 0.80) 100%),
+        url('/images/bg-desktop.jpg');
       background-size: cover;
-      background-position: center top;
+      background-position: center;
       background-repeat: no-repeat;
+    }
+
+    #phone-container {
+      overflow: hidden;
     }
 
     @media (max-width: 767px) {
       body {
-        background-image:
-          linear-gradient(180deg, rgba(248, 249, 255, 0.88) 0%, rgba(240, 244, 255, 0.93) 48%, rgba(235, 240, 255, 0.97) 100%),
-          url('/images/bg-mobile.jpg');
-        background-size: cover;
-        background-position: center top;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
+        background-color: #090d16;
+        background-image: none;
       }
     }
 
@@ -128,6 +122,293 @@
       border-radius: 50%;
       box-shadow: 0 2px 6px rgba(0,0,0,0.15);
     }
+
+    /* ======================================================== */
+    /* Custom Animated Day/Night Toggle Pill (Reference Image)  */
+    /* ======================================================== */
+    .theme-toggle-switch {
+      position: relative;
+      width: 78px;
+      height: 34px;
+      border-radius: 9999px;
+      padding: 0;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      outline: none;
+      overflow: visible;
+      flex-shrink: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .theme-toggle-switch .toggle-track {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 9999px;
+      overflow: hidden;
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.25), 0 2px 8px rgba(0, 0, 0, 0.2);
+      border: 1.5px solid rgba(255, 255, 255, 0.4);
+      transition: border-color 0.4s ease;
+    }
+
+    .dark .theme-toggle-switch .toggle-track {
+      border-color: rgba(255, 255, 255, 0.2);
+      box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.6), 0 2px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    .theme-toggle-switch .sky-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 9999px;
+      transition: opacity 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Day Sky: Sky blue gradient */
+    .theme-toggle-switch .day-bg {
+      background: linear-gradient(180deg, #4298f0 0%, #6eb2f8 50%, #99cafb 100%);
+      opacity: 1;
+    }
+    .dark .theme-toggle-switch .day-bg {
+      opacity: 0;
+    }
+
+    /* Concentric Day Rings radiating from Sun on left */
+    .day-rings {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .day-ring {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.18);
+    }
+    .day-ring.ring-1 { width: 54px; height: 54px; left: -9px; top: -10px; }
+    .day-ring.ring-2 { width: 74px; height: 74px; left: -19px; top: -20px; }
+    .day-ring.ring-3 { width: 96px; height: 96px; left: -30px; top: -31px; }
+
+    /* Clouds Layer */
+    .clouds-layer {
+      position: absolute;
+      right: -2px;
+      bottom: -2px;
+      width: 54px;
+      height: 26px;
+      pointer-events: none;
+      transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.4s ease;
+    }
+    .clouds-svg { width: 100%; height: 100%; }
+    .dark .clouds-layer {
+      transform: translateY(18px);
+      opacity: 0;
+    }
+
+    /* Night Sky: Deep navy to midnight black gradient */
+    .theme-toggle-switch .night-bg {
+      background: linear-gradient(180deg, #070d18 0%, #0d1627 50%, #152238 100%);
+      opacity: 0;
+    }
+    .dark .theme-toggle-switch .night-bg {
+      opacity: 1;
+    }
+
+    /* Concentric Night Rings radiating from Moon on right */
+    .night-rings {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .night-ring {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(85, 105, 130, 0.22);
+    }
+    .night-ring.ring-1 { width: 54px; height: 54px; right: -9px; top: -10px; }
+    .night-ring.ring-2 { width: 74px; height: 74px; right: -19px; top: -20px; }
+    .night-ring.ring-3 { width: 96px; height: 96px; right: -30px; top: -31px; }
+
+    /* Stars Layer */
+    .stars-layer {
+      position: absolute;
+      left: 3px;
+      top: 2px;
+      width: 42px;
+      height: 26px;
+      pointer-events: none;
+      transform: translateY(-12px);
+      opacity: 0;
+      transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.4s ease;
+    }
+    .dark .stars-layer {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    .stars-svg { width: 100%; height: 100%; }
+    .star-pulse-1 { animation: starTwinkle 3s ease-in-out infinite; }
+    .star-pulse-2 { animation: starTwinkle 3s ease-in-out 1.5s infinite; }
+    @keyframes starTwinkle {
+      0%, 100% { opacity: 0.95; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+
+    /* Slider Thumb (Sun / Moon) */
+    .theme-toggle-switch .toggle-thumb {
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 27px;
+      height: 27px;
+      border-radius: 50%;
+      z-index: 10;
+      transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+    }
+    .dark .theme-toggle-switch .toggle-thumb {
+      transform: translateX(44px);
+    }
+
+    /* Sun Face */
+    .theme-toggle-switch .sun-face {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: #ffcc00;
+      box-shadow: inset 0 -2px 3px rgba(180, 120, 0, 0.3), inset 0 2px 3px rgba(255, 255, 255, 0.5), 0 0 12px rgba(255, 204, 0, 0.7);
+      opacity: 1;
+      transform: scale(1) rotate(0deg);
+      transition: opacity 0.35s ease, transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .dark .theme-toggle-switch .sun-face {
+      opacity: 0;
+      transform: scale(0.5) rotate(-90deg);
+    }
+
+    /* Moon Face */
+    .theme-toggle-switch .moon-face {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: #bcc3cf;
+      box-shadow: inset 0 -2px 4px rgba(0, 0, 0, 0.35), inset 0 2px 3px rgba(255, 255, 255, 0.6), 0 0 10px rgba(188, 195, 207, 0.35);
+      opacity: 0;
+      transform: scale(0.5) rotate(90deg);
+      transition: opacity 0.35s ease, transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .dark .theme-toggle-switch .moon-face {
+      opacity: 1;
+      transform: scale(1) rotate(0deg);
+    }
+
+    /* Moon Craters */
+    .theme-toggle-switch .crater {
+      position: absolute;
+      border-radius: 50%;
+      background: #667284;
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.4), 0 0.5px 1px rgba(255, 255, 255, 0.3);
+    }
+    .theme-toggle-switch .crater-lg { width: 7px; height: 7px; top: 4.5px; right: 5.5px; }
+    .theme-toggle-switch .crater-md { width: 5px; height: 5px; bottom: 5px; right: 9px; }
+    .theme-toggle-switch .crater-sm1 { width: 4.5px; height: 4.5px; top: 10px; left: 6px; }
+    .theme-toggle-switch .crater-sm2 { width: 3px; height: 3px; bottom: 4.5px; left: 8px; }
+
+    /* ======================================================== */
+    /* Dark Mode Theme Color Overrides                          */
+    /* ======================================================== */
+    html.dark {
+      color-scheme: dark;
+    }
+    .dark body {
+      background-color: #0b111e;
+      color: #f1f5f9;
+    }
+    .dark .laptop-canvas {
+      background-color: #070a12;
+      background-image: radial-gradient(circle at 50% 30%, #111726 0%, #05070c 100%);
+    }
+    .dark .mobile-ksrtc-bg {
+      background-image:
+        linear-gradient(180deg, rgba(11, 18, 30, 0.65) 0%, rgba(11, 18, 30, 0.72) 50%, rgba(6, 10, 18, 0.82) 100%),
+        url('/images/bg-desktop.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .dark #phone-container {
+      border-color: #1e293b;
+      box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.9), 0 0 0 10px #0f172a, 0 0 0 12px #1e293b;
+    }
+    .dark .bg-surface {
+      background-color: #0f172a !important;
+    }
+    .dark .bg-surface\/90 {
+      background-color: rgba(15, 23, 42, 0.92) !important;
+    }
+    .dark .bg-white {
+      background-color: #1e293b !important;
+      color: #f8fafc !important;
+      border-color: rgba(51, 65, 85, 0.6) !important;
+    }
+    .dark .bg-surface-container-low {
+      background-color: #141f33 !important;
+      border-color: rgba(51, 65, 85, 0.5) !important;
+    }
+    .dark .bg-surface-container {
+      background-color: #18243c !important;
+    }
+    .dark .bg-surface-container-high {
+      background-color: #1e2d4a !important;
+      color: #e2e8f0 !important;
+    }
+    .dark .text-on-surface {
+      color: #f8fafc !important;
+    }
+    .dark .text-on-surface-variant {
+      color: #94a3b8 !important;
+    }
+    .dark .text-secondary {
+      color: #94a3b8 !important;
+    }
+    .dark input#destination-input {
+      color: #f8fafc !important;
+    }
+    .dark input#destination-input::placeholder {
+      color: #64748b !important;
+    }
+    .dark .lang-opt:not(.bg-primary) {
+      background-color: #1e293b !important;
+      color: #f8fafc !important;
+      border-color: rgba(51, 65, 85, 0.6) !important;
+    }
+    .dark .border-outline-variant\/30,
+    .dark .border-outline-variant\/20,
+    .dark .border-outline-variant\/40 {
+      border-color: rgba(51, 65, 85, 0.6) !important;
+    }
+    .dark .bg-teal-50 {
+      background-color: rgba(15, 118, 110, 0.2) !important;
+    }
+    .dark .bg-amber-50 {
+      background-color: rgba(120, 53, 15, 0.25) !important;
+      border-color: rgba(180, 83, 9, 0.4) !important;
+      color: #fef3c7 !important;
+    }
+    .dark .border-slate-100 {
+      border-color: rgba(51, 65, 85, 0.5) !important;
+    }
+    .dark #live-leaflet-map {
+      filter: brightness(0.9) contrast(1.05);
+    }
   </style>
   <script>
     // Clean up any stale service workers from prior projects on localhost
@@ -145,22 +426,24 @@
   <!-- Desktop Device & Layout Toolbar (Visible on Laptop screens) -->
   <div id="desktop-toolbar" class="hidden md:flex items-center justify-between px-6 py-3 bg-slate-900 text-white shadow-md sticky top-0 z-[100]">
     <div class="flex items-center gap-3">
-      <img src="/public/logo.svg" alt="Wiyo Journeys Logo" class="w-8 h-8 rounded-lg object-contain" onerror="this.src='/logo.svg'"/>
+      <img src="/logo.svg" alt="Wiyo Journeys Logo" class="w-8 h-8 rounded-lg object-contain"/>
       <div>
         <h1 class="text-sm font-bold tracking-wide">Wiyo Journeys • Multilingual Route & Fare Assistant</h1>
         <p class="text-xs text-slate-400">ANAVANDI FutureBuild 2026 • Problem Statement PS-02</p>
       </div>
     </div>
     
-    <div class="flex items-center gap-2 bg-slate-800 p-1 rounded-xl border border-slate-700">
-      <button id="btn-view-mobile" class="px-3 py-1.5 rounded-lg text-xs font-bold transition-colors bg-teal-600 text-white flex items-center gap-1.5" onclick="setAppLayout('mobile')">
-        <span class="material-symbols-outlined text-[16px]">smartphone</span>
-        Mobile View
-      </button>
-      <button id="btn-view-desktop" class="px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors text-slate-300 hover:text-white flex items-center gap-1.5" onclick="setAppLayout('desktop')">
-        <span class="material-symbols-outlined text-[16px]">desktop_windows</span>
-        Laptop View
-      </button>
+    <div class="flex items-center gap-3">
+      <div class="flex items-center gap-2 bg-slate-800 p-1 rounded-xl border border-slate-700">
+        <button id="btn-view-mobile" class="px-3 py-1.5 rounded-lg text-xs font-bold transition-colors bg-teal-600 text-white flex items-center gap-1.5" onclick="setAppLayout('mobile')">
+          <span class="material-symbols-outlined text-[16px]">smartphone</span>
+          Mobile View
+        </button>
+        <button id="btn-view-desktop" class="px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors text-slate-300 hover:text-white flex items-center gap-1.5" onclick="setAppLayout('desktop')">
+          <span class="material-symbols-outlined text-[16px]">desktop_windows</span>
+          Laptop View
+        </button>
+      </div>
     </div>
 
     <!-- Status & Connectivity pill -->
@@ -178,6 +461,50 @@
     <!-- Phone / App Container -->
     <div id="phone-container" class="w-full md:max-w-[420px] md:rounded-[40px] overflow-hidden mobile-ksrtc-bg flex flex-col min-h-screen md:min-h-[860px] md:max-h-[900px] shadow-2xl relative md:border-[8px] md:border-slate-800">
       
+      <!-- Mobile Top Bar with Status and Animated Day / Night Switch -->
+      <div id="phone-top-bar" class="w-full px-5 pt-3 pb-1 flex items-center justify-between z-30 shrink-0 select-none transition-colors duration-200">
+        <div class="flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span id="mobile-top-brand" class="text-[11px] font-extrabold text-white/90 tracking-wide drop-shadow-xs">WIYO • KSRTC</span>
+        </div>
+        <!-- Mobile Day / Night Toggle Switch -->
+        <button class="theme-toggle-switch" aria-label="Toggle light and dark mode" onclick="toggleTheme()" title="Toggle Light / Dark mode">
+          <div class="toggle-track">
+            <div class="sky-bg day-bg">
+              <div class="day-rings"><div class="day-ring ring-1"></div><div class="day-ring ring-2"></div><div class="day-ring ring-3"></div></div>
+              <div class="clouds-layer">
+                <svg class="clouds-svg" viewBox="0 0 75 36" fill="none">
+                  <path d="M12 36c0-6 4.5-11 10.5-11 1.2 0 2.3.2 3.4.6C28 20.2 33 16 39 16c6.8 0 12.4 5.2 13 12 1.3-.6 2.8-1 4.5-1 5.8 0 10.5 4.7 10.5 10.5v-.5H12z" fill="rgba(255, 255, 255, 0.45)"/>
+                  <path d="M22 36c0-5 3.8-9 8.8-9 1 0 2 .2 2.8.5C35.2 23 39.5 19.5 44.5 19.5c5.7 0 10.4 4.3 10.9 10 1.1-.5 2.4-.8 3.8-.8 4.9 0 8.8 4 8.8 8.8v-.5H22z" fill="rgba(255, 255, 255, 0.7)"/>
+                  <path d="M30 36c0-4.5 3.5-8 8-8 .9 0 1.8.2 2.5.5C42 24.5 46 21 51 21c5.2 0 9.5 4 10 9.2 1-.5 2.2-.7 3.5-.7 4.4 0 8 3.6 8 8v-.5H30z" fill="#ffffff"/>
+                </svg>
+              </div>
+            </div>
+            <div class="sky-bg night-bg">
+              <div class="night-rings"><div class="night-ring ring-1"></div><div class="night-ring ring-2"></div><div class="night-ring ring-3"></div></div>
+              <div class="stars-layer">
+                <svg class="stars-svg" viewBox="0 0 50 32" fill="none">
+                  <path class="star star-pulse-1" d="M11 6L12.5 10L16.5 11.5L12.5 13L11 17L9.5 13L5.5 11.5L9.5 10Z" fill="#ffffff"/>
+                  <path class="star star-pulse-2" d="M24 16L25 18.5L27.5 19.5L25 20.5L24 23L23 20.5L20.5 19.5L23 18.5Z" fill="#ffffff"/>
+                  <circle cx="21" cy="7" r="1" fill="#ffffff" opacity="0.9"/>
+                  <circle cx="8" cy="24" r="0.8" fill="#ffffff" opacity="0.8"/>
+                  <circle cx="33" cy="9" r="0.9" fill="#ffffff" opacity="0.7"/>
+                </svg>
+              </div>
+            </div>
+            <div class="toggle-thumb">
+              <div class="sun-face"></div>
+              <div class="moon-face">
+                <span class="crater crater-lg"></span>
+                <span class="crater crater-md"></span>
+                <span class="crater crater-sm1"></span>
+                <span class="crater crater-sm2"></span>
+              </div>
+            </div>
+          </div>
+        </button>
+      </div>
+
       <!-- In-App Floating Audio Toast / Alert Banner -->
       <div id="inapp-toast" class="hidden fixed md:absolute top-4 left-4 right-4 z-[900] bg-slate-900 text-white px-4 py-3 rounded-2xl shadow-xl border border-slate-700 flex items-center gap-3 transition-all duration-300 transform">
         <div class="w-9 h-9 rounded-full bg-amber-500 text-slate-950 flex items-center justify-center shrink-0">
@@ -193,29 +520,14 @@
       <!-- SCREEN 1: LANGUAGE SELECTION                                   -->
       <!-- ============================================================== -->
       <div id="screen-language" class="screen flex-1 flex flex-col justify-between p-6 bg-transparent">
-        <div class="flex flex-col items-center text-center mt-2">
-          <!-- Kerala KSRTC Rainforest Bus Hero Card -->
-          <div class="relative w-full overflow-hidden rounded-2xl mb-3 shadow-md border border-slate-700/20 group">
-            <img src="/images/bg-desktop.jpg" alt="Kerala KSRTC Bus in Misty Rainforest" class="w-full h-28 object-cover object-center filter brightness-95 transform group-hover:scale-105 transition-transform duration-700"/>
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-900/35 to-transparent flex items-end p-3">
-              <div class="flex items-center justify-between w-full">
-                <div class="flex items-center gap-1.5">
-                  <span class="px-2 py-0.5 rounded-md bg-amber-500 text-slate-950 font-black text-[10px] tracking-wider uppercase">KSRTC • ആനവണ്ടി</span>
-                  <span class="text-white text-xs font-semibold drop-shadow">Kerala Transit</span>
-                </div>
-                <span class="text-[10px] text-emerald-300 font-semibold bg-emerald-950/70 px-2 py-0.5 rounded border border-emerald-600/40">MVD Verified</span>
-              </div>
-            </div>
-          </div>
-
-          <h1 class="text-2xl font-extrabold text-on-surface tracking-tight">Wiyo Journeys</h1>
-          <p class="text-xs text-on-surface-variant mt-0.5">
-            Your journey, made simple. • യാത്രകൾ ഇനി ലളിതം
+        <div class="flex flex-col items-center text-center pt-3 pb-1">
+          <h1 class="text-3xl font-extrabold text-white tracking-tight drop-shadow-md">Wiyo Journeys</h1>
+          <p class="text-xs text-slate-200 mt-1 font-medium drop-shadow-xs" id="lang-screen-tagline">
+            Your journey, made simple.
           </p>
 
-          <div class="mt-4 mb-1">
-            <h2 class="text-base font-bold text-on-surface">Choose your language</h2>
-            <p class="text-xs font-semibold text-primary mt-0.5">നിങ്ങളുടെ ഭാഷ തിരഞ്ഞെടുക്കുക</p>
+          <div class="mt-6 mb-1">
+            <h2 class="text-base font-bold text-white drop-shadow-xs" id="lang-screen-instruction">നിങ്ങളുടെ ഭാഷ തിരഞ്ഞെടുക്കുക</h2>
           </div>
         </div>
 
@@ -226,7 +538,7 @@
             <div class="min-w-0 pr-2">
               <div class="flex items-center gap-2">
                 <span class="font-bold text-base">English</span>
-                <span class="text-[10px] uppercase font-bold bg-primary-fixed text-on-primary px-2 py-0.5 rounded-full">Default</span>
+                <span class="text-[10px] uppercase font-bold bg-primary-fixed text-on-primary px-2 py-0.5 rounded-full" id="lang-default-badge">Default</span>
               </div>
               <p class="text-xs text-primary-fixed opacity-95 mt-1">Plan your bus journey with ease</p>
             </div>
@@ -243,7 +555,6 @@
             <div class="min-w-0 pr-2">
               <div class="flex items-center gap-2">
                 <span class="font-bold text-base">മലയാളം</span>
-                <span class="text-xs text-on-surface-variant">Malayalam</span>
               </div>
               <p class="text-xs text-on-surface-variant mt-1">കേരളത്തിലെ ബസ് യാത്രകൾ എളുപ്പമാക്കൂ</p>
             </div>
@@ -260,7 +571,6 @@
             <div class="min-w-0 pr-2">
               <div class="flex items-center gap-2">
                 <span class="font-bold text-base">தமிழ்</span>
-                <span class="text-xs text-on-surface-variant">Tamil</span>
               </div>
               <p class="text-xs text-on-surface-variant mt-1">உங்கள் பேருந்து பயணத்தை எளிதாக்குங்கள்</p>
             </div>
@@ -277,7 +587,6 @@
             <div class="min-w-0 pr-2">
               <div class="flex items-center gap-2">
                 <span class="font-bold text-base">हिंदी</span>
-                <span class="text-xs text-on-surface-variant">Hindi</span>
               </div>
               <p class="text-xs text-on-surface-variant mt-1">सरल और सुगम बस यात्रा</p>
             </div>
@@ -293,13 +602,13 @@
         <!-- Continue Button & Disclaimer -->
         <div class="flex flex-col gap-3 mb-2">
           <button id="lang-continue-btn" class="w-full h-13 py-3.5 bg-primary hover:bg-primary-container text-white font-bold rounded-2xl shadow-lg flex items-center justify-center gap-2 active:scale-[0.98] transition-all" onclick="goToScreen('screen-destination')">
-            <span id="lang-continue-text">Continue • തുടർന്ന് പോകുക</span>
+            <span id="lang-continue-text">Continue</span>
             <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
           </button>
           
-          <div class="flex items-center justify-center gap-1.5 text-on-surface-variant text-xs">
-            <span class="material-symbols-outlined text-[16px] text-primary">bolt</span>
-            <span>No login required • 100% Offline Ready</span>
+          <div class="flex items-center justify-center gap-1.5 text-slate-300 text-xs">
+            <span class="material-symbols-outlined text-[16px] text-teal-400">bolt</span>
+            <span id="lang-disclaimer-text">No login required • 100% Offline Ready</span>
           </div>
         </div>
       </div>
@@ -314,10 +623,10 @@
             <button class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface hover:bg-surface-container" onclick="goToScreen('screen-language')" title="Back to Language Selection">
               <span class="material-symbols-outlined text-[22px]">arrow_back</span>
             </button>
-            <img src="/public/logo.svg" alt="Wiyo Journeys Logo" class="w-6 h-6 rounded-lg object-contain" onerror="this.src='/logo.svg'"/>
+            <img src="/logo.svg" alt="Wiyo Journeys Logo" class="w-6 h-6 rounded-lg object-contain"/>
             <div>
               <span class="text-[10px] text-primary font-bold uppercase tracking-wider block leading-none">Wiyo Journeys</span>
-              <h2 class="text-xs font-bold text-on-surface">Destination Selection</h2>
+              <h2 class="text-xs font-bold text-on-surface" id="screen2-header-title">Destination Selection</h2>
             </div>
           </div>
           <button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-primary" onclick="goToScreen('screen-language')" title="Change Language">
@@ -330,10 +639,10 @@
           <div>
             <div class="flex items-center gap-1.5">
               <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-              <span class="text-xs font-bold text-primary uppercase" id="greeting-text">Good morning! • സുപ്രഭാതം!</span>
+              <span class="text-xs font-bold text-primary uppercase" id="greeting-text">Good morning!</span>
             </div>
             <h3 class="text-xl font-extrabold text-on-surface mt-1" id="where-to-go-title">Where do you want to go?</h3>
-            <p class="text-xs text-on-surface-variant" id="where-to-go-sub">എങ്ങോട്ടാണ് പോകേണ്ടത്?</p>
+            <p class="text-xs text-on-surface-variant" id="where-to-go-sub">Enter stop or destination</p>
           </div>
 
           <!-- Search Input & Voice Mic -->
@@ -361,21 +670,22 @@
                 </div>
                 <div>
                   <div class="flex items-center gap-1.5">
-                    <span class="text-[10px] font-bold text-primary uppercase tracking-wider">Boarding Bus Stop</span>
-                    <span class="inline-flex items-center gap-1 bg-white px-2 py-0.5 rounded-full text-[10px] font-semibold text-emerald-700 border border-emerald-200">
-                      <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> GPS Active
+                    <span class="text-[10px] font-bold text-primary uppercase tracking-wider" id="boarding-stop-label">Boarding Bus Stop</span>
+                    <span class="inline-flex items-center gap-1 bg-white dark:bg-slate-800 px-2 py-0.5 rounded-full text-[10px] font-semibold text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800">
+                      <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                      <span id="gps-active-badge-text">GPS Active</span>
                     </span>
                   </div>
                   <h4 id="detected-stop-name" class="text-sm font-bold text-on-surface mt-0.5">Maharajas Ground Bus Shelter</h4>
                   <span id="detected-stop-dist" class="text-xs font-semibold text-primary">160m walk from you</span>
                 </div>
               </div>
-              <button id="refresh-gps-btn" class="w-8 h-8 rounded-full bg-white text-slate-600 flex items-center justify-center shadow-sm active:rotate-180 transition-transform" onclick="detectGPSLocation()">
+              <button id="refresh-gps-btn" class="w-8 h-8 rounded-full bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-200 flex items-center justify-center shadow-sm active:rotate-180 transition-transform" onclick="detectGPSLocation()">
                 <span class="material-symbols-outlined text-[18px]">refresh</span>
               </button>
             </div>
             <p id="detected-stop-hint" class="text-[11px] text-on-surface-variant">
-              Platform 2 (Bay 2) • Stadium Arch. Auto-matched from your current position.
+              Platform 2 (Bay 2) • Stadium Arch. Auto-matched from location.
             </p>
           </div>
 
@@ -397,9 +707,9 @@
               <span class="material-symbols-outlined text-[22px]">directions_bus</span>
               <span id="find-bus-btn-text">Find My Bus</span>
             </button>
-            <div class="flex items-center justify-center gap-1 text-slate-500 text-[11px] mt-2">
+            <div class="flex items-center justify-center gap-1 text-slate-500 dark:text-slate-400 text-[11px] mt-2">
               <span class="material-symbols-outlined text-[14px]">cloud_done</span>
-              <span>Official Kerala MVD Stage Fares</span>
+              <span id="mvd-disclaimer-text">Official Kerala MVD Stage Fares</span>
             </div>
           </div>
         </div>
@@ -417,22 +727,22 @@
             </button>
             <div>
               <span class="text-[10px] text-primary font-bold uppercase tracking-wider block leading-none">Wiyo Journeys</span>
-              <h2 class="text-sm font-bold text-on-surface">Bus Details & Fare</h2>
+              <h2 class="text-sm font-bold text-on-surface" id="screen3-header-title">Bus Details & Fare</h2>
             </div>
           </div>
-          <button class="w-8 h-8 rounded-full bg-teal-50 text-primary flex items-center justify-center" onclick="speakRouteDetails()">
+          <button class="w-8 h-8 rounded-full bg-teal-50 dark:bg-teal-900/40 text-primary flex items-center justify-center" onclick="speakRouteDetails()">
             <span class="material-symbols-outlined text-[18px]">volume_up</span>
           </button>
         </header>
 
         <div class="p-5 flex flex-col gap-4">
           <!-- Target Destination Banner -->
-          <div class="flex items-center gap-3 bg-white p-3 rounded-2xl border border-outline-variant/30 shadow-sm">
+          <div class="flex items-center gap-3 bg-white rounded-2xl border border-outline-variant/30 shadow-sm p-3">
             <div class="w-9 h-9 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
               <span class="material-symbols-outlined text-[22px]">location_on</span>
             </div>
             <div class="min-w-0">
-              <span class="text-[10px] font-bold text-secondary uppercase tracking-wider">Destination</span>
+              <span class="text-[10px] font-bold text-secondary uppercase tracking-wider" id="dest-banner-label">Destination</span>
               <h3 id="details-dest-title" class="text-sm font-bold text-on-surface truncate">Lulu Mall, Edappally</h3>
             </div>
           </div>
@@ -442,15 +752,15 @@
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-1.5 text-primary text-xs font-bold uppercase">
                 <span class="material-symbols-outlined text-[18px]">directions_walk</span>
-                <span>Boarding Point</span>
+                <span id="details-boarding-label">Boarding Point</span>
               </div>
-              <span class="bg-surface-container-high text-on-surface text-[11px] font-bold px-2.5 py-0.5 rounded-full">180m • 3 min walk</span>
+              <span id="details-walk-pill" class="bg-surface-container-high text-on-surface text-[11px] font-bold px-2.5 py-0.5 rounded-full">180m • 3 min walk</span>
             </div>
             <div>
               <h4 id="details-boarding-name" class="text-base font-bold text-on-surface">Maharajas Ground Bus Bay</h4>
               <p id="details-boarding-landmark" class="text-xs text-secondary mt-0.5">Platform 2 (Bay 2) • M.G. Road Corridor</p>
             </div>
-            <p class="text-xs text-on-surface-variant">
+            <p id="details-walk-instruction" class="text-xs text-on-surface-variant">
               Walk past the stadium arch and turn right at junction shelter. Boarding bay is immediately on your left.
             </p>
           </div>
@@ -475,21 +785,21 @@
               </div>
               <div class="text-right">
                 <span id="details-time-pill" class="text-base font-extrabold text-primary block">09:48 AM</span>
-                <span class="text-[10px] text-secondary">Departs bay</span>
+                <span id="details-departs-bay-label" class="text-[10px] text-secondary">Departs bay</span>
               </div>
             </div>
 
             <div class="bg-surface-container-low rounded-xl p-3 flex flex-col gap-1">
               <div class="flex items-center gap-1 text-[10px] font-bold text-secondary uppercase">
                 <span class="material-symbols-outlined text-[14px]">signpost</span>
-                <span>Bus Board Header</span>
+                <span id="details-board-header-label">Bus Board Header</span>
               </div>
               <p id="details-board-header" class="text-xs font-bold text-on-surface">
-                Towards Aluva via Edappally (ലുലു മാൾ)
+                Towards Aluva via Edappally
               </p>
             </div>
 
-            <div class="flex items-center justify-between text-secondary text-xs pt-1 border-t border-slate-100">
+            <div class="flex items-center justify-between text-secondary text-xs pt-1 border-t border-slate-100 dark:border-slate-800">
               <div class="flex items-center gap-1">
                 <span class="material-symbols-outlined text-[16px]">schedule</span>
                 <span id="details-duration-pill">~22 mins ride</span>
@@ -504,8 +814,8 @@
           <!-- Card 3: Route Progression Schematic & Fare Breakdown -->
           <div class="bg-white rounded-2xl p-4 shadow-sm border border-outline-variant/30 flex flex-col gap-3">
             <div class="flex items-center justify-between">
-              <h4 class="text-xs font-bold text-on-surface uppercase tracking-wider">Route Progression & Fare</h4>
-              <span class="text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full">Direct Line</span>
+              <h4 class="text-xs font-bold text-on-surface uppercase tracking-wider" id="details-progression-title">Route Progression & Fare</h4>
+              <span id="details-direct-line-badge" class="text-[11px] font-bold text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/60 px-2 py-0.5 rounded-full">Direct Line</span>
             </div>
 
             <!-- Route Nodes Schematic -->
@@ -518,19 +828,19 @@
               <div class="flex items-center justify-between">
                 <div class="flex items-center gap-1.5 text-on-surface font-semibold text-xs">
                   <span class="material-symbols-outlined text-secondary text-[18px]">payments</span>
-                  <span>Estimated Fare</span>
+                  <span id="details-estimated-fare-label">Estimated Fare</span>
                 </div>
                 <span id="details-fare-amount" class="text-lg font-black text-on-surface">₹22.00</span>
               </div>
               <p id="details-fare-breakdown" class="text-[11px] text-secondary">
-                Base fare: ₹15.00 (Fast Passenger 5km) • Stages: ₹7.00
+                Base fare: ₹15.00 • Stages: ₹7.00
               </p>
             </div>
 
             <!-- Conductor Disclaimer Badge -->
-            <div class="flex items-start gap-2 bg-amber-50 p-2.5 rounded-xl border border-amber-200/60 text-amber-900 text-[11px]">
-              <span class="material-symbols-outlined text-amber-700 text-[16px] shrink-0 mt-0.5">info</span>
-              <p>
+            <div class="flex items-start gap-2 bg-amber-50 dark:bg-amber-950/40 p-2.5 rounded-xl border border-amber-200/60 dark:border-amber-800/50 text-amber-900 dark:text-amber-200 text-[11px]">
+              <span class="material-symbols-outlined text-amber-700 dark:text-amber-400 text-[16px] shrink-0 mt-0.5">info</span>
+              <p id="details-conductor-disclaimer">
                 <strong>Official Estimate:</strong> Pay directly to conductor inside the bus via Cash or Chalo / UPI tap.
               </p>
             </div>
@@ -540,7 +850,7 @@
           <div class="flex flex-col gap-2 mt-2 mb-6">
             <button class="w-full h-13 py-3.5 bg-primary hover:bg-primary-container text-white font-bold rounded-2xl shadow-lg flex items-center justify-center gap-2 active:scale-[0.98] transition-all" onclick="startLiveJourneyFromDetails()">
               <span class="material-symbols-outlined text-[20px]">play_circle</span>
-              <span>Start Journey • യാത്ര ആരംഭിക്കുക</span>
+              <span id="start-journey-btn-text">Start Journey</span>
             </button>
             <button class="w-full py-2.5 bg-surface-container-high text-on-surface font-semibold text-xs rounded-xl hover:bg-surface-container active:scale-[0.98] transition-all flex items-center justify-center gap-1.5" onclick="saveCurrentJourneyPass()">
               <span class="material-symbols-outlined text-[18px]">download_for_offline</span>
@@ -558,7 +868,7 @@
         <div class="bg-surface-container px-4 py-3 border-b border-outline-variant/30 flex flex-col gap-1 shadow-sm sticky top-0 z-20">
           <div class="flex items-center justify-between">
             <div class="flex items-center gap-2">
-              <button class="w-7 h-7 rounded-full flex items-center justify-center bg-white shadow-xs text-on-surface hover:bg-slate-50 active:scale-95 transition-all" onclick="goToScreen('screen-details')" title="Back to Bus Details">
+              <button class="w-7 h-7 rounded-full flex items-center justify-center bg-white dark:bg-slate-800 shadow-xs text-on-surface hover:bg-slate-50 active:scale-95 transition-all" onclick="goToScreen('screen-details')" title="Back to Bus Details">
                 <span class="material-symbols-outlined text-[18px]">arrow_back</span>
               </button>
               <div class="flex items-center gap-1.5">
@@ -566,26 +876,26 @@
                   <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                   <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span>
                 </span>
-                <span class="text-[11px] font-extrabold text-primary uppercase tracking-wider">Bus Journey in Progress</span>
+                <span class="text-[11px] font-extrabold text-primary uppercase tracking-wider" id="track-title">Bus Journey in Progress</span>
               </div>
             </div>
-            <div class="flex items-center gap-1 bg-white px-2 py-0.5 rounded-full border border-outline-variant/40 text-[10px] font-bold text-on-surface shadow-xs">
+            <div class="flex items-center gap-1 bg-white dark:bg-slate-800 px-2 py-0.5 rounded-full border border-outline-variant/40 text-[10px] font-bold text-on-surface shadow-xs">
               <span class="material-symbols-outlined text-[13px] text-primary">gps_fixed</span>
-              <span>GPS Active</span>
+              <span id="track-gps-text">GPS Active</span>
             </div>
           </div>
           <div class="flex items-baseline justify-between mt-1">
             <div>
               <h3 id="track-route-badge" class="text-sm font-bold text-on-surface">KSRTC Route 12A</h3>
-              <p id="track-dest-badge" class="text-[11px] text-on-surface-variant">To Lulu Mall, Edappally • ലുലു മാൾ</p>
+              <p id="track-dest-badge" class="text-[11px] text-on-surface-variant">To Lulu Mall, Edappally</p>
             </div>
-            <span class="text-[11px] font-bold text-primary bg-primary-fixed/40 px-2 py-0.5 rounded-full">Super Fast</span>
+            <span id="track-service-pill" class="text-[11px] font-bold text-primary bg-primary-fixed/40 px-2 py-0.5 rounded-full">Super Fast</span>
           </div>
         </div>
 
         <div class="p-4 flex flex-col gap-3">
           <!-- Interactive Working Leaflet Map Container -->
-          <div class="relative w-full h-72 rounded-2xl overflow-hidden shadow-md border border-outline-variant/40 bg-[#e8edf2]">
+          <div class="relative w-full h-72 rounded-2xl overflow-hidden shadow-md border border-outline-variant/40 bg-[#e8edf2] dark:bg-slate-900">
             <div id="live-leaflet-map" class="w-full h-full z-10" style="min-height: 288px;"></div>
             
             <!-- Live Speed & Status Badge -->
@@ -596,9 +906,9 @@
 
             <!-- Interactive Map Trigger Controls -->
             <div class="absolute top-2.5 right-2.5 flex flex-col gap-1.5 z-[400]">
-              <button class="px-2.5 py-1.5 rounded-lg bg-white/95 shadow-md text-teal-800 text-xs font-bold flex items-center gap-1 border border-teal-200 active:scale-95 transition-all" onclick="simulateNextProgress()" title="Simulate bus moving towards next stop">
-                <span class="material-symbols-outlined text-[16px] text-teal-600">fast_forward</span>
-                <span>Next Stop</span>
+              <button class="px-2.5 py-1.5 rounded-lg bg-white/95 dark:bg-slate-800 shadow-md text-teal-800 dark:text-teal-300 text-xs font-bold flex items-center gap-1 border border-teal-200 dark:border-teal-700 active:scale-95 transition-all" onclick="simulateNextProgress()" title="Simulate bus moving towards next stop">
+                <span class="material-symbols-outlined text-[16px] text-teal-600 dark:text-teal-400">fast_forward</span>
+                <span id="next-stop-btn-text">Next Stop</span>
               </button>
             </div>
           </div>
@@ -606,22 +916,22 @@
           <!-- HUD Card: Next Stop & ETA -->
           <div class="bg-white rounded-2xl p-3.5 shadow-sm border border-outline-variant/30 flex items-center justify-between">
             <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-xl bg-teal-50 text-primary flex items-center justify-center shrink-0">
+              <div class="w-10 h-10 rounded-xl bg-teal-50 dark:bg-teal-900/40 text-primary flex items-center justify-center shrink-0">
                 <span class="material-symbols-outlined text-[22px]">directions_bus</span>
               </div>
               <div>
-                <span class="text-[10px] font-bold text-secondary uppercase tracking-wider">Next / Final Stop</span>
+                <span class="text-[10px] font-bold text-secondary uppercase tracking-wider" id="hud-next-stop-label">Next / Final Stop</span>
                 <h4 id="hud-next-stop-name" class="text-sm font-bold text-on-surface">Lulu Mall Bus Bay</h4>
                 <p id="hud-next-stop-sub" class="text-xs text-primary font-semibold">Edappally Junction</p>
               </div>
             </div>
-            <div class="flex items-center gap-2.5 border-l border-slate-100 pl-3">
+            <div class="flex items-center gap-2.5 border-l border-slate-100 dark:border-slate-800 pl-3">
               <div class="text-right">
-                <span class="text-[10px] text-slate-400 block">Est. Time</span>
+                <span class="text-[10px] text-slate-400 block" id="hud-time-label">Est. Time</span>
                 <span id="hud-eta-text" class="text-base font-extrabold text-primary leading-tight">~2 min</span>
               </div>
               <div class="text-right">
-                <span class="text-[10px] text-slate-400 block">Distance</span>
+                <span class="text-[10px] text-slate-400 block" id="hud-dist-label">Distance</span>
                 <span id="hud-dist-text" class="text-base font-extrabold text-on-surface leading-tight">250 m</span>
               </div>
             </div>
@@ -632,25 +942,24 @@
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-1.5">
                 <span class="material-symbols-outlined text-amber-300 text-[18px]">notification_important</span>
-                <span class="text-[10px] font-extrabold uppercase tracking-widest text-amber-200">Alighting Alert • Stop Approaching</span>
+                <span class="text-[10px] font-extrabold uppercase tracking-widest text-amber-200" id="alighting-alert-title">Alighting Alert • Stop Approaching</span>
               </div>
-              <span class="text-[10px] font-bold bg-white/20 px-2 py-0.5 rounded-full">~30 sec away</span>
+              <span class="text-[10px] font-bold bg-white/20 px-2 py-0.5 rounded-full" id="alighting-alert-pill">~30 sec away</span>
             </div>
             <div class="bg-black/20 rounded-xl p-2.5 flex flex-col">
               <h5 id="alert-stop-heading" class="text-sm font-bold leading-tight">Edappally Junction / Lulu Mall</h5>
               <p id="alert-stop-subtext" class="text-xs text-amber-100 mt-0.5">Your bus stop is 250m away. Please get ready to alight safely.</p>
-              <p class="text-[10px] text-amber-300 mt-0.5">ബസ് ഉടൻ എത്തും, ഇറങ്ങാൻ തയ്യാറാകുക.</p>
             </div>
 
             <!-- Voice Repeat & Slower buttons -->
             <div class="grid grid-cols-2 gap-2 pt-1">
               <button class="py-2 px-3 rounded-xl bg-white text-amber-900 font-bold text-xs flex items-center justify-center gap-1 shadow-sm active:scale-95 transition-transform" onclick="triggerAlertSpeech('repeat')">
                 <span class="material-symbols-outlined text-[16px]">volume_up</span>
-                <span>Repeat Audio</span>
+                <span id="repeat-audio-btn-text">Repeat Audio</span>
               </button>
               <button class="py-2 px-3 rounded-xl bg-white/20 hover:bg-white/30 text-white font-bold text-xs flex items-center justify-center gap-1 active:scale-95 transition-transform" onclick="triggerAlertSpeech('slower')">
                 <span class="material-symbols-outlined text-[16px]">slow_motion_video</span>
-                <span>Speak Slower</span>
+                <span id="speak-slower-btn-text">Speak Slower</span>
               </button>
             </div>
           </div>
@@ -659,10 +968,10 @@
           <div class="flex flex-col gap-2 mt-2 mb-6">
             <button id="trip-finish-btn" class="w-full h-13 py-3.5 bg-primary hover:bg-primary-container text-white font-bold rounded-2xl shadow-lg flex items-center justify-center gap-2 active:scale-[0.98] transition-all" onclick="finishTripAction()">
               <span class="material-symbols-outlined text-[20px]">task_alt</span>
-              <span>Trip Complete • Alighted from Bus</span>
+              <span id="trip-finish-btn-text">Trip Complete • Alighted from Bus</span>
             </button>
-            <div id="trip-complete-banner" class="hidden p-3 bg-emerald-100 text-emerald-900 border border-emerald-300 rounded-xl text-center text-xs font-bold">
-              🎉 You have alighted safely at Lulu Mall. Thank you for riding KSRTC!
+            <div id="trip-complete-banner" class="hidden p-3 bg-emerald-100 dark:bg-emerald-950/80 text-emerald-900 dark:text-emerald-200 border border-emerald-300 dark:border-emerald-800 rounded-xl text-center text-xs font-bold">
+              🎉 You have alighted safely at destination. Thank you for riding KSRTC!
             </div>
           </div>
         </div>
