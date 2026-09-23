@@ -1,5 +1,9 @@
 import { Stop, Route, JourneyPlan, JourneyLeg, MultilingualText, FallbackStopInfo } from '../types';
-import { calculateHaversineDistance, calculateCompassDirection } from './geo';
+import {
+  calculateHaversineDistance,
+  calculateCompassDirection,
+  computeRouteSegmentDistances
+} from './geo';
 import {
   calculateAccurateKeralaFare,
   BusServiceClass,
@@ -10,10 +14,34 @@ import {
 export class TransitRouter {
   private stopsMap: Map<string, Stop>;
   private routes: Route[];
+  private routeSegmentDistances: Map<string, number[]> = new Map();
 
   constructor(stops: Stop[], routes: Route[]) {
     this.stopsMap = new Map(stops.map((s) => [s.id, s]));
     this.routes = routes;
+
+    // Precalculate consecutive segment distances for each route
+    this.routes.forEach((route) => {
+      this.routeSegmentDistances.set(
+        route.id,
+        computeRouteSegmentDistances(route.stops, this.stopsMap)
+      );
+    });
+  }
+
+  /**
+   * Returns precalculated distance in meters along a route between two stop indices
+   */
+  public getRouteDistanceBetweenIndices(routeId: string, idx1: number, idx2: number): number {
+    const segs = this.routeSegmentDistances.get(routeId);
+    if (!segs) return 0;
+    const minIdx = Math.min(idx1, idx2);
+    const maxIdx = Math.max(idx1, idx2);
+    let total = 0;
+    for (let i = minIdx; i < maxIdx && i < segs.length; i++) {
+      total += segs[i];
+    }
+    return total;
   }
 
   /**
@@ -70,15 +98,8 @@ export class TransitRouter {
       .map((id) => this.stopsMap.get(id)!)
       .filter(Boolean);
 
-    // Compute total distance along stops
-    let distanceMeters = 0;
-    for (let s = 0; s < legStopsIds.length - 1; s++) {
-      const s1 = this.stopsMap.get(legStopsIds[s]);
-      const s2 = this.stopsMap.get(legStopsIds[s + 1]);
-      if (s1 && s2) {
-        distanceMeters += calculateHaversineDistance(s1.lat, s1.lng, s2.lat, s2.lng);
-      }
-    }
+    // Compute total distance along stops using cached segment distances
+    const distanceMeters = this.getRouteDistanceBetweenIndices(route.id, originIdx, destIdx);
     const distanceKm = Math.max(2.0, distanceMeters / 1000);
 
     // Calculate stage count and fare directly from route dataset

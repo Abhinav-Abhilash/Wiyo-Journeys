@@ -23,6 +23,52 @@ export function calculateHaversineDistance(
 }
 
 /**
+ * Computes Haversine distance in kilometers with 2 decimal precision
+ */
+export function calculateHaversineDistanceKm(
+  lat1: number,
+  lon1: number,
+  lat2: number,
+  lon2: number
+): number {
+  return Math.round((calculateHaversineDistance(lat1, lon1, lat2, lon2) / 1000) * 100) / 100;
+}
+
+/**
+ * Convenience helper to compute distance in meters between two Stop objects
+ */
+export function calculateStopDistance(stopA: Stop, stopB: Stop): number {
+  return calculateHaversineDistance(stopA.lat, stopA.lng, stopB.lat, stopB.lng);
+}
+
+/**
+ * Convenience helper to compute distance in kilometers between two Stop objects
+ */
+export function calculateStopDistanceKm(stopA: Stop, stopB: Stop): number {
+  return calculateHaversineDistanceKm(stopA.lat, stopA.lng, stopB.lat, stopB.lng);
+}
+
+/**
+ * Computes distances between consecutive stop pairs along a route
+ */
+export function computeRouteSegmentDistances(
+  stopIds: string[],
+  stopsMap: Map<string, Stop>
+): number[] {
+  const segments: number[] = [];
+  for (let i = 0; i < stopIds.length - 1; i++) {
+    const s1 = stopsMap.get(stopIds[i]);
+    const s2 = stopsMap.get(stopIds[i + 1]);
+    if (s1 && s2) {
+      segments.push(calculateHaversineDistance(s1.lat, s1.lng, s2.lat, s2.lng));
+    } else {
+      segments.push(0);
+    }
+  }
+  return segments;
+}
+
+/**
  * Calculates 8-point compass bearing from origin to destination
  */
 export function calculateCompassDirection(
@@ -72,15 +118,22 @@ export function findNearestStops(
   return stopsWithDistance.slice(0, limit);
 }
 
+export const MAX_ROAD_SNAP_DISTANCE_METERS = 75;
+
 /**
- * Snaps a GPS coordinate to the closest point along a road polyline
+ * Snaps a GPS coordinate to the closest point along a road polyline.
+ * If raw GPS is within maxSnapDistanceMeters (default 75m), snaps to road to eliminate jitter.
+ * If raw GPS is further than 75m (e.g. detour or drift), falls back to raw GPS.
  */
 export function snapToRoadPolyline(
   lat: number,
   lng: number,
-  roadCoords: [number, number][]
-): { snappedPoint: [number, number]; index: number; minDistanceMeters: number } {
-  if (roadCoords.length === 0) return { snappedPoint: [lat, lng], index: 0, minDistanceMeters: 0 };
+  roadCoords: [number, number][],
+  maxSnapDistanceMeters = MAX_ROAD_SNAP_DISTANCE_METERS
+): { snappedPoint: [number, number]; index: number; minDistanceMeters: number; isSnapped: boolean } {
+  if (roadCoords.length === 0) {
+    return { snappedPoint: [lat, lng], index: 0, minDistanceMeters: 0, isSnapped: false };
+  }
 
   let minDistance = Infinity;
   let bestIndex = 0;
@@ -93,10 +146,13 @@ export function snapToRoadPolyline(
     }
   }
 
+  const isSnapped = minDistance <= maxSnapDistanceMeters;
+
   return {
-    snappedPoint: roadCoords[bestIndex],
+    snappedPoint: isSnapped ? roadCoords[bestIndex] : [lat, lng],
     index: bestIndex,
     minDistanceMeters: minDistance,
+    isSnapped,
   };
 }
 
@@ -142,6 +198,10 @@ export class JourneyTracker {
     this.roadCoords = coords;
   }
 
+  public resetAlerts() {
+    this.alertedStops.clear();
+  }
+
   /**
    * Update tracker with a 1-second GPS location fix
    */
@@ -154,6 +214,7 @@ export class JourneyTracker {
     shouldAlert: boolean;
     approachingStop: Stop | null;
     snappedCoord: [number, number];
+    isSnapped: boolean;
   } {
     const destStop = this.journey.destination;
     const originStop = this.journey.origin;
@@ -168,15 +229,19 @@ export class JourneyTracker {
       this.speedSamples.reduce((a, b) => a + b, 0) / this.speedSamples.length;
     const avgSpeedMps = Math.max((avgSpeedKmh * 1000) / 3600, 5.0); // min 5 m/s
 
-    // Snap to road
+    // Snap to road with 75m threshold fallback
     let snapped = [currentLat, currentLng] as [number, number];
+    let isSnapped = false;
     let remainingDistanceMeters = calculateHaversineDistance(currentLat, currentLng, destStop.lat, destStop.lng);
 
     if (this.roadCoords.length > 0) {
       const snapResult = snapToRoadPolyline(currentLat, currentLng, this.roadCoords);
       snapped = snapResult.snappedPoint;
-      this.currentRoadIndex = Math.max(this.currentRoadIndex, snapResult.index);
-      remainingDistanceMeters = calculateRemainingRoadDistance(this.roadCoords, this.currentRoadIndex);
+      isSnapped = snapResult.isSnapped;
+      if (isSnapped) {
+        this.currentRoadIndex = Math.max(this.currentRoadIndex, snapResult.index);
+        remainingDistanceMeters = calculateRemainingRoadDistance(this.roadCoords, this.currentRoadIndex);
+      }
     }
 
     const totalTripDistance = Math.max(
@@ -191,11 +256,13 @@ export class JourneyTracker {
 
     const etaSeconds = Math.round(remainingDistanceMeters / avgSpeedMps);
 
-    // 30-second arrival alert trigger (<= 35s or <= 280m)
-    const isApproaching = (etaSeconds <= 35 || remainingDistanceMeters <= 280) && !this.alertedStops.has(destStop.id);
+    // Rule: Whichever trigger is reached FIRST (Distance <= 250m OR ETA <= 30s)
+    // Exactly-once per stop guaranteed by alertedStops check
+    const isWithinAlertZone = (remainingDistanceMeters <= 250 || etaSeconds <= 30);
+    const shouldAlert = isWithinAlertZone && !this.alertedStops.has(destStop.id);
 
     let approachingStop: Stop | null = null;
-    if (isApproaching) {
+    if (shouldAlert) {
       this.alertedStops.add(destStop.id);
       approachingStop = destStop;
     }
@@ -217,15 +284,16 @@ export class JourneyTracker {
       speedKmh: Math.round(avgSpeedKmh),
       passedStops: isJourneyComplete ? [originStop, destStop] : [originStop],
       remainingStops: isJourneyComplete ? [] : [destStop],
-      isApproachingStop: isApproaching,
+      isApproachingStop: isWithinAlertZone,
       isJourneyComplete,
     };
 
     return {
       progress,
-      shouldAlert: isApproaching,
+      shouldAlert,
       approachingStop,
       snappedCoord: snapped,
+      isSnapped,
     };
   }
 

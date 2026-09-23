@@ -1047,6 +1047,8 @@ function populateDetailsScreen(plan: JourneyPlan) {
   }
 };
 
+let spokenAlertStops = new Set<string>();
+
 /**
  * Screen 4: Live Journey Tracking & Real-Time Road-Snapped Leaflet Map
  */
@@ -1061,6 +1063,9 @@ async function initLiveLeafletMap() {
 
   if (!currentJourneyPlan) return;
 
+  // Reset alert states for new journey
+  spokenAlertStops.clear();
+
   const leg = currentJourneyPlan.legs[0];
   const stops = [currentJourneyPlan.origin, ...leg.intermediateStops, currentJourneyPlan.destination];
 
@@ -1069,6 +1074,7 @@ async function initLiveLeafletMap() {
 
   // Initialize Journey Tracker with road coordinates
   tracker = new JourneyTracker(currentJourneyPlan, activeRoadCoordinates);
+  tracker.resetAlerts();
 
   const routeBadge = document.getElementById('track-route-badge');
   const destBadge = document.getElementById('track-dest-badge');
@@ -1078,6 +1084,9 @@ async function initLiveLeafletMap() {
   // Center on start of route
   const startCoord = activeRoadCoordinates[0];
 
+  // Graceful offline fallback: dark schematic canvas background
+  mapContainer.style.background = '#0f172a';
+
   leafletMap = L.map('live-leaflet-map', {
     center: startCoord,
     zoom: 14,
@@ -1085,10 +1094,14 @@ async function initLiveLeafletMap() {
     attributionControl: false
   });
 
-  // OpenStreetMap Tile Layer
+  // OpenStreetMap Tile Layer with SVG blueprint fallback for offline resilience
+  const offlineBlueprintTile =
+    'data:image/svg+xml;charset=utf-8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="256" height="256"%3E%3Crect fill="%230f172a" width="256" height="256"/%3E%3Cpath stroke="%231e293b" stroke-width="1" stroke-dasharray="4 4" d="M0 64h256M0 128h256M0 192h256M64 0v256M128 0v256M192 0v256"/%3E%3C/svg%3E';
+
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
-    crossOrigin: true
+    crossOrigin: true,
+    errorTileUrl: offlineBlueprintTile
   }).addTo(leafletMap);
 
   // Draw Exact Road Polyline (Emerald Teal)
@@ -1217,29 +1230,39 @@ function handleGpsUpdate(result: ReturnType<JourneyTracker['updatePosition']>) {
     busMarker.setLatLng(result.snappedCoord);
   }
 
-  // Trigger 30-second arrival alarm if threshold reached
+  // Trigger arrival alarm (fires exactly once per approaching stop, whichever condition met first)
   if (result.shouldAlert && result.approachingStop) {
-    triggerArrivalNotification(result.approachingStop, currentLanguage, (msg) => {
-      showToast('Arrival Alert', msg);
-    });
+    const stop = result.approachingStop;
+    if (!spokenAlertStops.has(stop.id)) {
+      spokenAlertStops.add(stop.id);
 
-    const stopName = result.approachingStop.names[currentLanguage] || result.approachingStop.names.en;
-    const alertSubtext = document.getElementById('alert-stop-subtext');
-    const alertStopHeading = document.getElementById('alert-stop-heading');
-    if (alertStopHeading) alertStopHeading.textContent = stopName;
-    if (alertSubtext) alertSubtext.textContent = i18n[currentLanguage].alightReadyDesc(stopName);
+      triggerArrivalNotification(stop, currentLanguage, (msg) => {
+        showToast('Arrival Alert', msg);
+      });
 
-    const announcement = currentLanguage === 'ml'
-      ? `ശ്രദ്ധിക്കുക. നിങ്ങളുടെ സ്റ്റോപ്പ് ${stopName} 30 സെക്കൻഡിൽ എത്തും. ഇറങ്ങാൻ തയ്യാറാകുക.`
-      : currentLanguage === 'ta'
-        ? `கவனிக்கவும். உங்கள் நிறுத்தம் ${stopName} 30 வினாடிகளில் வரவுள்ளது.`
-        : currentLanguage === 'hi'
-          ? `ध्यान दें। आपका स्टॉप ${stopName} 30 सेकंड में आने वाला है।`
-          : `Attention. Your stop ${stopName} is approaching in 30 seconds. Please get ready to alight.`;
+      const stopName = stop.names[currentLanguage] || stop.names.en;
+      const alertSubtext = document.getElementById('alert-stop-subtext');
+      const alertStopHeading = document.getElementById('alert-stop-heading');
+      if (alertStopHeading) alertStopHeading.textContent = stopName;
+      if (alertSubtext) alertSubtext.textContent = i18n[currentLanguage].alightReadyDesc(stopName);
 
-    speakText(announcement, currentLanguage, 1.0, {
-      onError: (err) => showToast('Voice Notice', typeof err === 'string' ? err : 'Speech playback error')
-    });
+      const announcement = currentLanguage === 'ml'
+        ? `ശ്രദ്ധിക്കുക. നിങ്ങളുടെ സ്റ്റോപ്പ് ${stopName} 30 സെക്കൻഡിൽ എത്തും. ഇറങ്ങാൻ തയ്യാറാകുക.`
+        : currentLanguage === 'ta'
+          ? `கவனிக்கவும். உங்கள் நிறுத்தம் ${stopName} 30 வினாடிகளில் வரவுள்ளது.`
+          : currentLanguage === 'hi'
+            ? `ध्यान दें। आपका स्टॉप ${stopName} 30 सेकंड में आने वाला है।`
+            : `Attention. Your stop ${stopName} is approaching in 30 seconds. Please get ready to alight.`;
+
+      // Cancel any ongoing speech before priority alert
+      if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+        try { window.speechSynthesis.cancel(); } catch (_) { }
+      }
+
+      speakText(announcement, currentLanguage, 1.0, {
+        onError: (err) => showToast('Voice Notice', typeof err === 'string' ? err : 'Speech playback error')
+      });
+    }
   }
 }
 
