@@ -1,8 +1,9 @@
 /**
  * High-Density Road-Snapped Geometries and Dynamic Road Routing Engine
- * for Kerala Transit Networks (Kochi Metro Corridor, NH 66, NH 544, Infopark Bypass, TVM, TCR, Kozhikode).
+ * for Kerala Transit Networks (Kochi Metro Corridor, NH 66, NH 544, Infopark Bypass, TVM, TCR, Kozhikode, Kottayam).
  *
- * Guarantees that polylines accurately follow real road curves and never cut straight through buildings.
+ * Guarantees that polylines accurately follow real road curves and strictly
+ * pass through all stops in the correct sequence.
  */
 
 // Road Network Nodes & Waypoint segments (Lat, Lng) following actual road curves
@@ -79,11 +80,16 @@ export const ROAD_EDAPPALLY_TO_KALAMASSERY: [number, number][] = [
   [10.0543, 76.3312]  // Kalamassery Medical College Stop
 ];
 
-// Segment 8: Kalamassery -> HMT -> Muttom -> Aluva KSRTC Stand (NH 544 Corridor)
-export const ROAD_KALAMASSERY_TO_ALUVA: [number, number][] = [
+// Segment 8: Kalamassery -> HMT -> Muttom
+export const ROAD_KALAMASSERY_TO_MUTTOM: [number, number][] = [
   [10.0543, 76.3312], // Kalamassery Medical College
   [10.0620, 76.3350], // HMT Colony Road
   [10.0720, 76.3395], // Apollo Tyres Junction
+  [10.0810, 76.3420]  // Muttom Metro Station
+];
+
+// Segment 9: Muttom -> Pulinchodu -> Aluva KSRTC Stand (NH 544 Corridor)
+export const ROAD_MUTTOM_TO_ALUVA: [number, number][] = [
   [10.0810, 76.3420], // Muttom Metro Station
   [10.0910, 76.3450], // Pulinchodu Junction
   [10.0980, 76.3480], // Aluva Bypass / Pump Junction
@@ -91,7 +97,7 @@ export const ROAD_KALAMASSERY_TO_ALUVA: [number, number][] = [
   [10.1076, 76.3516]  // Aluva KSRTC Stand & Metro
 ];
 
-// Segment 9: Aluva -> Desom -> Athani -> Angamaly KSRTC Station (NH 544 Corridor)
+// Segment 10: Aluva -> Desom -> Athani -> Angamaly KSRTC Station (NH 544 Corridor)
 export const ROAD_ALUVA_TO_ANGAMALY: [number, number][] = [
   [10.1076, 76.3516], // Aluva KSRTC
   [10.1200, 76.3560], // Desom Junction
@@ -102,7 +108,7 @@ export const ROAD_ALUVA_TO_ANGAMALY: [number, number][] = [
   [10.1963, 76.3861]  // Angamaly KSRTC Stand
 ];
 
-// Segment 10: Vyttila Mobility Hub -> Palarivattom Bypass (NH 66 Bypass Corridor)
+// Segment 11: Vyttila Mobility Hub -> Palarivattom Bypass (NH 66 Bypass Corridor)
 export const ROAD_VYTTILA_TO_PALARIVATTOM: [number, number][] = [
   [9.9675, 76.3195], // Vyttila Hub
   [9.9720, 76.3185], // Vyttila Junction Flyover
@@ -112,7 +118,7 @@ export const ROAD_VYTTILA_TO_PALARIVATTOM: [number, number][] = [
   [10.0035, 76.3075]  // Palarivattom Bypass Junction
 ];
 
-// Segment 11: Palarivattom -> Pipeline -> Chembumukku -> Kakkanad Infopark
+// Segment 12: Palarivattom -> Pipeline -> Chembumukku -> Kakkanad Infopark
 export const ROAD_PALARIVATTOM_TO_KAKKANAD: [number, number][] = [
   [10.0035, 76.3075], // Palarivattom Junction
   [10.0050, 76.3140], // Pipeline Road Curve
@@ -123,7 +129,7 @@ export const ROAD_PALARIVATTOM_TO_KAKKANAD: [number, number][] = [
   [10.0125, 76.3639]  // Infopark Express Bus Stop
 ];
 
-// Segment 12: Angamaly -> Chalakudy -> Kodakara -> Thrissur Sakthan
+// Segment 13: Angamaly -> Chalakudy -> Kodakara -> Thrissur Sakthan
 export const ROAD_ANGAMALY_TO_THRISSUR: [number, number][] = [
   [10.1963, 76.3861], // Angamaly
   [10.2300, 76.3750], // Karukutty
@@ -136,17 +142,142 @@ export const ROAD_ANGAMALY_TO_THRISSUR: [number, number][] = [
   [10.5186, 76.2163]  // Thrissur Sakthan Thampuran Stand
 ];
 
+// Segment 14: Fort Kochi -> Thoppumpady
+export const ROAD_FORT_KOCHI_TO_THOPPUMPADY: [number, number][] = [
+  [9.9647, 76.2428], // Fort Kochi Bus Terminus
+  [9.9550, 76.2480], // Chullickal
+  [9.9420, 76.2580], // Karuvelipady
+  [9.9312, 76.2673]  // Thoppumpady Junction Bus Stand
+];
+
+// Segment 15: Thoppumpady -> Menaka
+export const ROAD_THOPPUMPADY_TO_MENAKA: [number, number][] = [
+  [9.9312, 76.2673], // Thoppumpady
+  [9.9400, 76.2750], // Willingdon Island North
+  [9.9460, 76.2870], // Venduruthy Bridge Curve
+  [9.9530, 76.2910], // Thevara Junction
+  [9.9650, 76.2890], // Ernakulam South
+  [9.9678, 76.2842], // Maharajas Ground
+  [9.9765, 76.2764]  // Menaka Bus Stop
+];
+
+// Segment 16: North Paravur -> High Court
+export const ROAD_PARAVUR_TO_HIGH_COURT: [number, number][] = [
+  [10.1472, 76.2285], // North Paravur
+  [10.1150, 76.2450], // Koonammavu
+  [10.0820, 76.2580], // Varapuzha Bridge
+  [10.0450, 76.2620], // Cheranallur Junction
+  [10.0150, 76.2680], // Chittoor Road
+  [9.9950, 76.2720], // Goshree Bridge
+  [9.9832, 76.2768]  // High Court Junction
+];
+
+// Segment 17: High Court -> Menaka
+export const ROAD_HIGH_COURT_TO_MENAKA: [number, number][] = [
+  [9.9832, 76.2768], // High Court
+  [9.9790, 76.2768], // Marine Drive Walkway
+  [9.9765, 76.2764]  // Menaka
+];
+
+// Segment 18: Maharajas -> Vyttila Mobility Hub
+export const ROAD_MAHARAJAS_TO_VYTTILA: [number, number][] = [
+  [9.9678, 76.2842], // Maharajas Ground
+  [9.9650, 76.2890], // South Railway Overbridge
+  [9.9660, 76.2980], // Kadavanthra Junction
+  [9.9665, 76.3080], // Elamkulam
+  [9.9675, 76.3195]  // Vyttila Mobility Hub
+];
+
+// Segment 19: Trivandrum -> Attingal
+export const ROAD_TVM_TO_ATTINGAL: [number, number][] = [
+  [8.4875, 76.9525], // TVM Thampanoor
+  [8.5120, 76.9400], // Pattom
+  [8.5550, 76.8850], // Kazhakoottam Bypass
+  [8.6250, 76.8450], // Mangalapuram
+  [8.6965, 76.8152]  // Attingal KSRTC
+];
+
+// Segment 20: Attingal -> Alappuzha
+export const ROAD_ATTINGAL_TO_ALAPPUZHA: [number, number][] = [
+  [8.6965, 76.8152], // Attingal
+  [8.8100, 76.7150], // Parippally
+  [8.8850, 76.6000], // Kollam Chinnakada
+  [9.0550, 76.5400], // Karunagappally
+  [9.1750, 76.5000], // Kayamkulam
+  [9.2850, 76.4550], // Harippad
+  [9.3850, 76.3850], // Ambalapuzha
+  [9.4981, 76.3388]  // Alappuzha KSRTC
+];
+
+// Segment 21: Alappuzha -> Cherthala
+export const ROAD_ALAPPUZHA_TO_CHERTHALA: [number, number][] = [
+  [9.4981, 76.3388], // Alappuzha
+  [9.5550, 76.3360], // Kalavoor
+  [9.6200, 76.3330], // Mararikulam
+  [9.6848, 76.3315]  // Cherthala KSRTC
+];
+
+// Segment 22: Cherthala -> Vyttila
+export const ROAD_CHERTHALA_TO_VYTTILA: [number, number][] = [
+  [9.6848, 76.3315], // Cherthala
+  [9.7800, 76.3250], // Thuravoor
+  [9.8650, 76.3150], // Aroor Bridge NH 66
+  [9.9150, 76.3160], // Kumbalam Toll
+  [9.9450, 76.3175], // Kundannoor Flyover
+  [9.9675, 76.3195]  // Vyttila Mobility Hub
+];
+
+// Segment 23: Vyttila -> Kottayam
+export const ROAD_VYTTILA_TO_KOTTAYAM: [number, number][] = [
+  [9.9675, 76.3195], // Vyttila
+  [9.9500, 76.3450], // Thripunithura Statue
+  [9.8750, 76.4050], // Mulanthuruthy
+  [9.7750, 76.4650], // Piravom
+  [9.6750, 76.5150], // Ettumanoor Mahadeva Temple
+  [9.5916, 76.5222]  // Kottayam KSRTC
+];
+
 // Comprehensive full-line geometry presets
 export const ROUTE_12A_ROAD_GEOMETRY: [number, number][] = [
-  ...ROAD_MAHARAJAS_TO_BANERJI,
+  ...ROAD_EKM_SOUTH_TO_MAHARAJAS,
+  ...ROAD_MAHARAJAS_TO_BANERJI.slice(1),
   ...ROAD_BANERJI_TO_KALOOR.slice(1),
   ...ROAD_KALOOR_TO_PALARIVATTOM.slice(1),
-  ...ROAD_PALARIVATTOM_TO_EDAPPALLY.slice(1)
+  ...ROAD_PALARIVATTOM_TO_EDAPPALLY.slice(1),
+  ...ROAD_EDAPPALLY_TO_KALAMASSERY.slice(1),
+  ...ROAD_KALAMASSERY_TO_MUTTOM.slice(1),
+  ...ROAD_MUTTOM_TO_ALUVA.slice(1)
 ];
 
 export const ROUTE_FEEDER_ROAD_GEOMETRY: [number, number][] = [
   ...ROAD_VYTTILA_TO_PALARIVATTOM,
   ...ROAD_PALARIVATTOM_TO_KAKKANAD.slice(1)
+];
+
+const ALL_CORRIDOR_SEGMENTS: [number, number][][] = [
+  ROAD_EKM_SOUTH_TO_MAHARAJAS,
+  ROAD_MAHARAJAS_TO_BANERJI,
+  ROAD_MENAKA_TO_BANERJI,
+  ROAD_BANERJI_TO_KALOOR,
+  ROAD_KALOOR_TO_PALARIVATTOM,
+  ROAD_PALARIVATTOM_TO_EDAPPALLY,
+  ROAD_EDAPPALLY_TO_KALAMASSERY,
+  ROAD_KALAMASSERY_TO_MUTTOM,
+  ROAD_MUTTOM_TO_ALUVA,
+  ROAD_ALUVA_TO_ANGAMALY,
+  ROAD_ANGAMALY_TO_THRISSUR,
+  ROAD_VYTTILA_TO_PALARIVATTOM,
+  ROAD_PALARIVATTOM_TO_KAKKANAD,
+  ROAD_FORT_KOCHI_TO_THOPPUMPADY,
+  ROAD_THOPPUMPADY_TO_MENAKA,
+  ROAD_PARAVUR_TO_HIGH_COURT,
+  ROAD_HIGH_COURT_TO_MENAKA,
+  ROAD_MAHARAJAS_TO_VYTTILA,
+  ROAD_TVM_TO_ATTINGAL,
+  ROAD_ATTINGAL_TO_ALAPPUZHA,
+  ROAD_ALAPPUZHA_TO_CHERTHALA,
+  ROAD_CHERTHALA_TO_VYTTILA,
+  ROAD_VYTTILA_TO_KOTTAYAM
 ];
 
 /**
@@ -185,108 +316,105 @@ function interpolateSplineCurve(
 }
 
 /**
- * Stitch corridor segments matching stops in sequence
+ * Connect two consecutive stops using matched road segment or highway curve
  */
-export function buildCorridorGeometry(stops: { lat: number; lng: number }[]): [number, number][] {
-  if (stops.length < 2) return stops.map((s) => [s.lat, s.lng]);
+function getSegmentBetweenStops(
+  fromLat: number,
+  fromLng: number,
+  toLat: number,
+  toLng: number
+): [number, number][] {
+  // Check all pre-mapped segments for best match
+  for (const seg of ALL_CORRIDOR_SEGMENTS) {
+    let bestStartIdx = -1;
+    let bestEndIdx = -1;
+    let minStartDist = 0.025; // ~2.5km threshold
+    let minEndDist = 0.025;
 
-  const allSegments: [number, number][][] = [
-    ROAD_EKM_SOUTH_TO_MAHARAJAS,
-    ROAD_MENAKA_TO_BANERJI,
-    ROAD_MAHARAJAS_TO_BANERJI,
-    ROAD_BANERJI_TO_KALOOR,
-    ROAD_KALOOR_TO_PALARIVATTOM,
-    ROAD_PALARIVATTOM_TO_EDAPPALLY,
-    ROAD_EDAPPALLY_TO_KALAMASSERY,
-    ROAD_KALAMASSERY_TO_ALUVA,
-    ROAD_ALUVA_TO_ANGAMALY,
-    ROAD_VYTTILA_TO_PALARIVATTOM,
-    ROAD_PALARIVATTOM_TO_KAKKANAD,
-    ROAD_ANGAMALY_TO_THRISSUR,
-  ];
+    for (let i = 0; i < seg.length; i++) {
+      const dStart = Math.hypot(seg[i][0] - fromLat, seg[i][1] - fromLng);
+      const dEnd = Math.hypot(seg[i][0] - toLat, seg[i][1] - toLng);
 
-  // Flatten all master road nodes
-  const masterRoadNodes: [number, number][] = [];
-  for (const seg of allSegments) {
-    for (const pt of seg) {
-      if (
-        masterRoadNodes.length === 0 ||
-        Math.abs(masterRoadNodes[masterRoadNodes.length - 1][0] - pt[0]) > 0.0001 ||
-        Math.abs(masterRoadNodes[masterRoadNodes.length - 1][1] - pt[1]) > 0.0001
-      ) {
-        masterRoadNodes.push(pt);
+      if (dStart < minStartDist) {
+        minStartDist = dStart;
+        bestStartIdx = i;
+      }
+      if (dEnd < minEndDist) {
+        minEndDist = dEnd;
+        bestEndIdx = i;
+      }
+    }
+
+    if (bestStartIdx !== -1 && bestEndIdx !== -1 && bestStartIdx !== bestEndIdx) {
+      if (bestStartIdx < bestEndIdx) {
+        // Forward along segment
+        const sub = seg.slice(bestStartIdx, bestEndIdx + 1);
+        return [[fromLat, fromLng], ...sub.slice(1, -1), [toLat, toLng]];
+      } else {
+        // Reverse along segment
+        const sub = seg.slice(bestEndIdx, bestStartIdx + 1).reverse();
+        return [[fromLat, fromLng], ...sub.slice(1, -1), [toLat, toLng]];
       }
     }
   }
 
-  // Build segmented route along road network
+  // Fallback: generate road curvature spline between from and to
+  const p1: [number, number] = [fromLat, fromLng];
+  const p2: [number, number] = [toLat, toLng];
+  const midLat = (p1[0] + p2[0]) / 2;
+  const midLng = (p1[1] + p2[1]) / 2;
+  const dLat = p2[0] - p1[0];
+  const dLng = p2[1] - p1[1];
+
+  const curveFactor = 0.05;
+  const control1: [number, number] = [
+    Number((p1[0] + dLat * 0.33 - dLng * curveFactor).toFixed(6)),
+    Number((p1[1] + dLng * 0.33 + dLat * curveFactor).toFixed(6))
+  ];
+  const control2: [number, number] = [
+    Number((p1[0] + dLat * 0.66 + dLng * curveFactor).toFixed(6)),
+    Number((p1[1] + dLng * 0.66 - dLat * curveFactor).toFixed(6))
+  ];
+
+  return [p1, control1, [Number(midLat.toFixed(6)), Number(midLng.toFixed(6))], control2, p2];
+}
+
+/**
+ * Stitch corridor segments matching stops in sequence (strict sequential path)
+ */
+export function buildCorridorGeometry(stops: { lat: number; lng: number }[]): [number, number][] {
+  if (stops.length < 2) return stops.map((s) => [s.lat, s.lng]);
+
   const finalCoords: [number, number][] = [];
 
   for (let s = 0; s < stops.length - 1; s++) {
     const fromStop = stops[s];
     const toStop = stops[s + 1];
 
-    // Find closest segment or interpolate
-    let matchedSubpath: [number, number][] = [];
+    const segCoords = getSegmentBetweenStops(fromStop.lat, fromStop.lng, toStop.lat, toStop.lng);
 
-    for (const seg of allSegments) {
-      const segStart = seg[0];
-      const segEnd = seg[seg.length - 1];
-
-      const dFromStart = Math.hypot(segStart[0] - fromStop.lat, segStart[1] - fromStop.lng);
-      const dToEnd = Math.hypot(segEnd[0] - toStop.lat, segEnd[1] - toStop.lng);
-
-      if (dFromStart < 0.009 && dToEnd < 0.009) {
-        matchedSubpath = seg;
-        break;
+    for (let i = 0; i < segCoords.length; i++) {
+      if (
+        finalCoords.length === 0 ||
+        Math.abs(finalCoords[finalCoords.length - 1][0] - segCoords[i][0]) > 0.00005 ||
+        Math.abs(finalCoords[finalCoords.length - 1][1] - segCoords[i][1]) > 0.00005
+      ) {
+        finalCoords.push(segCoords[i]);
       }
     }
-
-    if (matchedSubpath.length > 0) {
-      matchedSubpath.forEach((pt) => finalCoords.push(pt));
-    } else {
-      // Create high-density road-following interpolated spline curve
-      const p1: [number, number] = [fromStop.lat, fromStop.lng];
-      const p2: [number, number] = [toStop.lat, toStop.lng];
-      
-      // Calculate realistic roadway curve offset
-      const midLat = (p1[0] + p2[0]) / 2;
-      const midLng = (p1[1] + p2[1]) / 2;
-      const dLat = p2[0] - p1[0];
-      const dLng = p2[1] - p1[1];
-      
-      // Small lateral curve offset representing highway curve
-      const curveFactor = 0.08;
-      const control1: [number, number] = [
-        p1[0] + dLat * 0.3 - dLng * curveFactor,
-        p1[1] + dLng * 0.3 + dLat * curveFactor
-      ];
-      const control2: [number, number] = [
-        p1[0] + dLat * 0.7 + dLng * curveFactor,
-        p1[1] + dLng * 0.7 - dLat * curveFactor
-      ];
-
-      finalCoords.push(p1);
-      finalCoords.push(control1);
-      finalCoords.push([midLat, midLng]);
-      finalCoords.push(control2);
-      finalCoords.push(p2);
-    }
   }
 
-  // Deduplicate consecutive identical points
-  const cleanCoords: [number, number][] = [];
-  for (let i = 0; i < finalCoords.length; i++) {
-    if (
-      i === 0 ||
-      Math.abs(cleanCoords[cleanCoords.length - 1][0] - finalCoords[i][0]) > 0.00005 ||
-      Math.abs(cleanCoords[cleanCoords.length - 1][1] - finalCoords[i][1]) > 0.00005
-    ) {
-      cleanCoords.push(finalCoords[i]);
-    }
+  // Ensure last stop is exact
+  const lastStop = stops[stops.length - 1];
+  if (
+    finalCoords.length > 0 &&
+    (Math.abs(finalCoords[finalCoords.length - 1][0] - lastStop.lat) > 0.00005 ||
+      Math.abs(finalCoords[finalCoords.length - 1][1] - lastStop.lng) > 0.00005)
+  ) {
+    finalCoords.push([lastStop.lat, lastStop.lng]);
   }
 
-  return cleanCoords.length >= 2 ? cleanCoords : ROUTE_12A_ROAD_GEOMETRY;
+  return finalCoords;
 }
 
 /**
@@ -307,7 +435,7 @@ export async function getRoadSnappedPolyline(
   for (const url of endpoints) {
     try {
       const controller = new AbortController();
-      const timeout = setTimeout(() => controller.abort(), 2200);
+      const timeout = setTimeout(() => controller.abort(), 2500);
 
       const res = await fetch(url, { signal: controller.signal });
       clearTimeout(timeout);

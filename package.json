@@ -6,6 +6,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
+    "test": "node scripts/verify_e2e_route_tracing.mjs",
     "sarvam:pregen": "ts-node scripts/sarvam-tts-prep.ts"
   },
   "keywords": [],

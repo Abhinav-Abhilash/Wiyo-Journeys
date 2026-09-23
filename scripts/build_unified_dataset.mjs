@@ -550,7 +550,6 @@ const UNIFIED_ROUTES = [
     },
     stops: [
       'ST_EKM_SOUTH',
-      'ST_MENAKA',
       'ST_MAHARAJAS',
       'ST_KALOOR',
       'ST_PALARIVATTOM',
@@ -561,14 +560,13 @@ const UNIFIED_ROUTES = [
     ],
     stopStages: {
       ST_EKM_SOUTH: 1,
-      ST_MENAKA: 2,
-      ST_MAHARAJAS: 3,
-      ST_KALOOR: 4,
-      ST_PALARIVATTOM: 5,
-      ST_EDAPPALLY: 6,
-      ST_KALAMASSERY: 7,
-      ST_MUTTOM: 8,
-      ST_ALUVA: 9
+      ST_MAHARAJAS: 2,
+      ST_KALOOR: 3,
+      ST_PALARIVATTOM: 4,
+      ST_EDAPPALLY: 5,
+      ST_KALAMASSERY: 6,
+      ST_MUTTOM: 7,
+      ST_ALUVA: 8
     },
     fareTable: {
       1: 15,
@@ -577,8 +575,7 @@ const UNIFIED_ROUTES = [
       4: 26,
       5: 30,
       6: 35,
-      7: 40,
-      8: 45
+      7: 40
     }
   },
   {
