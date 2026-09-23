@@ -70,13 +70,42 @@
     ::-webkit-scrollbar { width: 6px; height: 6px; }
     ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
     
-    /* Device frame wrapper for laptop mode */
+    /* Device frame wrapper for laptop mode with scenic KSRTC Kerala rainforest background */
     .laptop-canvas {
       min-height: 100vh;
-      background: radial-gradient(circle at 50% 0%, #dce9ff 0%, #eff4ff 50%, #e2e8f0 100%);
+      background-image:
+        radial-gradient(circle at 50% 20%, rgba(15, 23, 42, 0.45) 0%, rgba(11, 28, 48, 0.78) 100%),
+        url('/images/bg-desktop.jpg');
+      background-size: cover;
+      background-position: center 38%;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
     }
+
+    /* Mobile phone container with portrait KSRTC background and frosted glass */
+    .mobile-ksrtc-bg {
+      background-image:
+        linear-gradient(180deg, rgba(248, 249, 255, 0.88) 0%, rgba(240, 244, 255, 0.93) 48%, rgba(235, 240, 255, 0.97) 100%),
+        url('/images/bg-mobile.jpg');
+      background-size: cover;
+      background-position: center top;
+      background-repeat: no-repeat;
+    }
+
+    @media (max-width: 767px) {
+      body {
+        background-image:
+          linear-gradient(180deg, rgba(248, 249, 255, 0.88) 0%, rgba(240, 244, 255, 0.93) 48%, rgba(235, 240, 255, 0.97) 100%),
+          url('/images/bg-mobile.jpg');
+        background-size: cover;
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+      }
+    }
+
     .phone-shell {
-      box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25), 0 0 0 12px #1e293b, 0 0 0 14px #475569;
+      box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.6), 0 0 0 10px #0f172a, 0 0 0 12px #334155;
     }
 
     /* Custom Leaflet Map Pin Styles */
@@ -147,7 +176,7 @@
   <div id="app-wrapper" class="w-full flex items-center justify-center min-h-screen md:p-6 laptop-canvas">
     
     <!-- Phone / App Container -->
-    <div id="phone-container" class="w-full md:max-w-[420px] md:rounded-[40px] overflow-hidden bg-surface flex flex-col min-h-screen md:min-h-[860px] md:max-h-[900px] shadow-2xl relative md:border-[8px] md:border-slate-800">
+    <div id="phone-container" class="w-full md:max-w-[420px] md:rounded-[40px] overflow-hidden mobile-ksrtc-bg flex flex-col min-h-screen md:min-h-[860px] md:max-h-[900px] shadow-2xl relative md:border-[8px] md:border-slate-800">
       
       <!-- In-App Floating Audio Toast / Alert Banner -->
       <div id="inapp-toast" class="hidden fixed md:absolute top-4 left-4 right-4 z-[900] bg-slate-900 text-white px-4 py-3 rounded-2xl shadow-xl border border-slate-700 flex items-center gap-3 transition-all duration-300 transform">
@@ -163,18 +192,29 @@
       <!-- ============================================================== -->
       <!-- SCREEN 1: LANGUAGE SELECTION                                   -->
       <!-- ============================================================== -->
-      <div id="screen-language" class="screen flex-1 flex flex-col justify-between p-6 bg-surface">
-        <div class="flex flex-col items-center text-center mt-4">
-          <div class="w-20 h-20 rounded-2xl bg-white shadow-md p-2 flex items-center justify-center mb-3 border border-outline-variant/30">
-            <img src="/public/logo.svg" alt="Wiyo Journeys Logo" class="w-full h-full object-contain rounded-xl" onerror="this.src='/logo.svg'"/>
+      <div id="screen-language" class="screen flex-1 flex flex-col justify-between p-6 bg-transparent">
+        <div class="flex flex-col items-center text-center mt-2">
+          <!-- Kerala KSRTC Rainforest Bus Hero Card -->
+          <div class="relative w-full overflow-hidden rounded-2xl mb-3 shadow-md border border-slate-700/20 group">
+            <img src="/images/bg-desktop.jpg" alt="Kerala KSRTC Bus in Misty Rainforest" class="w-full h-28 object-cover object-center filter brightness-95 transform group-hover:scale-105 transition-transform duration-700"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-900/35 to-transparent flex items-end p-3">
+              <div class="flex items-center justify-between w-full">
+                <div class="flex items-center gap-1.5">
+                  <span class="px-2 py-0.5 rounded-md bg-amber-500 text-slate-950 font-black text-[10px] tracking-wider uppercase">KSRTC • ആനവണ്ടി</span>
+                  <span class="text-white text-xs font-semibold drop-shadow">Kerala Transit</span>
+                </div>
+                <span class="text-[10px] text-emerald-300 font-semibold bg-emerald-950/70 px-2 py-0.5 rounded border border-emerald-600/40">MVD Verified</span>
+              </div>
+            </div>
           </div>
+
           <h1 class="text-2xl font-extrabold text-on-surface tracking-tight">Wiyo Journeys</h1>
-          <p class="text-xs text-on-surface-variant mt-1">
+          <p class="text-xs text-on-surface-variant mt-0.5">
             Your journey, made simple. • യാത്രകൾ ഇനി ലളിതം
           </p>
 
-          <div class="mt-6 mb-2">
-            <h2 class="text-lg font-bold text-on-surface">Choose your language</h2>
+          <div class="mt-4 mb-1">
+            <h2 class="text-base font-bold text-on-surface">Choose your language</h2>
             <p class="text-xs font-semibold text-primary mt-0.5">നിങ്ങളുടെ ഭാഷ തിരഞ്ഞെടുക്കുക</p>
           </div>
         </div>
