@@ -20,7 +20,13 @@
         "hi": "दक्षिण रेलवे स्टेशन मुख्य द्वार"
       },
       "district": "Ernakulam",
-      "aliases": ["Ernakulam South", "EKM South", "South Stand", "South Railway", "Jos Junction"]
+      "aliases": [
+        "Ernakulam South",
+        "EKM South",
+        "South Stand",
+        "South Railway",
+        "Jos Junction"
+      ]
     },
     {
       "id": "ST_MAHARAJAS",
@@ -39,7 +45,11 @@
         "hi": "प्लेटफॉर्म 2 • एमजी रोड / स्टेडियम आर्च"
       },
       "district": "Ernakulam",
-      "aliases": ["Maharajas", "MG Road Kochi", "Stadium Ground"]
+      "aliases": [
+        "Maharajas",
+        "MG Road Kochi",
+        "Stadium Ground"
+      ]
     },
     {
       "id": "ST_MENAKA",
@@ -58,7 +68,11 @@
         "hi": "मरीन ड्राइव / षण्मुखम रोड जंक्शन"
       },
       "district": "Ernakulam",
-      "aliases": ["Menaka", "Marine Drive", "High Court Junction"]
+      "aliases": [
+        "Menaka",
+        "Marine Drive",
+        "High Court Junction"
+      ]
     },
     {
       "id": "ST_KALOOR",
@@ -77,7 +91,11 @@
         "hi": "कलूर स्टेडियम के सामने / मेट्रो पिलर 512"
       },
       "district": "Ernakulam",
-      "aliases": ["Kaloor", "JLN Stadium", "Kaloor Stand"]
+      "aliases": [
+        "Kaloor",
+        "JLN Stadium",
+        "Kaloor Stand"
+      ]
     },
     {
       "id": "ST_PALARIVATTOM",
@@ -96,7 +114,11 @@
         "hi": "पालारिवट्टम फ्लाईओवर / पाइपलाइन रोड"
       },
       "district": "Ernakulam",
-      "aliases": ["Palarivattom", "Palarivattom Bypass", "Pipeline"]
+      "aliases": [
+        "Palarivattom",
+        "Palarivattom Bypass",
+        "Pipeline"
+      ]
     },
     {
       "id": "ST_EDAPPALLY",
@@ -115,7 +137,12 @@
         "hi": "लुलु मॉल मुख्य प्रवेश द्वार / इडप्पल्ली टोल गेट"
       },
       "district": "Ernakulam",
-      "aliases": ["Lulu Mall", "Edappally", "Edappally Toll", "Edappally Church"]
+      "aliases": [
+        "Lulu Mall",
+        "Edappally",
+        "Edappally Toll",
+        "Edappally Church"
+      ]
     },
     {
       "id": "ST_KALAMASSERY",
@@ -134,7 +161,12 @@
         "hi": "सरकारी मेडिकल कॉलेज अस्पताल गेट / कुसैट जंक्शन"
       },
       "district": "Ernakulam",
-      "aliases": ["Kalamassery", "Medical College", "CUSAT", "HMT Junction"]
+      "aliases": [
+        "Kalamassery",
+        "Medical College",
+        "CUSAT",
+        "HMT Junction"
+      ]
     },
     {
       "id": "ST_ALUVA",
@@ -153,7 +185,13 @@
         "hi": "अलुवा रेलवे स्टेशन के पास / मेट्रो पिलर 24"
       },
       "district": "Ernakulam",
-      "aliases": ["Aluva", "Alwaye", "Aluva Stand", "Aluva Metro", "Periyar Bank"]
+      "aliases": [
+        "Aluva",
+        "Alwaye",
+        "Aluva Stand",
+        "Aluva Metro",
+        "Periyar Bank"
+      ]
     },
     {
       "id": "ST_VYTTILA",
@@ -172,7 +210,12 @@
         "hi": "हब बे 4 • वॉटर मेट्रो और लंबी दूरी की बसें"
       },
       "district": "Ernakulam",
-      "aliases": ["Vyttila", "Vytilla", "Mobility Hub", "Vyttila Junction"]
+      "aliases": [
+        "Vyttila",
+        "Vytilla",
+        "Mobility Hub",
+        "Vyttila Junction"
+      ]
     },
     {
       "id": "ST_KAKKANAD",
@@ -191,7 +234,12 @@
         "hi": "इन्फोपार्क फेज 1 एक्सप्रेस हाईवे गेट"
       },
       "district": "Ernakulam",
-      "aliases": ["Infopark", "Kakkanad", "Collectorate Kakkanad", "SmartCity"]
+      "aliases": [
+        "Infopark",
+        "Kakkanad",
+        "Collectorate Kakkanad",
+        "SmartCity"
+      ]
     },
     {
       "id": "ST_ANGAMALY",
@@ -210,7 +258,11 @@
         "hi": "अंगमाली चर्च के पास / एयरपोर्ट जंक्शन"
       },
       "district": "Ernakulam",
-      "aliases": ["Angamaly", "Angamali", "Nedumbassery Airport Stand"]
+      "aliases": [
+        "Angamaly",
+        "Angamali",
+        "Nedumbassery Airport Stand"
+      ]
     },
     {
       "id": "ST_THRISSUR",
@@ -229,7 +281,12 @@
         "hi": "शक्तन मार्केट टर्मिनल / केएसआरटीसी डिपो"
       },
       "district": "Thrissur",
-      "aliases": ["Thrissur", "Trichur", "Sakthan Stand", "Swaraj Round"]
+      "aliases": [
+        "Thrissur",
+        "Trichur",
+        "Sakthan Stand",
+        "Swaraj Round"
+      ]
     },
     {
       "id": "ST_TVM_THAMPANOOR",
@@ -248,7 +305,12 @@
         "hi": "तिरुवनंतपुरम सेंट्रल रेलवे स्टेशन के सामने"
       },
       "district": "Thiruvananthapuram",
-      "aliases": ["Thampanoor", "Trivandrum", "TVM Central", "Thiruvananthapuram"]
+      "aliases": [
+        "Thampanoor",
+        "Trivandrum",
+        "TVM Central",
+        "Thiruvananthapuram"
+      ]
     },
     {
       "id": "ST_KOZHIKODE_KSRTC",
@@ -267,7 +329,12 @@
         "hi": "मावूर रोड वाणिज्यिक परिसर टर्मिनल"
       },
       "district": "Kozhikode",
-      "aliases": ["Kozhikode", "Calicut", "Mavoor Road Stand", "Calicut Bus Stand"]
+      "aliases": [
+        "Kozhikode",
+        "Calicut",
+        "Mavoor Road Stand",
+        "Calicut Bus Stand"
+      ]
     }
   ],
   "routes": [
@@ -281,9 +348,27 @@
         "firstBus": "05:30",
         "lastBus": "22:30",
         "frequencyMins": 8,
-        "departureTimes": ["05:30", "05:38", "05:46", "05:54", "06:02", "06:10", "06:18", "06:26"]
+        "departureTimes": [
+          "05:30",
+          "05:38",
+          "05:46",
+          "05:54",
+          "06:02",
+          "06:10",
+          "06:18",
+          "06:26"
+        ]
       },
-      "stops": ["ST_EKM_SOUTH", "ST_MENAKA", "ST_MAHARAJAS", "ST_KALOOR", "ST_PALARIVATTOM", "ST_EDAPPALLY", "ST_KALAMASSERY", "ST_ALUVA"],
+      "stops": [
+        "ST_EKM_SOUTH",
+        "ST_MENAKA",
+        "ST_MAHARAJAS",
+        "ST_KALOOR",
+        "ST_PALARIVATTOM",
+        "ST_EDAPPALLY",
+        "ST_KALAMASSERY",
+        "ST_ALUVA"
+      ],
       "stopStages": {
         "ST_EKM_SOUTH": 1,
         "ST_MENAKA": 2,
@@ -315,7 +400,13 @@
         "lastBus": "21:30",
         "frequencyMins": 12
       },
-      "stops": ["ST_EKM_SOUTH", "ST_MAHARAJAS", "ST_KALOOR", "ST_PALARIVATTOM", "ST_EDAPPALLY"],
+      "stops": [
+        "ST_EKM_SOUTH",
+        "ST_MAHARAJAS",
+        "ST_KALOOR",
+        "ST_PALARIVATTOM",
+        "ST_EDAPPALLY"
+      ],
       "stopStages": {
         "ST_EKM_SOUTH": 1,
         "ST_MAHARAJAS": 2,
@@ -341,7 +432,11 @@
         "lastBus": "22:00",
         "frequencyMins": 10
       },
-      "stops": ["ST_VYTTILA", "ST_PALARIVATTOM", "ST_KAKKANAD"],
+      "stops": [
+        "ST_VYTTILA",
+        "ST_PALARIVATTOM",
+        "ST_KAKKANAD"
+      ],
       "stopStages": {
         "ST_VYTTILA": 1,
         "ST_PALARIVATTOM": 2,
@@ -362,9 +457,27 @@
         "type": "timetable",
         "firstBus": "05:00",
         "lastBus": "23:00",
-        "departureTimes": ["05:00", "06:30", "08:00", "09:30", "11:00", "12:30", "14:00", "15:30", "17:00", "18:30", "20:00", "21:30"]
+        "departureTimes": [
+          "05:00",
+          "06:30",
+          "08:00",
+          "09:30",
+          "11:00",
+          "12:30",
+          "14:00",
+          "15:30",
+          "17:00",
+          "18:30",
+          "20:00",
+          "21:30"
+        ]
       },
-      "stops": ["ST_MAHARAJAS", "ST_EDAPPALLY", "ST_ALUVA", "ST_ANGAMALY"],
+      "stops": [
+        "ST_MAHARAJAS",
+        "ST_EDAPPALLY",
+        "ST_ALUVA",
+        "ST_ANGAMALY"
+      ],
       "stopStages": {
         "ST_MAHARAJAS": 1,
         "ST_EDAPPALLY": 3,
@@ -386,9 +499,28 @@
         "type": "timetable",
         "firstBus": "04:30",
         "lastBus": "22:30",
-        "departureTimes": ["04:30", "06:00", "07:30", "09:00", "10:30", "12:00", "13:30", "15:00", "16:30", "18:00", "19:30", "21:00"]
+        "departureTimes": [
+          "04:30",
+          "06:00",
+          "07:30",
+          "09:00",
+          "10:30",
+          "12:00",
+          "13:30",
+          "15:00",
+          "16:30",
+          "18:00",
+          "19:30",
+          "21:00"
+        ]
       },
-      "stops": ["ST_MAHARAJAS", "ST_EDAPPALLY", "ST_ALUVA", "ST_ANGAMALY", "ST_THRISSUR"],
+      "stops": [
+        "ST_MAHARAJAS",
+        "ST_EDAPPALLY",
+        "ST_ALUVA",
+        "ST_ANGAMALY",
+        "ST_THRISSUR"
+      ],
       "stopStages": {
         "ST_MAHARAJAS": 1,
         "ST_EDAPPALLY": 2,

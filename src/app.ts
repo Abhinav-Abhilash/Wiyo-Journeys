@@ -879,10 +879,10 @@ function populateDetailsScreen(plan: JourneyPlan) {
   // Handle fallback nearest stop presentation
   if (plan.type === 'fallback_nearest' && plan.fallbackInfo) {
     const fb = plan.fallbackInfo;
-    const targetName = fb.targetDestination.names[currentLanguage] || fb.targetDestination.names.en;
-    const alightName = fb.nearestReachableStop.names[currentLanguage] || fb.nearestReachableStop.names.en;
-    const distKm = (fb.distanceMeters / 1000).toFixed(1);
-    const dirStr = fb.compassDirection[currentLanguage] || fb.compassDirection.en;
+    const targetName = fb.requestedDestination?.names[currentLanguage] || fb.requestedDestination?.names.en || destName;
+    const alightName = fb.nearestReachableStop?.names[currentLanguage] || fb.nearestReachableStop?.names.en || destName;
+    const distKm = fb.walkDistanceKm || (fb.walkDistanceMeters ? (fb.walkDistanceMeters / 1000).toFixed(1) : '0');
+    const dirStr = fb.compassDirection?.[currentLanguage] || fb.compassDirection?.en || '';
 
     if (fallbackBanner) fallbackBanner.classList.remove('hidden');
     if (fallbackBadgeTitle) fallbackBadgeTitle.textContent = strings.fallbackTitle;
@@ -958,10 +958,10 @@ function populateDetailsScreen(plan: JourneyPlan) {
 
   if (currentJourneyPlan.type === 'fallback_nearest' && currentJourneyPlan.fallbackInfo) {
     const fb = currentJourneyPlan.fallbackInfo;
-    const targetName = fb.targetDestination.names[currentLanguage] || fb.targetDestination.names.en;
-    const alightName = fb.nearestReachableStop.names[currentLanguage] || fb.nearestReachableStop.names.en;
-    const distKm = (fb.distanceMeters / 1000).toFixed(1);
-    const dirStr = fb.compassDirection[currentLanguage] || fb.compassDirection.en;
+    const targetName = fb.requestedDestination?.names[currentLanguage] || fb.requestedDestination?.names.en || destName;
+    const alightName = fb.nearestReachableStop?.names[currentLanguage] || fb.nearestReachableStop?.names.en || destName;
+    const distKm = fb.walkDistanceKm || (fb.walkDistanceMeters ? (fb.walkDistanceMeters / 1000).toFixed(1) : '0');
+    const dirStr = fb.compassDirection?.[currentLanguage] || fb.compassDirection?.en || '';
 
     const phrase = strings.fallbackSpoken(
       originName,
