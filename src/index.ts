@@ -56,11 +56,11 @@ export function getNearestStops(
       return;
     }
 
-    if (!('geolocation' in navigator)) {
+    if (typeof navigator === 'undefined' || !('geolocation' in navigator)) {
       resolve({
         status: 'permission_denied',
         fallback: 'manual_selection',
-        stops: allStops.slice(0, limit).map((s) => ({ stop: s, distanceMeters: 180 })),
+        stops: allStops.slice(0, limit).map((s) => ({ stop: s, distanceMeters: 160 })),
       });
       return;
     }
@@ -74,10 +74,10 @@ export function getNearestStops(
         resolve({
           status: 'permission_denied',
           fallback: 'manual_selection',
-          stops: allStops.slice(0, limit).map((s) => ({ stop: s, distanceMeters: 180 })),
+          stops: allStops.slice(0, limit).map((s) => ({ stop: s, distanceMeters: 160 })),
         });
       },
-      { timeout: 4000, maximumAge: 30000 }
+      { enableHighAccuracy: true, timeout: 8000, maximumAge: 60000 }
     );
   });
 }

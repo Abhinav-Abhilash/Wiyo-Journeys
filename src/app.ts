@@ -410,6 +410,9 @@ window.addEventListener('DOMContentLoaded', async () => {
 
   if (screenId === 'screen-tracking') {
     setTimeout(() => initLiveLeafletMap(), 250);
+  } else if (screenId === 'screen-search') {
+    renderPopularStops();
+    detectGPSLocation(false);
   } else {
     // Clear live tracking when leaving screen 4
     if (simInterval) {
@@ -576,29 +579,47 @@ function updateUILanguage() {
   renderPopularStops();
 }
 
-async function detectGPSLocation() {
+async function detectGPSLocation(notifyUser = true) {
   const refreshBtn = document.getElementById('refresh-gps-btn');
   if (refreshBtn) refreshBtn.classList.add('animate-spin');
 
-  const res = await getNearestStops();
-  if (refreshBtn) refreshBtn.classList.remove('animate-spin');
+  try {
+    const res = await getNearestStops();
+    if (res.stops && res.stops.length > 0) {
+      const nearest = res.stops[0];
+      selectedOriginStop = nearest.stop;
 
-  if (res.stops && res.stops.length > 0) {
-    const nearest = res.stops[0];
-    selectedOriginStop = nearest.stop;
+      const nameEl = document.getElementById('detected-stop-name');
+      const distEl = document.getElementById('detected-stop-dist');
+      const hintEl = document.getElementById('detected-stop-hint');
+      const badgeEl = document.getElementById('gps-active-badge-text');
 
-    const nameEl = document.getElementById('detected-stop-name');
-    const distEl = document.getElementById('detected-stop-dist');
-    const hintEl = document.getElementById('detected-stop-hint');
+      const localName = nearest.stop.names[currentLanguage] || nearest.stop.names.en;
+      if (nameEl) nameEl.textContent = localName;
+      if (distEl) distEl.textContent = i18n[currentLanguage].walkFromYou(nearest.distanceMeters);
+      if (hintEl && nearest.stop.landmarkHint) {
+        hintEl.textContent = `${nearest.stop.landmarkHint[currentLanguage] || nearest.stop.landmarkHint.en}.`;
+      }
+      if (badgeEl) {
+        badgeEl.textContent = res.status === 'success' ? 'GPS Active' : 'Nearest Hub';
+      }
 
-    if (nameEl) nameEl.textContent = nearest.stop.names[currentLanguage] || nearest.stop.names.en;
-    if (distEl) distEl.textContent = i18n[currentLanguage].walkFromYou(nearest.distanceMeters);
-    if (hintEl && nearest.stop.landmarkHint) {
-      hintEl.textContent = `${nearest.stop.landmarkHint[currentLanguage] || nearest.stop.landmarkHint.en}.`;
+      renderPopularStops();
+
+      if (notifyUser) {
+        const distStr = nearest.distanceMeters < 1000
+          ? `${nearest.distanceMeters}m`
+          : `${(nearest.distanceMeters / 1000).toFixed(1)} km`;
+        showToast('Live Location', `${localName} • ${distStr}`);
+      }
     }
+  } catch (err) {
+    console.warn('GPS detection notice:', err);
+  } finally {
+    if (refreshBtn) refreshBtn.classList.remove('animate-spin');
   }
 }
-(window as any).detectGPSLocation = detectGPSLocation;
+(window as any).detectGPSLocation = () => detectGPSLocation(true);
 
 /**
  * Popular Stops List
