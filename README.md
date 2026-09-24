@@ -70,8 +70,8 @@ flowchart TD
     G --> H
 ```
 
-### 1. Kerala RTI Bus Timing Dataset (`Kerala-Private-Bus-Timing`)
-* **Source:** Official Right to Information (RTI) private bus schedules compiled across Kerala districts (`ernakulam.json`, `attingal.json`, `alappuzha.json`, `kottayam.json`, `thrissur.json`, `kozhikode.json`, `palakkad.json`).
+### 1. Kerala RTI Bus Timing Dataset (`Kerala-Bus-Timing`)
+* **Source:** Official Right to Information (RTI) bus schedules compiled across Kerala districts (`ernakulam.json`, `attingal.json`, `alappuzha.json`, `kottayam.json`, `thrissur.json`, `kozhikode.json`, `palakkad.json`).
 * **Contribution:** Real-world trip timings, first/last bus departures, departure intervals, and regional stop names.
 
 ### 2. Kochi GTFS Open Transit Feed (`KochiTransport/`)
