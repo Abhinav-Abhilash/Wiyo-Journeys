@@ -849,11 +849,56 @@ const UNIFIED_ROUTES = [
   }
 ];
 
+// 5. Strict Multi-Source Validation according to Rules 1-5
+console.log('🧪 Validating unified dataset rules...');
+
+const stopsList = Object.values(KNOWN_STOPS_MAP);
+const stopIdsSet = new Set();
+const stopCoordsSet = new Set();
+
+stopsList.forEach((s) => {
+  // Check unique ID
+  if (stopIdsSet.has(s.id)) {
+    throw new Error(`Duplicate Stop ID detected: ${s.id}`);
+  }
+  stopIdsSet.add(s.id);
+
+  // Check 4 languages
+  ['en', 'ml', 'ta', 'hi'].forEach((lang) => {
+    if (!s.names[lang] || typeof s.names[lang] !== 'string') {
+      throw new Error(`Stop ${s.id} is missing localized name for language: ${lang}`);
+    }
+  });
+
+  // Check coordinates
+  if (typeof s.lat !== 'number' || typeof s.lng !== 'number' || s.lat < 8.0 || s.lat > 13.0 || s.lng < 75.0 || s.lng > 78.0) {
+    throw new Error(`Stop ${s.id} has invalid coordinates: [${s.lat}, ${s.lng}]`);
+  }
+
+  // Exact duplicate coordinate check
+  const coordKey = `${s.lat.toFixed(5)},${s.lng.toFixed(5)}`;
+  if (stopCoordsSet.has(coordKey)) {
+    console.warn(`⚠️ Note: Stop ${s.id} shares near-exact coordinates with another entry: ${coordKey}`);
+  }
+  stopCoordsSet.add(coordKey);
+});
+
+// Check routes referencing valid stops
+UNIFIED_ROUTES.forEach((route) => {
+  route.stops.forEach((stopId) => {
+    if (!stopIdsSet.has(stopId)) {
+      throw new Error(`Route ${route.id} (${route.name}) references non-existent stop: ${stopId}`);
+    }
+  });
+});
+
+console.log(`✅ All ${stopsList.length} stops and ${UNIFIED_ROUTES.length} routes passed 100% integrity validation!`);
+
 const unifiedOutput = {
   version: '2.0.0',
   updatedAt: new Date().toISOString(),
   disclaimer: 'Consolidated multimodal dataset compiled from Kerala RTI Private Bus Timings, Kochi GTFS, and Kerala MVD/KSRTC official notifications.',
-  stops: Object.values(KNOWN_STOPS_MAP),
+  stops: stopsList,
   routes: UNIFIED_ROUTES
 };
 
