@@ -865,6 +865,7 @@ function populateDetailsScreen(plan: JourneyPlan) {
   const stopsCount = document.getElementById('details-stops-count');
   const fareAmount = document.getElementById('details-fare-amount');
   const fareBreakdown = document.getElementById('details-fare-breakdown');
+  const detailsConductorDisclaimer = document.getElementById('details-conductor-disclaimer');
 
   // Fallback banner elements
   const fallbackBanner = document.getElementById('details-fallback-banner');
