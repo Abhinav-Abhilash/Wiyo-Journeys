@@ -85,6 +85,7 @@ const i18n = {
     estimatedFare: 'Estimated Fare',
     fareBreakdown: (base: number, stage: number) => `Base fare: ₹${base}.00 • Stages: ₹${stage}.00`,
     conductorDisclaimer: 'Official Estimate: Pay directly to conductor inside the bus via Cash or Chalo / UPI tap.',
+    detailsConductorDisclaimer: 'Official Estimate: Pay directly to conductor inside the bus via Cash or Chalo / UPI tap.',
     startJourney: 'Start Journey',
     savePass: 'Save Offline Bus Pass',
     passSaved: 'Pass Cached Offline ✓',
@@ -151,6 +152,7 @@ const i18n = {
     estimatedFare: 'പ്രതീക്ഷിക്കുന്ന നിരക്ക്',
     fareBreakdown: (base: number, stage: number) => `അടിസ്ഥാന നിരക്ക്: ₹${base}.00 • സ്റ്റേജ് നിരക്ക്: ₹${stage}.00`,
     conductorDisclaimer: 'ഔദ്യോഗിക നിരക്ക്: ബസ്സിനുള്ളിൽ കണ്ടക്ടർക്ക് പണമായോ യുപിഐ വഴിയോ നേരിട്ട് നൽകുക.',
+    detailsConductorDisclaimer: 'ഔദ്യോഗിക നിരക്ക്: ബസ്സിനുള്ളിൽ കണ്ടക്ടർക്ക് പണമായോ യുപിഐ വഴിയോ നേരിട്ട് നൽകുക.',
     startJourney: 'യാത്ര ആരംഭിക്കുക',
     savePass: 'ഓഫ്‌ലൈൻ പാസ് സേവ് ചെയ്യുക',
     passSaved: 'പാസ് സേവ് ചെയ്തു ✓',
@@ -217,6 +219,7 @@ const i18n = {
     estimatedFare: 'மதிப்பிடப்பட்ட கட்டணம்',
     fareBreakdown: (base: number, stage: number) => `அடிப்படை கட்டணம்: ₹${base}.00 • நிலை கட்டணம்: ₹${stage}.00`,
     conductorDisclaimer: 'அதிகாரப்பூர்வ கட்டணம்: பேருந்தில் நடத்துனரிடம் பணம் அல்லது யுபிஐ மூலம் செலுத்தவும்.',
+    detailsConductorDisclaimer: 'அதிகாரப்பூர்வ கட்டணம்: பேருந்தில் நடத்துனரிடம் பணம் அல்லது யுபிஐ மூலம் செலுத்தவும்.',
     startJourney: 'பயணத்தை தொடங்குங்கள்',
     savePass: 'ஆஃப்லைன் பாஸ் சேமிக்கவும்',
     passSaved: 'பாஸ் சேமிக்கப்பட்டது ✓',
@@ -283,6 +286,7 @@ const i18n = {
     estimatedFare: 'अनुमानित किराया',
     fareBreakdown: (base: number, stage: number) => `मूल किराया: ₹${base}.00 • चरण किराया: ₹${stage}.00`,
     conductorDisclaimer: 'आधिकारिक अनुमान: बस में कंडक्टर को नकद या यूपीआई द्वारा सीधे भुगतान करें।',
+    detailsConductorDisclaimer: 'आधिकारिक अनुमान: बस में कंडक्टर को नकद या यूपीआई द्वारा सीधे भुगतान करें।',
     startJourney: 'यात्रा शुरू करें',
     savePass: 'ऑफ़लाइन पास सहेजें',
     passSaved: 'पास सुरक्षित हो गया ✓',
@@ -832,8 +836,9 @@ async function executeFindBus() {
   }
   if (findBtnText) findBtnText.textContent = strings.findingBus;
 
+  let plans: JourneyPlan[] = [];
   try {
-    const plans = await Promise.race([
+    plans = await Promise.race([
       new Promise<JourneyPlan[]>((resolve) => {
         const res = findJourneys(selectedOriginStop!.id, selectedDestStop!.id);
         resolve(res);
@@ -852,12 +857,10 @@ async function executeFindBus() {
     if (currentJourneyPlan.notes) {
       showToast('Notice', currentJourneyPlan.notes[lang] || currentJourneyPlan.notes.en);
     }
-
-    populateDetailsScreen(currentJourneyPlan);
-    (window as any).goToScreen('screen-details');
-  } catch (err: any) {
-    console.error('Error finding bus:', err);
-    showToast('Search Error', err?.message || 'Failed to complete route search.');
+  } catch (searchErr: any) {
+    console.error('[Transit Route Lookup Error]:', searchErr);
+    showToast('Search Notice', searchErr?.message || strings.nearestNotice);
+    return;
   } finally {
     isFindingBus = false;
     if (findBtn) findBtn.disabled = false;
@@ -865,6 +868,16 @@ async function executeFindBus() {
       findBtnIcon.innerHTML = '<span class="material-symbols-outlined text-[22px]">directions_bus</span>';
     }
     if (findBtnText) findBtnText.textContent = i18n[currentLanguage].findBus;
+  }
+
+  // Resilient Presentation Layer: populate Screen 3 details safely
+  try {
+    populateDetailsScreen(currentJourneyPlan!);
+    (window as any).goToScreen('screen-details');
+  } catch (renderErr: any) {
+    console.error('[UI Presentation Warning in populateDetailsScreen]:', renderErr);
+    // Non-fatal: still navigate so commuter can view available journey details
+    (window as any).goToScreen('screen-details');
   }
 }
 (window as any).executeFindBus = executeFindBus;
@@ -950,7 +963,7 @@ function populateDetailsScreen(plan: JourneyPlan) {
     }
   }
   if (detailsConductorDisclaimer) {
-    detailsConductorDisclaimer.textContent = plan.totalFare.disclaimer || strings.conductorDisclaimer;
+    detailsConductorDisclaimer.textContent = plan.totalFare.disclaimer || strings.detailsConductorDisclaimer || strings.conductorDisclaimer;
   }
 
   // Render schematic nodes
